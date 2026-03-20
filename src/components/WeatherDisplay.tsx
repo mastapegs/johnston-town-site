@@ -78,7 +78,8 @@ function WeatherDisplay() {
   const description = getWeatherDescription(weather.weathercode);
 
   return (
-    <div
+    <p
+      role="status"
       aria-label={`Current weather in Johnston: ${Math.round(weather.temperature)} degrees Fahrenheit, ${description}`}
       className="flex items-center gap-1.5 text-sm text-gray-600"
     >
@@ -86,7 +87,7 @@ function WeatherDisplay() {
         {Math.round(weather.temperature)}°F
       </span>
       <span className="hidden sm:inline">{description}</span>
-    </div>
+    </p>
   );
 }
 
