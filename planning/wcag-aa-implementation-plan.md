@@ -11,15 +11,15 @@ WCAG 2.1 Level AA conformance and add automated accessibility checks to CI.
 
 Audited all pages and components. Key findings:
 
-| Issue                                  | Severity | Count | WCAG Criterion                 |
-| -------------------------------------- | -------- | ----- | ------------------------------ |
-| Missing focus indicators               | CRITICAL | 8+    | 2.4.7 Focus Visible            |
-| Missing skip-navigation link           | CRITICAL | 1     | 2.4.1 Bypass Blocks            |
-| Color contrast failures                | HIGH     | 3-4   | 1.4.3 Contrast Minimum         |
-| External link missing new-window alert | HIGH     | 1     | 2.4.4 Link Purpose In Context  |
-| Missing `aria-current` on active nav   | MEDIUM   | 1     | 1.3.1 Info and Relationships   |
+| Issue                                  | Severity | Count | WCAG Criterion                |
+| -------------------------------------- | -------- | ----- | ----------------------------- |
+| Missing focus indicators               | CRITICAL | 8+    | 2.4.7 Focus Visible           |
+| Missing skip-navigation link           | CRITICAL | 1     | 2.4.1 Bypass Blocks           |
+| Color contrast failures                | HIGH     | 3-4   | 1.4.3 Contrast Minimum        |
+| External link missing new-window alert | HIGH     | 1     | 2.4.4 Link Purpose In Context |
+| Missing `aria-current` on active nav   | MEDIUM   | 1     | 1.3.1 Info and Relationships  |
 | Missing `aria-label`s                  | MEDIUM   | 2-3   | 1.3.1 / 2.4.4                 |
-| Weather display not labeled            | LOW      | 1     | 1.3.1 Info and Relationships   |
+| Weather display not labeled            | LOW      | 1     | 1.3.1 Info and Relationships  |
 
 The site already does several things well: semantic HTML (`<nav>`, `<main>`,
 `<dl>`), proper heading hierarchy, responsive mobile-first design, and
@@ -67,11 +67,11 @@ Specific locations:
 
 **WCAG:** 1.4.3 Contrast Minimum (4.5:1 for normal text, 3:1 for large text)
 
-| Element                       | Current               | Fix                              |
-| ----------------------------- | --------------------- | -------------------------------- |
-| Inactive nav links            | `text-gray-600`       | `text-gray-700` (ratio ~8.5:1)  |
-| Weather description text      | `text-gray-500`       | `text-gray-600` (ratio ~5.7:1)  |
-| Active nav link (blue on bg)  | `text-blue-600`       | `text-blue-700` (ratio ~6.5:1)  |
+| Element                      | Current         | Fix                            |
+| ---------------------------- | --------------- | ------------------------------ |
+| Inactive nav links           | `text-gray-600` | `text-gray-700` (ratio ~8.5:1) |
+| Weather description text     | `text-gray-500` | `text-gray-600` (ratio ~5.7:1) |
+| Active nav link (blue on bg) | `text-blue-600` | `text-blue-700` (ratio ~6.5:1) |
 
 ### 1.4 Add `aria-current="page"` to Active NavLink
 
@@ -87,12 +87,12 @@ should be automatic). If using a custom `className` function, ensure
 
 **WCAG:** 1.3.1 / 2.4.4 / 2.4.9
 
-| Element                | File                | Label                                        |
-| ---------------------- | ------------------- | -------------------------------------------- |
-| `<nav>`                | `Layout.tsx`        | `aria-label="Main navigation"`               |
-| Weather display `<div>`| `Layout.tsx`        | `aria-label="Current weather in Johnston"`    |
-| Phone `<a href="tel">` | `ListingDetail.tsx` | `aria-label="Call {listing.name}"`           |
-| External website link  | `ListingDetail.tsx` | `aria-label="Visit {listing.name} website (opens in new tab)"` |
+| Element                 | File                | Label                                                          |
+| ----------------------- | ------------------- | -------------------------------------------------------------- |
+| `<nav>`                 | `Layout.tsx`        | `aria-label="Main navigation"`                                 |
+| Weather display `<div>` | `Layout.tsx`        | `aria-label="Current weather in Johnston"`                     |
+| Phone `<a href="tel">`  | `ListingDetail.tsx` | `aria-label="Call {listing.name}"`                             |
+| External website link   | `ListingDetail.tsx` | `aria-label="Visit {listing.name} website (opens in new tab)"` |
 
 ### 1.6 Add External Link Indicator
 
@@ -246,31 +246,31 @@ This will:
 
 These items can't be fully automated but should be part of your process:
 
-| Check                              | How                                                 |
-| ---------------------------------- | --------------------------------------------------- |
-| Keyboard navigation flow           | Tab through every page, verify logical order         |
-| Screen reader testing              | Test with VoiceOver (Mac) or NVDA (Windows)          |
-| Zoom to 200%                       | Verify no content is clipped or broken               |
-| Touch target size (44x44px min)    | Verify buttons/links are large enough on mobile      |
-| Reduced motion                     | If animations are added later, respect `prefers-reduced-motion` |
+| Check                           | How                                                             |
+| ------------------------------- | --------------------------------------------------------------- |
+| Keyboard navigation flow        | Tab through every page, verify logical order                    |
+| Screen reader testing           | Test with VoiceOver (Mac) or NVDA (Windows)                     |
+| Zoom to 200%                    | Verify no content is clipped or broken                          |
+| Touch target size (44x44px min) | Verify buttons/links are large enough on mobile                 |
+| Reduced motion                  | If animations are added later, respect `prefers-reduced-motion` |
 
 ---
 
 ## Implementation Order
 
-| Step | Task                                  | Blocks CI? |
-| ---- | ------------------------------------- | ---------- |
-| 1    | Add `eslint-plugin-jsx-a11y`          | Yes — will flag issues in lint |
-| 2    | Fix all lint a11y violations          | Unblocks lint |
-| 3    | Add skip-nav link                     | No         |
-| 4    | Add focus indicators everywhere       | No         |
-| 5    | Fix color contrast                    | No         |
-| 6    | Add aria-labels and aria-current      | No         |
-| 7    | Add external link indicators          | No         |
-| 8    | Add route change announcements        | No         |
-| 9    | Add `pa11y-ci` + CI workflow job      | Yes — will fail on remaining issues |
-| 10   | Verify pa11y-ci passes clean          | Unblocks CI |
-| 11   | Manual keyboard + screen reader test  | N/A        |
+| Step | Task                                 | Blocks CI?                          |
+| ---- | ------------------------------------ | ----------------------------------- |
+| 1    | Add `eslint-plugin-jsx-a11y`         | Yes — will flag issues in lint      |
+| 2    | Fix all lint a11y violations         | Unblocks lint                       |
+| 3    | Add skip-nav link                    | No                                  |
+| 4    | Add focus indicators everywhere      | No                                  |
+| 5    | Fix color contrast                   | No                                  |
+| 6    | Add aria-labels and aria-current     | No                                  |
+| 7    | Add external link indicators         | No                                  |
+| 8    | Add route change announcements       | No                                  |
+| 9    | Add `pa11y-ci` + CI workflow job     | Yes — will fail on remaining issues |
+| 10   | Verify pa11y-ci passes clean         | Unblocks CI                         |
+| 11   | Manual keyboard + screen reader test | N/A                                 |
 
 ---
 

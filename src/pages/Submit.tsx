@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function Submit() {
+  useEffect(() => {
+    document.title = "Submit a Listing — Johnston Community Directory";
+  }, []);
+
   return (
     <div className="mx-auto max-w-2xl py-12 text-center">
       <h1 className="text-3xl font-bold text-gray-900">Submit a Listing</h1>

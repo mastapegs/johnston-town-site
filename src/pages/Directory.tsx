@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { Link, useSearchParams } from "react-router";
 import { categories, listings } from "../data/listings";
 
 function Directory() {
   const [searchParams, setSearchParams] = useSearchParams();
+
+  useEffect(() => {
+    document.title = "Directory — Johnston Community Directory";
+  }, []);
   const activeCategory = searchParams.get("category");
 
   const filtered = activeCategory
@@ -19,7 +24,7 @@ function Directory() {
       <div className="mt-6 flex flex-wrap gap-2">
         <button
           onClick={() => setSearchParams({})}
-          className={`rounded-full px-3 py-1 text-sm ${
+          className={`rounded-full px-3 py-1 text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 ${
             !activeCategory
               ? "bg-blue-600 text-white"
               : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -31,7 +36,7 @@ function Directory() {
           <button
             key={category}
             onClick={() => setSearchParams({ category })}
-            className={`rounded-full px-3 py-1 text-sm ${
+            className={`rounded-full px-3 py-1 text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 ${
               activeCategory === category
                 ? "bg-blue-600 text-white"
                 : "bg-gray-100 text-gray-700 hover:bg-gray-200"
@@ -47,7 +52,7 @@ function Directory() {
           <Link
             key={listing.id}
             to={`/directory/${listing.id}`}
-            className="rounded-lg border border-gray-200 bg-white p-5 hover:border-blue-300"
+            className="rounded-lg border border-gray-200 bg-white p-5 hover:border-blue-300 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
           >
             <span className="text-xs font-medium text-blue-600">
               {listing.category}
@@ -55,7 +60,7 @@ function Directory() {
             <h2 className="mt-1 text-lg font-semibold text-gray-900">
               {listing.name}
             </h2>
-            <p className="mt-1 text-sm text-gray-500">{listing.address}</p>
+            <p className="mt-1 text-sm text-gray-600">{listing.address}</p>
             <p className="mt-2 text-sm text-gray-600 line-clamp-2">
               {listing.description}
             </p>

@@ -6,41 +6,41 @@ _Research conducted March 2026 to inform the Johnston Community Directory roadma
 
 ## Sites Researched
 
-| Site | Type | Scale | URL |
-| ---- | ---- | ----- | --- |
-| **findhelp.org** (fka Aunt Bertha) | National social-care network | Every US ZIP code | findhelp.org |
-| **211 (United Way)** | National helpline + web directory | State/county-level (e.g., 211virginia.org, wa211.org) | 211.org |
-| **James City County Housing Portal** | County resource hub | Single county (~77k pop.) | jamescitycountyva.gov |
-| **Windsor, CO** | Municipal website (CivicPlus) | Single town (~47k pop.) | windsorgov.com |
-| **Town of Sherborn, MA** | Small-town municipal site | Single town (~4k pop.) | sherbornma.org |
-| **Senior Resource Connect MI** | Niche directory (seniors) | State-level (Michigan) | seniorresourceconnectmi.org |
-| **Johnston Community Directory** | Hyper-local resource guide | Single town (~30k pop.) | _our site_ |
+| Site                                 | Type                              | Scale                                                 | URL                         |
+| ------------------------------------ | --------------------------------- | ----------------------------------------------------- | --------------------------- |
+| **findhelp.org** (fka Aunt Bertha)   | National social-care network      | Every US ZIP code                                     | findhelp.org                |
+| **211 (United Way)**                 | National helpline + web directory | State/county-level (e.g., 211virginia.org, wa211.org) | 211.org                     |
+| **James City County Housing Portal** | County resource hub               | Single county (~77k pop.)                             | jamescitycountyva.gov       |
+| **Windsor, CO**                      | Municipal website (CivicPlus)     | Single town (~47k pop.)                               | windsorgov.com              |
+| **Town of Sherborn, MA**             | Small-town municipal site         | Single town (~4k pop.)                                | sherbornma.org              |
+| **Senior Resource Connect MI**       | Niche directory (seniors)         | State-level (Michigan)                                | seniorresourceconnectmi.org |
+| **Johnston Community Directory**     | Hyper-local resource guide        | Single town (~30k pop.)                               | _our site_                  |
 
 ---
 
 ## Feature Comparison Matrix
 
-| Feature | findhelp | 211 | James City | Windsor | Sherborn | Sr. Resource MI | **Johnston (ours)** |
-| ------- | :------: | :-: | :--------: | :-----: | :------: | :-------------: | :-----------------: |
-| **Search / keyword lookup** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ❌ |
-| **Category browsing** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **ZIP-code / location filter** | ✅ | ✅ | — | — | — | ✅ | — (single town) |
-| **Map / geolocation view** | ✅ | ✅ | ✅ | ✅ | — | — | ❌ |
-| **Detailed listing cards** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **"Next steps" / how-to-access** | ✅ | — | — | — | — | — | ❌ |
-| **Community submission / suggest** | ✅ | ✅ | — | — | — | — | 🔜 (placeholder) |
-| **Claimed / verified badge** | ✅ | — | — | — | — | — | ❌ |
-| **Mobile-responsive** | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| **Accessibility (WCAG)** | ✅ | ✅ | ✅ | ✅ (dyslexia fonts) | ✅ | ✅ | Partial |
-| **Multi-language / translation** | ✅ | ✅ | — | — | — | — | ❌ |
-| **Event calendar** | — | — | ✅ | ✅ | ✅ | — | ❌ |
-| **News / announcements** | — | — | ✅ | ✅ | ✅ | — | ❌ |
-| **Online forms / bill pay** | — | — | ✅ | ✅ | ✅ | — | ❌ |
-| **Live chat / 24-7 helpline** | — | ✅ | — | — | — | — | ❌ |
-| **Analytics / impact tracking** | ✅ | ✅ | — | — | — | — | ❌ |
-| **Referral / intake workflow** | ✅ | ✅ | — | — | — | — | ❌ |
-| **Weather widget** | — | — | — | — | — | — | ✅ |
-| **Shareable filtered URLs** | ✅ | ✅ | — | — | — | ✅ | ✅ |
+| Feature                            | findhelp | 211 | James City |       Windsor       | Sherborn | Sr. Resource MI | **Johnston (ours)** |
+| ---------------------------------- | :------: | :-: | :--------: | :-----------------: | :------: | :-------------: | :-----------------: |
+| **Search / keyword lookup**        |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ❌          |
+| **Category browsing**              |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
+| **ZIP-code / location filter**     |    ✅    | ✅  |     —      |          —          |    —     |       ✅        |   — (single town)   |
+| **Map / geolocation view**         |    ✅    | ✅  |     ✅     |         ✅          |    —     |        —        |         ❌          |
+| **Detailed listing cards**         |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
+| **"Next steps" / how-to-access**   |    ✅    |  —  |     —      |          —          |    —     |        —        |         ❌          |
+| **Community submission / suggest** |    ✅    | ✅  |     —      |          —          |    —     |        —        |  🔜 (placeholder)   |
+| **Claimed / verified badge**       |    ✅    |  —  |     —      |          —          |    —     |        —        |         ❌          |
+| **Mobile-responsive**              |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
+| **Accessibility (WCAG)**           |    ✅    | ✅  |     ✅     | ✅ (dyslexia fonts) |    ✅    |       ✅        |       Partial       |
+| **Multi-language / translation**   |    ✅    | ✅  |     —      |          —          |    —     |        —        |         ❌          |
+| **Event calendar**                 |    —     |  —  |     ✅     |         ✅          |    ✅    |        —        |         ❌          |
+| **News / announcements**           |    —     |  —  |     ✅     |         ✅          |    ✅    |        —        |         ❌          |
+| **Online forms / bill pay**        |    —     |  —  |     ✅     |         ✅          |    ✅    |        —        |         ❌          |
+| **Live chat / 24-7 helpline**      |    —     | ✅  |     —      |          —          |    —     |        —        |         ❌          |
+| **Analytics / impact tracking**    |    ✅    | ✅  |     —      |          —          |    —     |        —        |         ❌          |
+| **Referral / intake workflow**     |    ✅    | ✅  |     —      |          —          |    —     |        —        |         ❌          |
+| **Weather widget**                 |    —     |  —  |     —      |          —          |    —     |        —        |         ✅          |
+| **Shareable filtered URLs**        |    ✅    | ✅  |     —      |          —          |    —     |       ✅        |         ✅          |
 
 ---
 
@@ -98,15 +98,15 @@ findhelp.org lets anyone "Suggest a Program" (added within 2 business days). 211
 
 ## Where Johnston Already Stands Out
 
-| Strength | Why It Matters |
-| -------- | -------------- |
-| **Hyper-local focus** | National platforms drown small towns in regional results. Johnston's directory is _only_ Johnston — no noise. |
-| **Manually verified listings** | Every entry is researched by a real person, not scraped. This matches the trust model of 211 without the overhead. |
-| **Clean, fast, modern UI** | React + Vite + Tailwind delivers sub-second loads. Many municipal sites are bloated WordPress installations. |
-| **Category-filtered shareable URLs** | `?category=Food%20Assistance` is bookmarkable and shareable — a feature some larger sites lack. |
-| **Community-first mission** | No ads, no paid placements, no login walls. This aligns with 211's ethos but without the bureaucratic overhead. |
-| **Open-source / version-controlled data** | Listings in TypeScript mean full audit trail via git. No opaque database. |
-| **Weather widget** | A small but unique local touch that no comparable resource directory offers. |
+| Strength                                  | Why It Matters                                                                                                     |
+| ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| **Hyper-local focus**                     | National platforms drown small towns in regional results. Johnston's directory is _only_ Johnston — no noise.      |
+| **Manually verified listings**            | Every entry is researched by a real person, not scraped. This matches the trust model of 211 without the overhead. |
+| **Clean, fast, modern UI**                | React + Vite + Tailwind delivers sub-second loads. Many municipal sites are bloated WordPress installations.       |
+| **Category-filtered shareable URLs**      | `?category=Food%20Assistance` is bookmarkable and shareable — a feature some larger sites lack.                    |
+| **Community-first mission**               | No ads, no paid placements, no login walls. This aligns with 211's ethos but without the bureaucratic overhead.    |
+| **Open-source / version-controlled data** | Listings in TypeScript mean full audit trail via git. No opaque database.                                          |
+| **Weather widget**                        | A small but unique local touch that no comparable resource directory offers.                                       |
 
 ---
 

@@ -1,0 +1,18 @@
+{
+  "defaults": {
+    "standard": "WCAG2AA",
+    "runners": ["axe"],
+    "timeout": 10000,
+    "wait": 1000,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox"]
+    }
+  },
+  "urls": [
+    "http://localhost:4173/",
+    "http://localhost:4173/directory",
+    "http://localhost:4173/directory/johnston-town-hall",
+    "http://localhost:4173/about",
+    "http://localhost:4173/submit"
+  ]
+}
