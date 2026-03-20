@@ -75,15 +75,19 @@ function WeatherDisplay() {
 
   if (!weather) return null;
 
+  const description = getWeatherDescription(weather.weathercode);
+
   return (
-    <div className="flex items-center gap-1.5 text-sm text-gray-500">
+    <p
+      role="status"
+      aria-label={`Current weather in Johnston: ${Math.round(weather.temperature)} degrees Fahrenheit, ${description}`}
+      className="flex items-center gap-1.5 text-sm text-gray-600"
+    >
       <span className="font-medium text-gray-700">
         {Math.round(weather.temperature)}°F
       </span>
-      <span className="hidden sm:inline">
-        {getWeatherDescription(weather.weathercode)}
-      </span>
-    </div>
+      <span className="hidden sm:inline">{description}</span>
+    </p>
   );
 }
 

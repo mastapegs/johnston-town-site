@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { listings } from "../data/listings";
 
 function ListingDetail() {
   const { id } = useParams<{ id: string }>();
   const listing = listings.find((l) => l.id === id);
+
+  useEffect(() => {
+    document.title = listing
+      ? `${listing.name} — Johnston Community Directory`
+      : "Listing Not Found — Johnston Community Directory";
+  }, [listing]);
 
   if (!listing) {
     return (
@@ -14,7 +21,7 @@ function ListingDetail() {
         </p>
         <Link
           to="/directory"
-          className="mt-4 inline-block text-blue-600 hover:underline"
+          className="mt-4 inline-block text-blue-600 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
         >
           &larr; Back to Directory
         </Link>
@@ -24,7 +31,10 @@ function ListingDetail() {
 
   return (
     <div>
-      <Link to="/directory" className="text-sm text-blue-600 hover:underline">
+      <Link
+        to="/directory"
+        className="text-sm text-blue-600 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+      >
         &larr; Back to Directory
       </Link>
 
@@ -39,15 +49,16 @@ function ListingDetail() {
 
         <dl className="mt-6 space-y-3 text-sm">
           <div>
-            <dt className="font-medium text-gray-500">Address</dt>
+            <dt className="font-medium text-gray-600">Address</dt>
             <dd className="text-gray-900">{listing.address}</dd>
           </div>
           <div>
-            <dt className="font-medium text-gray-500">Phone</dt>
+            <dt className="font-medium text-gray-600">Phone</dt>
             <dd className="text-gray-900">
               <a
                 href={`tel:${listing.phone.replace(/[^\d+]/g, "")}`}
-                className="text-blue-600 hover:underline"
+                aria-label={`Call ${listing.name}`}
+                className="text-blue-600 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
               >
                 {listing.phone}
               </a>
@@ -55,21 +66,23 @@ function ListingDetail() {
           </div>
           {listing.hours && (
             <div>
-              <dt className="font-medium text-gray-500">Hours</dt>
+              <dt className="font-medium text-gray-600">Hours</dt>
               <dd className="text-gray-900">{listing.hours}</dd>
             </div>
           )}
           {listing.website && (
             <div>
-              <dt className="font-medium text-gray-500">Website</dt>
+              <dt className="font-medium text-gray-600">Website</dt>
               <dd>
                 <a
                   href={listing.website}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
+                  aria-label={`Visit ${listing.name} website (opens in new tab)`}
+                  className="text-blue-600 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
                 >
                   {listing.website}
+                  <span className="sr-only"> (opens in new tab)</span>
                 </a>
               </dd>
             </div>

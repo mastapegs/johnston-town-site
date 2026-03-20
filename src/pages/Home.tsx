@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { Link } from "react-router";
 import { categories } from "../data/listings";
 
 function Home() {
+  useEffect(() => {
+    document.title = "Johnston Community Directory";
+  }, []);
+
   return (
     <div className="space-y-12">
       <section className="py-12 text-center">
@@ -14,7 +19,7 @@ function Home() {
         </p>
         <Link
           to="/directory"
-          className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700"
+          className="mt-6 inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-medium text-white hover:bg-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
         >
           Browse the Directory
         </Link>
@@ -29,7 +34,7 @@ function Home() {
             <Link
               key={category}
               to={`/directory?category=${encodeURIComponent(category)}`}
-              className="rounded-lg border border-gray-200 bg-white p-4 text-center text-sm font-medium text-gray-700 hover:border-blue-300 hover:text-blue-600"
+              className="rounded-lg border border-gray-200 bg-white p-4 text-center text-sm font-medium text-gray-700 hover:border-blue-300 hover:text-blue-600 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             >
               {category}
             </Link>
