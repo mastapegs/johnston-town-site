@@ -49,7 +49,7 @@ function Layout() {
       </main>
 
       <footer className="border-t border-gray-200 bg-white">
-        <div className="mx-auto max-w-5xl px-4 py-6 text-center text-sm text-gray-600">
+        <div className="mx-auto max-w-5xl px-4 py-6 text-center text-sm text-gray-700">
           <p>
             Johnston Community Directory &mdash; built by a neighbor, for
             neighbors.
