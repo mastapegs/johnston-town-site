@@ -36,12 +36,15 @@ Local businesses — restaurants, shops, auto repair, salons — will follow. Bu
 ## How It Works
 
 ### Phase 1 — Curated Launch
+
 Listings are researched and added by hand. Every entry is verified. Quality and accuracy matter more than quantity. The goal is to be trustworthy from day one.
 
 ### Phase 2 — Community Input
+
 Open up a way for community members to suggest new listings or flag outdated information. Submissions are reviewed before going live to maintain quality.
 
 ### Phase 3 — Sustainable Growth
+
 Offer local businesses the option to claim and enhance their listings — better placement, richer profiles, photos. This creates a revenue path that keeps the directory free for residents while giving businesses a reason to participate.
 
 ## What Each Listing Should Include
