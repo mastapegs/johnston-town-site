@@ -11,6 +11,7 @@ A React web application that serves as a centralized community directory for Joh
 - **Language**: TypeScript (strict mode)
 - **Styling**: Tailwind CSS v4 (via Vite plugin)
 - **Code Quality**: ESLint 9 (flat config) + Prettier
+- **Accessibility Testing**: pa11y-ci (WCAG2AA standard)
 - **Deployment**: Netlify (via GitHub Actions)
 
 ## Commands
@@ -22,6 +23,7 @@ npm run preview        # Preview production build locally
 npm run lint           # Run ESLint
 npm run format         # Format code with Prettier
 npm run format:check   # Check formatting without modifying files
+npm run a11y           # Run WCAG2AA accessibility tests via pa11y-ci
 ```
 
 ## Project Structure
@@ -29,7 +31,8 @@ npm run format:check   # Check formatting without modifying files
 ```
 src/
 ├── components/
-│   └── Layout.tsx           # Header/footer/nav wrapper (used on all pages)
+│   ├── Layout.tsx           # Header/footer/nav wrapper (used on all pages)
+│   └── WeatherDisplay.tsx   # Live weather widget (Open Meteo API, no auth needed)
 ├── pages/
 │   ├── Home.tsx             # Landing page with category grid
 │   ├── Directory.tsx        # Browse/filter listings by category
@@ -48,6 +51,8 @@ src/
 - `src/data/listings.ts` — All listings are hardcoded here. Contains the `Listing` interface, the `categories` tuple, and the `listings` array.
 - `src/App.tsx` — React Router configuration with all routes.
 - `src/components/Layout.tsx` — Shared layout wrapper with navigation and footer.
+- `src/components/WeatherDisplay.tsx` — Real-time weather widget using Open Meteo API (Johnston coords: 41.824, -71.516). Refreshes every 30 minutes, fails silently.
+- `.pa11yci` — Accessibility test configuration (URLs and WCAG standard).
 - `planning/vision.md` — Product vision and roadmap document.
 
 ## Routes
@@ -84,13 +89,14 @@ Categories are defined as a constant tuple in `src/data/listings.ts` and reused 
 - **Styling**: Tailwind utility classes inline (no separate CSS files per component)
 - **Routing**: React Router v7 — uses `NavLink`, `useSearchParams`, `useParams`, `Link`
 - **TypeScript**: Strict mode with `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`
+- **Accessibility**: WCAG2AA compliance — skip-to-main links, aria-labels, semantic HTML, focus outlines (`outline-2 outline-offset-2 outline-blue-600`)
 - **Responsive design**: Mobile-first with Tailwind breakpoints (`sm:`, `lg:`)
 
 ## CI/CD
 
 Three GitHub Actions workflows in `.github/workflows/`:
 
-1. **ci.yml** — Reusable workflow: runs lint, format check, and TypeScript type checking (Node 22)
+1. **ci.yml** — Reusable workflow: runs lint, format check, TypeScript type checking, and accessibility tests (Node 22)
 2. **deploy.yml** — Runs on push to `main`: CI checks → build → deploy to Netlify production
 3. **pull-request.yml** — Runs on PRs: CI checks → build → deploy preview to Netlify (alias `pr-{number}`, comments URL on PR)
 
