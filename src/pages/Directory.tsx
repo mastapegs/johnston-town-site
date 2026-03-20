@@ -1,0 +1,75 @@
+import { Link, useSearchParams } from "react-router";
+import { categories, listings } from "../data/listings";
+
+function Directory() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategory = searchParams.get("category");
+
+  const filtered = activeCategory
+    ? listings.filter((l) => l.category === activeCategory)
+    : listings;
+
+  return (
+    <div>
+      <h1 className="text-3xl font-bold text-gray-900">Directory</h1>
+      <p className="mt-2 text-gray-600">
+        Browse verified local services and resources in Johnston.
+      </p>
+
+      <div className="mt-6 flex flex-wrap gap-2">
+        <button
+          onClick={() => setSearchParams({})}
+          className={`rounded-full px-3 py-1 text-sm ${
+            !activeCategory
+              ? "bg-blue-600 text-white"
+              : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          }`}
+        >
+          All
+        </button>
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setSearchParams({ category })}
+            className={`rounded-full px-3 py-1 text-sm ${
+              activeCategory === category
+                ? "bg-blue-600 text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            {category}
+          </button>
+        ))}
+      </div>
+
+      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+        {filtered.map((listing) => (
+          <Link
+            key={listing.id}
+            to={`/directory/${listing.id}`}
+            className="rounded-lg border border-gray-200 bg-white p-5 hover:border-blue-300"
+          >
+            <span className="text-xs font-medium text-blue-600">
+              {listing.category}
+            </span>
+            <h2 className="mt-1 text-lg font-semibold text-gray-900">
+              {listing.name}
+            </h2>
+            <p className="mt-1 text-sm text-gray-500">{listing.address}</p>
+            <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+              {listing.description}
+            </p>
+          </Link>
+        ))}
+      </div>
+
+      {filtered.length === 0 && (
+        <p className="mt-8 text-center text-gray-500">
+          No listings found in this category yet.
+        </p>
+      )}
+    </div>
+  );
+}
+
+export default Directory;
