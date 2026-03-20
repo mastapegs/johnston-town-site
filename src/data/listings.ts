@@ -74,4 +74,48 @@ export const listings: Listing[] = [
     description:
       "Licensed childcare center for ages 2 months to 5 years. DCYF-certified with qualified teachers and an on-site nurse. Curriculum focused on language, reading readiness, and physical, social, and emotional development.",
   },
+  {
+    id: "operation-stand-down-ri",
+    name: "Operation Stand Down Rhode Island",
+    category: "Shelters",
+    address: "1010 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 383-4730",
+    website: "https://osdri.org",
+    hours: "Mon–Fri 8:30 AM – 4:30 PM",
+    description:
+      "Rhode Island's primary nonprofit resource for homeless and at-risk veterans. Provides emergency and permanent housing, case management, mental health and substance abuse treatment coordination, employment assistance, and a food pantry.",
+  },
+  {
+    id: "crossroads-rhode-island",
+    name: "Crossroads Rhode Island",
+    category: "Shelters",
+    address: "160 Broad St, Providence, RI 02903",
+    phone: "(401) 521-2255",
+    website: "https://www.crossroadsri.org",
+    hours: "Hotline: Mon–Fri 9 AM – 9 PM, Sat–Sun 9 AM – 2 PM",
+    description:
+      "Rhode Island's largest homeless services organization. Operates emergency shelters for men, women, families, and couples. Also provides domestic violence services with a 24/7 helpline at (401) 861-2760.",
+  },
+  {
+    id: "providence-rescue-mission",
+    name: "Providence Rescue Mission",
+    category: "Shelters",
+    address: "627 Cranston St, Providence, RI 02907",
+    phone: "(401) 274-8861",
+    website: "https://www.providencerescuemission.org",
+    hours: "Open 24/7",
+    description:
+      "Emergency overnight shelter for homeless men and women. Provides three hot meals daily, warm showers, clean clothing, a food pantry, dental services, and a one-year discipleship program.",
+  },
+  {
+    id: "amos-house",
+    name: "Amos House",
+    category: "Shelters",
+    address: "460 Pine St, Providence, RI 02907",
+    phone: "(401) 272-0220",
+    website: "https://amoshouse.com",
+    hours: "Mon–Thu 8:00 AM – 4:00 PM, Fri 8:00 AM – 1:00 PM",
+    description:
+      "Nonprofit providing shelter housing, the state's largest soup kitchen, and social services for individuals who are hungry, homeless, or in crisis. Offers case management, mental health care, and recovery support.",
+  },
 ];
