@@ -7,6 +7,8 @@ export interface Listing {
   website?: string;
   hours?: string;
   description: string;
+  lat: number;
+  lng: number;
 }
 
 export const categories = [
@@ -29,6 +31,8 @@ export const listings: Listing[] = [
     hours: "Mon–Fri 8:30 AM – 4:00 PM",
     description:
       "Programs, meals, and social activities for Johnston seniors. Transportation assistance available.",
+    lat: 41.8232,
+    lng: -71.4951,
   },
   {
     id: "johnston-town-hall",
@@ -40,6 +44,8 @@ export const listings: Listing[] = [
     hours: "Mon–Fri 8:30 AM – 4:30 PM",
     description:
       "Town government offices including tax assessor, building permits, vital records, and general administration.",
+    lat: 41.8243,
+    lng: -71.4988,
   },
   {
     id: "tri-county-community-action",
@@ -51,6 +57,8 @@ export const listings: Listing[] = [
     hours: "Mon–Fri 8:00 AM – 4:00 PM",
     description:
       "Food pantry, fuel assistance, and emergency services for individuals and families in need.",
+    lat: 41.8225,
+    lng: -71.4866,
   },
   {
     id: "johnston-public-library",
@@ -62,6 +70,8 @@ export const listings: Listing[] = [
     hours: "Mon–Thu 9 AM – 8 PM, Fri–Sat 9 AM – 5 PM",
     description:
       "Public library offering books, digital resources, community programs, and meeting spaces.",
+    lat: 41.8305,
+    lng: -71.5024,
   },
   {
     id: "lollipop-learning-center",
@@ -73,6 +83,8 @@ export const listings: Listing[] = [
     hours: "Mon–Fri 7:00 AM – 5:30 PM",
     description:
       "Licensed childcare center for ages 2 months to 5 years. DCYF-certified with qualified teachers and an on-site nurse. Curriculum focused on language, reading readiness, and physical, social, and emotional development.",
+    lat: 41.8262,
+    lng: -71.5089,
   },
   {
     id: "operation-stand-down-ri",
@@ -84,6 +96,8 @@ export const listings: Listing[] = [
     hours: "Mon–Fri 8:30 AM – 4:30 PM",
     description:
       "Rhode Island's primary nonprofit resource for homeless and at-risk veterans. Provides emergency and permanent housing, case management, mental health and substance abuse treatment coordination, employment assistance, and a food pantry.",
+    lat: 41.8218,
+    lng: -71.4837,
   },
   {
     id: "crossroads-rhode-island",
@@ -95,6 +109,8 @@ export const listings: Listing[] = [
     hours: "Hotline: Mon–Fri 9 AM – 9 PM, Sat–Sun 9 AM – 2 PM",
     description:
       "Rhode Island's largest homeless services organization. Operates emergency shelters for men, women, families, and couples. Also provides domestic violence services with a 24/7 helpline at (401) 861-2760.",
+    lat: 41.817,
+    lng: -71.4175,
   },
   {
     id: "providence-rescue-mission",
@@ -106,6 +122,8 @@ export const listings: Listing[] = [
     hours: "Open 24/7",
     description:
       "Emergency overnight shelter for homeless men and women. Provides three hot meals daily, warm showers, clean clothing, a food pantry, dental services, and a one-year discipleship program.",
+    lat: 41.8067,
+    lng: -71.4362,
   },
   {
     id: "amos-house",
@@ -117,5 +135,7 @@ export const listings: Listing[] = [
     hours: "Mon–Thu 8:00 AM – 4:00 PM, Fri 8:00 AM – 1:00 PM",
     description:
       "Nonprofit providing shelter housing, the state's largest soup kitchen, and social services for individuals who are hungry, homeless, or in crisis. Offers case management, mental health care, and recovery support.",
+    lat: 41.8127,
+    lng: -71.4195,
   },
 ];

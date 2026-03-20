@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { listings } from "../data/listings";
+import ListingMap from "../components/ListingMap";
 
 function ListingDetail() {
   const { id } = useParams<{ id: string }>();
@@ -88,6 +89,11 @@ function ListingDetail() {
             </div>
           )}
         </dl>
+      </div>
+
+      <div className="mt-6">
+        <h2 className="mb-3 text-lg font-semibold text-gray-900">Location</h2>
+        <ListingMap listings={[listing]} singleListing />
       </div>
     </div>
   );
