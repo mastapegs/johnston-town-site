@@ -44,7 +44,14 @@ function ListingDetail() {
           </div>
           <div>
             <dt className="font-medium text-gray-500">Phone</dt>
-            <dd className="text-gray-900">{listing.phone}</dd>
+            <dd className="text-gray-900">
+              <a
+                href={`tel:${listing.phone.replace(/[^\d+]/g, "")}`}
+                className="text-blue-600 hover:underline"
+              >
+                {listing.phone}
+              </a>
+            </dd>
           </div>
           {listing.hours && (
             <div>
