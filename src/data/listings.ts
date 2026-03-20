@@ -63,4 +63,15 @@ export const listings: Listing[] = [
     description:
       "Public library offering books, digital resources, community programs, and meeting spaces.",
   },
+  {
+    id: "lollipop-learning-center",
+    name: "Lollipop Learning Center",
+    category: "Childcare",
+    address: "2766B Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 764-0468",
+    website: "https://lollipoplearningri.com",
+    hours: "Mon–Fri 7:00 AM – 5:30 PM",
+    description:
+      "Licensed childcare center for ages 2 months to 5 years. DCYF-certified with qualified teachers and an on-site nurse. Curriculum focused on language, reading readiness, and physical, social, and emotional development.",
+  },
 ];
