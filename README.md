@@ -78,4 +78,4 @@ This project is open source and available to the community.
 
 ---
 
-*Built with care for Johnston, Rhode Island.*
+_Built with care for Johnston, Rhode Island._

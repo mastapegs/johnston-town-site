@@ -52,21 +52,21 @@ src/
 
 ## Routes
 
-| Path | Component | Description |
-|------|-----------|-------------|
-| `/` | Home | Category overview grid |
-| `/directory` | Directory | Browsable listing directory with category filter (via `?category=` query param) |
-| `/directory/:id` | ListingDetail | Detail page for a single listing |
-| `/about` | About | Project information |
-| `/submit` | Submit | Placeholder for community submissions |
+| Path             | Component     | Description                                                                     |
+| ---------------- | ------------- | ------------------------------------------------------------------------------- |
+| `/`              | Home          | Category overview grid                                                          |
+| `/directory`     | Directory     | Browsable listing directory with category filter (via `?category=` query param) |
+| `/directory/:id` | ListingDetail | Detail page for a single listing                                                |
+| `/about`         | About         | Project information                                                             |
+| `/submit`        | Submit        | Placeholder for community submissions                                           |
 
 ## Data Model
 
 ```typescript
 interface Listing {
-  id: string;           // Unique, kebab-case identifier
+  id: string; // Unique, kebab-case identifier
   name: string;
-  category: string;     // Must be one of the predefined categories
+  category: string; // Must be one of the predefined categories
   address: string;
   phone: string;
   website?: string;
