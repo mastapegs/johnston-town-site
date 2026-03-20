@@ -1,4 +1,5 @@
 import { Link, NavLink, Outlet } from "react-router";
+import WeatherDisplay from "./WeatherDisplay";
 
 function Layout() {
   const linkClass = ({ isActive }: { isActive: boolean }) =>
@@ -13,17 +14,20 @@ function Layout() {
           <Link to="/" className="text-xl font-bold text-gray-900">
             Johnston Town Site
           </Link>
-          <nav className="flex gap-6 text-sm">
-            <NavLink to="/" end className={linkClass}>
-              Home
-            </NavLink>
-            <NavLink to="/directory" className={linkClass}>
-              Directory
-            </NavLink>
-            <NavLink to="/about" className={linkClass}>
-              About
-            </NavLink>
-          </nav>
+          <div className="flex items-center gap-6">
+            <nav className="flex gap-6 text-sm">
+              <NavLink to="/" end className={linkClass}>
+                Home
+              </NavLink>
+              <NavLink to="/directory" className={linkClass}>
+                Directory
+              </NavLink>
+              <NavLink to="/about" className={linkClass}>
+                About
+              </NavLink>
+            </nav>
+            <WeatherDisplay />
+          </div>
         </div>
       </header>
 
