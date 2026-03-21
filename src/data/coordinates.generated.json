@@ -208,5 +208,55 @@
     "lat": 41.838,
     "lng": -71.472,
     "address": "1530 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-early-childhood-center": {
+    "lat": 41.8305,
+    "lng": -71.5025,
+    "address": "10 Memorial Ave, Johnston, RI 02919"
+  },
+  "graniteville-school": {
+    "lat": 41.8265,
+    "lng": -71.4785,
+    "address": "6 Collins Ave, Johnston, RI 02919"
+  },
+  "brown-avenue-elementary": {
+    "lat": 41.8315,
+    "lng": -71.5035,
+    "address": "14 Brown Ave, Johnston, RI 02919"
+  },
+  "sarah-dyer-barnes-elementary": {
+    "lat": 41.8345,
+    "lng": -71.5115,
+    "address": "24 Barnes Ave, Johnston, RI 02919"
+  },
+  "thornton-elementary": {
+    "lat": 41.8195,
+    "lng": -71.4855,
+    "address": "4 School St, Johnston, RI 02919"
+  },
+  "winsor-hill-elementary": {
+    "lat": 41.8365,
+    "lng": -71.4895,
+    "address": "100 Theresa St, Johnston, RI 02919"
+  },
+  "ferri-middle-school": {
+    "lat": 41.8305,
+    "lng": -71.5025,
+    "address": "10 Memorial Ave, Johnston, RI 02919"
+  },
+  "johnston-senior-high-school": {
+    "lat": 41.8245,
+    "lng": -71.5175,
+    "address": "345 Cherry Hill Rd, Johnston, RI 02919"
+  },
+  "st-rocco-school": {
+    "lat": 41.8215,
+    "lng": -71.4685,
+    "address": "931 Atwood Ave, Johnston, RI 02919"
+  },
+  "trinity-christian-academy": {
+    "lat": 41.8325,
+    "lng": -71.5285,
+    "address": "2119 Hartford Ave, Johnston, RI 02919"
   }
 }

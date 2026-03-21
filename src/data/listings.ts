@@ -25,6 +25,7 @@ export const categories = [
   "Shelters",
   "Parks",
   "Entertainment",
+  "Schools",
 ] as const;
 
 export type Category = (typeof categories)[number];
@@ -494,6 +495,106 @@ const listingData: ListingInput[] = [
     hours: "Mon–Fri 12:00 – 10:00 PM, Sat–Sun 12:00 – 11:00 PM",
     description:
       "Modern cinema with luxury recliners, reserved seating, RealD 3D, and XPlus Laser auditorium with Dolby Atmos. Offers Bargain Tuesdays and Senior Wednesdays.",
+  },
+  {
+    id: "johnston-early-childhood-center",
+    name: "Johnston Early Childhood Center",
+    category: "Schools",
+    address: "10 Memorial Ave, Johnston, RI 02919",
+    phone: "(401) 233-0054",
+    website: "https://ecc.johnstonschools.org",
+    description:
+      "Public kindergarten center serving approximately 195 students with a 12:1 student-teacher ratio. Provides a caring and collaborative learning environment.",
+  },
+  {
+    id: "graniteville-school",
+    name: "Graniteville School",
+    category: "Schools",
+    address: "6 Collins Ave, Johnston, RI 02919",
+    phone: "(401) 231-8790",
+    website: "https://graniteville.johnstonschools.org",
+    description:
+      "The district's dedicated Pre-K school serving approximately 144 students. Offers Universal Preschool classrooms and integrated classrooms for children with and without developmental disabilities.",
+  },
+  {
+    id: "brown-avenue-elementary",
+    name: "Brown Avenue Elementary School",
+    category: "Schools",
+    address: "14 Brown Ave, Johnston, RI 02919",
+    phone: "(401) 934-0270",
+    website: "https://brownave.johnstonschools.org",
+    description:
+      "Public elementary school (grades 1–5) serving approximately 215 students with a 13:1 student-teacher ratio. Offers Multi Language Learners program and Special Services.",
+  },
+  {
+    id: "sarah-dyer-barnes-elementary",
+    name: "Sarah Dyer Barnes Elementary School",
+    category: "Schools",
+    address: "24 Barnes Ave, Johnston, RI 02919",
+    phone: "(401) 231-8710",
+    website: "https://sdbarnes.johnstonschools.org",
+    description:
+      "Public elementary school (grades K–5) serving approximately 280 students with a 10:1 student-teacher ratio. The only K–5 elementary in the district.",
+  },
+  {
+    id: "thornton-elementary",
+    name: "Thornton Elementary School",
+    category: "Schools",
+    address: "4 School St, Johnston, RI 02919",
+    phone: "(401) 943-7369",
+    website: "https://thornton.johnstonschools.org",
+    description:
+      "Public elementary school (grades 1–5) serving approximately 346 students with a 12:1 student-teacher ratio.",
+  },
+  {
+    id: "winsor-hill-elementary",
+    name: "Winsor Hill Elementary School",
+    category: "Schools",
+    address: "100 Theresa St, Johnston, RI 02919",
+    phone: "(401) 831-4619",
+    website: "https://winsorhill.johnstonschools.org",
+    description:
+      "Public elementary school (grades 1–5) serving approximately 380 students with a 12:1 student-teacher ratio.",
+  },
+  {
+    id: "ferri-middle-school",
+    name: "Nicholas A. Ferri Middle School",
+    category: "Schools",
+    address: "10 Memorial Ave, Johnston, RI 02919",
+    phone: "(401) 233-1930",
+    website: "https://fms.johnstonschools.org",
+    description:
+      "The district's sole middle school (grades 6–8). Offers STEAM programs, languages, fine arts, computer science, 1-to-1 device integration, and interscholastic sports.",
+  },
+  {
+    id: "johnston-senior-high-school",
+    name: "Johnston Senior High School",
+    category: "Schools",
+    address: "345 Cherry Hill Rd, Johnston, RI 02919",
+    phone: "(401) 233-1920",
+    website: "https://jhs.johnstonschools.org",
+    description:
+      "The district's sole high school (grades 9–12). Offers CTE programs, STEAM academies, 8 AP classes, and pathways in Law and Public Safety. Features 300+ student athletes.",
+  },
+  {
+    id: "st-rocco-school",
+    name: "St. Rocco School",
+    category: "Schools",
+    address: "931 Atwood Ave, Johnston, RI 02919",
+    phone: "(401) 944-2993",
+    website: "https://www.stroccoschool.org",
+    description:
+      "Roman Catholic parochial school (grades PK–8) associated with St. Rocco Parish. Serves approximately 177 students with an 11:1 student-teacher ratio.",
+  },
+  {
+    id: "trinity-christian-academy",
+    name: "Trinity Christian Academy",
+    category: "Schools",
+    address: "2119 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 934-0208",
+    website: "https://www.trinityri.org/trinity-christian-academy",
+    description:
+      "Private Christian school (grades PK–12) and ministry of Trinity Assembly of God. Serves approximately 70 students with an 8:1 student-teacher ratio.",
   },
 ];
 
