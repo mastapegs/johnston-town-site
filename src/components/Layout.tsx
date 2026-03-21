@@ -48,18 +48,13 @@ function Layout() {
         <Outlet />
       </main>
 
-      <footer className="border-t border-gray-200">
-        <div className="mx-auto max-w-5xl px-4 py-6 text-center text-sm">
-          <p style={{ backgroundColor: "#fff", color: "#111827" }}>
+      <footer className="border-t border-gray-200 bg-white">
+        <div className="mx-auto max-w-5xl px-4 py-6 text-center text-sm text-gray-900">
+          <p>
             Johnston Community Directory &mdash; built by a neighbor, for
             neighbors.
           </p>
-          <p
-            className="mt-1"
-            style={{ backgroundColor: "#fff", color: "#111827" }}
-          >
-            Free to use, always.
-          </p>
+          <p className="mt-1">Free to use, always.</p>
         </div>
       </footer>
     </div>
