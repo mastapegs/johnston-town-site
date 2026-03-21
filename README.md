@@ -56,7 +56,12 @@ npm run build        # Build for production
 npm run preview      # Preview the production build
 npm run lint         # Run the linter
 npm run format       # Format code with Prettier
+npm run geocode      # Resolve listing addresses to map coordinates
 ```
+
+### Maps & Geocoding
+
+Each listing includes an interactive map powered by OpenStreetMap. Addresses are the source of truth — when you add or change a listing address, run `npm run geocode` to automatically resolve it to precise map coordinates using the free Nominatim API (no API key needed). Results are cached, so only changed addresses are re-geocoded.
 
 ## Built With
 
@@ -65,6 +70,7 @@ npm run format       # Format code with Prettier
 - [Tailwind CSS](https://tailwindcss.com/) — Styling
 - [Vite](https://vite.dev/) — Build tool and dev server
 - [TypeScript](https://www.typescriptlang.org/) — Type safety
+- [OpenStreetMap](https://www.openstreetmap.org/) — Maps and geocoding
 
 ## Contributing
 

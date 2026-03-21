@@ -24,6 +24,7 @@ npm run lint           # Run ESLint
 npm run format         # Format code with Prettier
 npm run format:check   # Check formatting without modifying files
 npm run a11y           # Run WCAG2AA accessibility tests via pa11y-ci
+npm run geocode        # Resolve listing addresses to lat/lng coordinates
 ```
 
 ## Project Structure
@@ -32,27 +33,34 @@ npm run a11y           # Run WCAG2AA accessibility tests via pa11y-ci
 src/
 ├── components/
 │   ├── Layout.tsx           # Header/footer/nav wrapper (used on all pages)
+│   ├── ListingMap.tsx       # OpenStreetMap iframe embed for listing locations
 │   └── WeatherDisplay.tsx   # Live weather widget (Open Meteo API, no auth needed)
 ├── pages/
 │   ├── Home.tsx             # Landing page with category grid
-│   ├── Directory.tsx        # Browse/filter listings by category
-│   ├── ListingDetail.tsx    # Single listing detail view
+│   ├── Directory.tsx        # Browse/filter listings by category (list + map views)
+│   ├── ListingDetail.tsx    # Single listing detail view with map
 │   ├── About.tsx            # Project information
 │   └── Submit.tsx           # Placeholder for future submission form
 ├── data/
-│   └── listings.ts          # Listing data, types, and categories
+│   ├── listings.ts              # Listing data, types, and categories
+│   └── coordinates.generated.json  # Auto-generated lat/lng from addresses
 ├── App.tsx                  # Route definitions
 ├── main.tsx                 # Entry point
 └── index.css                # Tailwind import
+scripts/
+└── geocode.ts               # Build-time address → coordinates via Nominatim API
 ```
 
 ### Key Files
 
-- `src/data/listings.ts` — All listings are hardcoded here. Contains the `Listing` interface, the `categories` tuple, and the `listings` array.
+- `src/data/listings.ts` — Listing data (addresses are the source of truth). Contains the `Listing` interface, the `categories` tuple, and the `listings` array. Coordinates are loaded from `coordinates.generated.json` at runtime.
+- `src/data/coordinates.generated.json` — Auto-generated lat/lng coordinates. Regenerate with `npm run geocode` after changing addresses.
+- `scripts/geocode.ts` — Build-time script that resolves listing addresses to coordinates via the OpenStreetMap Nominatim API (free, no API key). Caches results and only re-geocodes when an address changes.
+- `src/components/ListingMap.tsx` — Map component using OpenStreetMap iframe embeds. Used on listing detail pages and the directory map view.
 - `src/App.tsx` — React Router configuration with all routes.
 - `src/components/Layout.tsx` — Shared layout wrapper with navigation and footer.
 - `src/components/WeatherDisplay.tsx` — Real-time weather widget using Open Meteo API (Johnston coords: 41.824, -71.516). Refreshes every 30 minutes, fails silently.
-- `.pa11yci` — Accessibility test configuration (URLs and WCAG standard).
+- `.pa11yci` — Accessibility test configuration (URLs, WCAG standard, and ignored rules).
 - `planning/vision.md` — Product vision and roadmap document.
 
 ## Routes
@@ -72,11 +80,13 @@ interface Listing {
   id: string; // Unique, kebab-case identifier
   name: string;
   category: string; // Must be one of the predefined categories
-  address: string;
+  address: string; // Source of truth for location — used to generate lat/lng
   phone: string;
   website?: string;
   hours?: string;
   description: string;
+  lat: number; // Auto-populated from coordinates.generated.json
+  lng: number; // Auto-populated from coordinates.generated.json
 }
 ```
 
@@ -89,7 +99,7 @@ Categories are defined as a constant tuple in `src/data/listings.ts` and reused 
 - **Styling**: Tailwind utility classes inline (no separate CSS files per component)
 - **Routing**: React Router v7 — uses `NavLink`, `useSearchParams`, `useParams`, `Link`
 - **TypeScript**: Strict mode with `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`
-- **Accessibility**: WCAG2AA compliance — skip-to-main links, aria-labels, semantic HTML, focus outlines (`outline-2 outline-offset-2 outline-blue-600`)
+- **Accessibility**: WCAG2AA compliance — skip-to-main links, aria-labels, semantic HTML, focus outlines (`outline-2 outline-offset-2 outline-blue-600`). See "WCAG & Accessibility Guidelines" below.
 - **Responsive design**: Mobile-first with Tailwind breakpoints (`sm:`, `lg:`)
 
 ## CI/CD
@@ -103,9 +113,32 @@ Three GitHub Actions workflows in `.github/workflows/`:
 ## Adding a New Listing
 
 1. Edit `src/data/listings.ts`
-2. Add a new object to the `listings` array following the `Listing` interface
+2. Add a new object to the `listingData` array (no lat/lng needed — just the address)
 3. Use an existing category from the `categories` tuple, or add a new one if needed
 4. Ensure the `id` is unique and kebab-case
+5. Run `npm run geocode` to generate coordinates from the address
+
+## WCAG & Accessibility Guidelines
+
+This project enforces WCAG2AA via pa11y-ci with the axe runner. Key lessons learned:
+
+### Color Contrast
+
+- **Use `text-gray-700` (not `text-gray-600`) for labels at small text sizes** (`text-sm`, `text-xs`). Tailwind's `gray-600` is borderline for WCAG2AA at 14px and below.
+- **Use `text-blue-700` (not `text-blue-600`) for links at small text sizes.** `blue-600` (~4.6:1 contrast on white) fails at `text-sm`.
+- As a rule of thumb: at `text-sm` or smaller, prefer `-700` variants for both gray and blue text.
+
+### Maps and Third-Party Libraries
+
+- **Avoid importing CSS from interactive map libraries** (Leaflet, MapLibre, etc.). Their stylesheets inject low-contrast elements (attribution links, zoom controls, branding) that fail axe color-contrast checks and conflict with Tailwind's base styles.
+- **Prefer iframe-based embeds** for third-party map content. The iframe boundary completely isolates external CSS from Tailwind, preventing style conflicts.
+- The `frame-tested` axe rule is ignored in `.pa11yci` because axe cannot scan inside cross-origin iframes. This is expected — the iframe has a descriptive `title` attribute per WCAG best practices.
+- **Static map images** (`<img>` with alt text, linked to interactive map) are the most accessible option if interactivity isn't needed. Zero CSS conflicts, zero library dependencies.
+
+### Geocoding
+
+- Addresses are the source of truth for listing locations. Coordinates are generated via `npm run geocode` using the OpenStreetMap Nominatim API (free, no API key, 1 req/sec rate limit).
+- The geocode script caches results in `src/data/coordinates.generated.json` and only re-geocodes when an address changes.
 
 ## Adding a New Page
 
