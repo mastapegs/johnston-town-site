@@ -85,7 +85,7 @@ function ListingMap({
           target="_blank"
           rel="noopener noreferrer"
           className="underline"
-          style={{ color: "#1d4ed8" }}
+          style={{ backgroundColor: "#fff", color: "#1d4ed8" }}
         >
           OpenStreetMap
         </a>{" "}
