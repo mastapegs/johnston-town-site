@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-A React web application that serves as a centralized community directory for Johnston, RI residents (~30,000 population). It helps residents discover local services, resources, and businesses. Currently in a "curated launch" phase focusing on essential services (food assistance, healthcare, childcare, senior services, mental health, municipal services, shelters).
+A React web application that serves as a centralized community directory for Johnston, RI residents (~30,000 population). It helps residents discover local services, resources, and businesses. Categories include: Food Assistance, Healthcare & Mental Health, Childcare, Senior Services, Municipal Services, Shelters, Parks & Recreation, Entertainment, and Schools.
 
 ## Tech Stack
 
@@ -49,6 +49,11 @@ src/
 └── index.css                # Tailwind import
 scripts/
 └── geocode.ts               # Build-time address → coordinates via Nominatim API
+public/
+└── _redirects               # Netlify SPA routing (/* → /index.html)
+planning/
+├── vision.md                # Product vision and roadmap
+└── community-site-comparison.md  # Comparison with other community resource sites
 ```
 
 ### Key Files
@@ -62,6 +67,8 @@ scripts/
 - `src/components/WeatherDisplay.tsx` — Real-time weather widget using Open Meteo API (Johnston coords: 41.824, -71.516). Refreshes every 30 minutes, fails silently.
 - `.pa11yci` — Accessibility test configuration (URLs, WCAG standard, and ignored rules).
 - `planning/vision.md` — Product vision and roadmap document.
+- `planning/community-site-comparison.md` — Comparison with other community resource sites.
+- `public/_redirects` — Netlify SPA routing config (rewrites all paths to `/index.html`).
 
 ## Routes
 
