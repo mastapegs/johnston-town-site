@@ -18,7 +18,7 @@ The directory focuses first on the services that matter most:
 - **Municipal Services** — Town Hall, libraries, schools, parks, and public works
 - **Shelters** — housing assistance and emergency shelter
 
-Every listing is researched and verified by hand. Accuracy matters more than volume — if it's in the directory, you can trust it.
+Use the **keyword search** to find what you need by name, description, or address — or browse by category. Every listing is researched and verified by hand. Accuracy matters more than volume — if it's in the directory, you can trust it.
 
 ## Why This Exists
 

@@ -22,7 +22,7 @@ _Research conducted March 2026 to inform the Johnston Community Directory roadma
 
 | Feature                            | findhelp | 211 | James City |       Windsor       | Sherborn | Sr. Resource MI | **Johnston (ours)** |
 | ---------------------------------- | :------: | :-: | :--------: | :-----------------: | :------: | :-------------: | :-----------------: |
-| **Search / keyword lookup**        |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ❌          |
+| **Search / keyword lookup**        |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
 | **Category browsing**              |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
 | **ZIP-code / location filter**     |    ✅    | ✅  |     —      |          —          |    —     |       ✅        |   — (single town)   |
 | **Map / geolocation view**         |    ✅    | ✅  |     ✅     |         ✅          |    —     |        —        |         ✅          |
@@ -40,7 +40,7 @@ _Research conducted March 2026 to inform the Johnston Community Directory roadma
 | **Analytics / impact tracking**    |    ✅    | ✅  |     —      |          —          |    —     |        —        |         ❌          |
 | **Referral / intake workflow**     |    ✅    | ✅  |     —      |          —          |    —     |        —        |         ❌          |
 | **Weather widget**                 |    —     |  —  |     —      |          —          |    —     |        —        |         ✅          |
-| **Shareable filtered URLs**        |    ✅    | ✅  |     —      |          —          |    —     |       ✅        |         ✅          |
+| **Shareable filtered URLs**        |    ✅    | ✅  |     —      |          —          |    —     |       ✅        |    ✅ (q + cat)     |
 
 ---
 
@@ -50,7 +50,7 @@ _Research conducted March 2026 to inform the Johnston Community Directory roadma
 
 Every major community resource site leads with a prominent search bar. findhelp.org and 211 both open with a single input asking "What do you need help with?" or "Enter your ZIP code." This is the #1 gap in Johnston's current UX — users who don't know which category to pick have no fallback.
 
-**Takeaway for Johnston:** Add a simple keyword search that filters listings by name, description, and category. Even a client-side filter over 11 listings would be a big UX win.
+**Takeaway for Johnston:** ✅ Done. Keyword search added — filters listings by name, description, address, and category with URL-synced `?q=` parameter.
 
 ### 2. "Next Steps" Reduce Friction
 
@@ -103,7 +103,7 @@ findhelp.org lets anyone "Suggest a Program" (added within 2 business days). 211
 | **Hyper-local focus**                     | National platforms drown small towns in regional results. Johnston's directory is _only_ Johnston — no noise.      |
 | **Manually verified listings**            | Every entry is researched by a real person, not scraped. This matches the trust model of 211 without the overhead. |
 | **Clean, fast, modern UI**                | React + Vite + Tailwind delivers sub-second loads. Many municipal sites are bloated WordPress installations.       |
-| **Category-filtered shareable URLs**      | `?category=Food%20Assistance` is bookmarkable and shareable — a feature some larger sites lack.                    |
+| **Search + category shareable URLs**      | `?q=food&category=Healthcare` is bookmarkable and shareable — a feature some larger sites lack.                    |
 | **Community-first mission**               | No ads, no paid placements, no login walls. This aligns with 211's ethos but without the bureaucratic overhead.    |
 | **Open-source / version-controlled data** | Listings in TypeScript mean full audit trail via git. No opaque database.                                          |
 | **Weather widget**                        | A small but unique local touch that no comparable resource directory offers.                                       |
@@ -116,7 +116,7 @@ Based on what the best sites do well and where Johnston has gaps:
 
 ### High Priority (Next Sprint)
 
-1. **Add keyword search** — Client-side filter across listing name + description + category. Every comparable site has this.
+1. ~~**Add keyword search**~~ — ✅ Done. Client-side keyword search filters across listing name, description, address, and category. Synced with URL via `?q=` param for shareable/bookmarkable searches. Composes with category filter.
 2. **Add "Verified" date badge to listing cards** — Surface the trust that's already built into the curation process.
 3. **Fill empty categories** — Healthcare and Mental Health currently show zero results. Add at least 2–3 listings each or add "coming soon" messaging.
 4. ~~**Accessibility audit**~~ — ✅ Done. WCAG2AA enforced via pa11y-ci with axe runner in CI. Skip-to-main link, aria-labels, focus outlines, and contrast guidelines all in place.
