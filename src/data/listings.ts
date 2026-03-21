@@ -85,6 +85,71 @@ const listingData: ListingInput[] = [
       "Public library offering books, digital resources, community programs, and meeting spaces.",
   },
   {
+    id: "johnston-police-department",
+    name: "Johnston Police Department",
+    category: "Municipal Services",
+    address: "1651 Atwood Ave, Johnston, RI 02919",
+    phone: "(401) 231-4210",
+    website: "https://www.johnstonpd.com",
+    hours: "24/7",
+    description:
+      "Full-service municipal police department providing law enforcement, emergency response, and animal control services for the Town of Johnston.",
+  },
+  {
+    id: "johnston-fire-department-hq",
+    name: "Johnston Fire Department — Headquarters",
+    category: "Municipal Services",
+    address: "1520 Atwood Ave, Johnston, RI 02919",
+    phone: "(401) 351-1600",
+    website: "https://www.johnstonfireri.com",
+    hours: "24/7",
+    description:
+      "Fire department headquarters housing Engine 3, Rescue 3, Ladder 1, and administrative offices. The department operates 4 stations across town.",
+  },
+  {
+    id: "johnston-dpw",
+    name: "Johnston Department of Public Works",
+    category: "Municipal Services",
+    address: "100 Irons Ave, Johnston, RI 02919",
+    phone: "(401) 231-4000",
+    website: "https://www.johnstonri.gov",
+    hours: "Mon–Thu 7:00 AM – 3:30 PM, Fri 7:00 AM – 2:30 PM",
+    description:
+      "Handles road maintenance, sanitary sewer services, snow removal, and infrastructure for the Town of Johnston.",
+  },
+  {
+    id: "johnston-municipal-court",
+    name: "Johnston Municipal Court",
+    category: "Municipal Services",
+    address: "1600 Atwood Ave, Johnston, RI 02919",
+    phone: "(401) 946-7150",
+    website: "https://www.johnstonri.gov",
+    hours: "Mon–Fri 8:30 AM – 4:30 PM",
+    description:
+      "Adjudicates state moving traffic violations and local ordinance offenses including parking, zoning, minimum housing code violations, and animal control matters.",
+  },
+  {
+    id: "johnston-public-schools",
+    name: "Johnston Public Schools — Central Office",
+    category: "Municipal Services",
+    address: "10 Memorial Ave, Johnston, RI 02919",
+    phone: "(401) 233-1900",
+    website: "https://www.johnstonschools.org",
+    hours: "Mon–Fri 8:00 AM – 4:00 PM",
+    description:
+      "Administrative headquarters for Johnston Public Schools, overseeing all public schools in the district. Located within the Nicholas A. Ferri Middle School building.",
+  },
+  {
+    id: "usps-johnston",
+    name: "US Post Office — Johnston",
+    category: "Municipal Services",
+    address: "1530 Atwood Ave, Johnston, RI 02919",
+    phone: "(401) 331-9367",
+    hours: "Mon–Fri 8:00 AM – 5:00 PM, Sat 8:00 AM – 2:00 PM",
+    description:
+      "Full-service United States Postal Service office providing mail services, package shipping, PO boxes, and passport applications.",
+  },
+  {
     id: "lollipop-learning-center",
     name: "Lollipop Learning Center",
     category: "Childcare",

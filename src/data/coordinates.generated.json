@@ -178,5 +178,35 @@
     "lat": 41.8295,
     "lng": -71.5045,
     "address": "7 Waveland St, Johnston, RI 02919"
+  },
+  "johnston-police-department": {
+    "lat": 41.8415,
+    "lng": -71.4765,
+    "address": "1651 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-fire-department-hq": {
+    "lat": 41.8382,
+    "lng": -71.4722,
+    "address": "1520 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-dpw": {
+    "lat": 41.8275,
+    "lng": -71.4945,
+    "address": "100 Irons Ave, Johnston, RI 02919"
+  },
+  "johnston-municipal-court": {
+    "lat": 41.8395,
+    "lng": -71.4745,
+    "address": "1600 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-public-schools": {
+    "lat": 41.8305,
+    "lng": -71.5025,
+    "address": "10 Memorial Ave, Johnston, RI 02919"
+  },
+  "usps-johnston": {
+    "lat": 41.838,
+    "lng": -71.472,
+    "address": "1530 Atwood Ave, Johnston, RI 02919"
   }
 }
