@@ -4,16 +4,16 @@ _Last reviewed: March 2026_
 
 ## Current State (Baseline)
 
-| Metric              | Value                                |
-| ------------------- | ------------------------------------ |
-| **Total listings**  | ~65                                  |
-| **Categories**      | 9 (all populated)                    |
-| **Tech stack**      | React 19, Vite 8, Tailwind v4, TS   |
-| **Accessibility**   | WCAG2AA enforced via pa11y-ci in CI  |
-| **Deployment**      | Netlify via GitHub Actions           |
+| Metric              | Value                                                     |
+| ------------------- | --------------------------------------------------------- |
+| **Total listings**  | ~65                                                       |
+| **Categories**      | 9 (all populated)                                         |
+| **Tech stack**      | React 19, Vite 8, Tailwind v4, TS                         |
+| **Accessibility**   | WCAG2AA enforced via pa11y-ci in CI                       |
+| **Deployment**      | Netlify via GitHub Actions                                |
 | **Search**          | Client-side keyword + category filter with shareable URLs |
 | **Maps**            | OpenStreetMap iframe embeds (directory + detail pages)    |
-| **Community input** | Not yet (Submit page is placeholder) |
+| **Community input** | Not yet (Submit page is placeholder)                      |
 
 ### Listings by Category
 
@@ -138,25 +138,25 @@ Instructions for LLM agents: Mark items `[x]` when the deliverable is fully impl
 
 How Johnston stacks up against comparable sites. Update as features ship.
 
-| Feature                       | findhelp.org | 211  | Windsor, CO | SACRD (San Antonio) | **Johnston** |
-| ----------------------------- | :----------: | :--: | :---------: | :-----------------: | :----------: |
-| Keyword search                |      ✅      |  ✅  |     ✅      |         ✅          |      ✅      |
-| Category browsing             |      ✅      |  ✅  |     ✅      |         ✅          |      ✅      |
-| Map view                      |      ✅      |  ✅  |     ✅      |         ✅          |      ✅      |
-| Detailed listing pages        |      ✅      |  ✅  |     ✅      |         ✅          |      ✅      |
-| Shareable filtered URLs       |      ✅      |  ✅  |      —      |          —          |      ✅      |
-| Mobile-responsive             |      ✅      |  ✅  |     ✅      |         ✅          |      ✅      |
-| WCAG accessibility (CI)       |      ✅      |  ✅  |     ✅      |          —          |      ✅      |
-| Weather widget                |      —       |  —   |      —      |          —          |      ✅      |
-| 211 emergency link            |      —       |  ✅  |      —      |          —          |      ✅      |
-| "Verified" badge              |      ✅      |  —   |      —      |          —          |      ❌      |
-| "Next steps" / how-to-access  |      ✅      |  —   |      —      |          —          |      ❌      |
-| Community submission form     |      ✅      |  ✅  |      —      |         ✅          |      ❌      |
-| Multi-language                |      ✅      |  ✅  |      —      |         ✅          |      ❌      |
-| Event calendar                |      —       |  —   |     ✅      |          —          |      ❌      |
-| Analytics                     |      ✅      |  ✅  |      —      |          —          |      ❌      |
-| "Claimed" org badge           |      ✅      |  —   |      —      |          —          |      ❌      |
-| SEO / structured data         |      ✅      |  ✅  |     ✅      |         ✅          |      ❌      |
+| Feature                      | findhelp.org | 211 | Windsor, CO | SACRD (San Antonio) | **Johnston** |
+| ---------------------------- | :----------: | :-: | :---------: | :-----------------: | :----------: |
+| Keyword search               |      ✅      | ✅  |     ✅      |         ✅          |      ✅      |
+| Category browsing            |      ✅      | ✅  |     ✅      |         ✅          |      ✅      |
+| Map view                     |      ✅      | ✅  |     ✅      |         ✅          |      ✅      |
+| Detailed listing pages       |      ✅      | ✅  |     ✅      |         ✅          |      ✅      |
+| Shareable filtered URLs      |      ✅      | ✅  |      —      |          —          |      ✅      |
+| Mobile-responsive            |      ✅      | ✅  |     ✅      |         ✅          |      ✅      |
+| WCAG accessibility (CI)      |      ✅      | ✅  |     ✅      |          —          |      ✅      |
+| Weather widget               |      —       |  —  |      —      |          —          |      ✅      |
+| 211 emergency link           |      —       | ✅  |      —      |          —          |      ✅      |
+| "Verified" badge             |      ✅      |  —  |      —      |          —          |      ❌      |
+| "Next steps" / how-to-access |      ✅      |  —  |      —      |          —          |      ❌      |
+| Community submission form    |      ✅      | ✅  |      —      |         ✅          |      ❌      |
+| Multi-language               |      ✅      | ✅  |      —      |         ✅          |      ❌      |
+| Event calendar               |      —       |  —  |     ✅      |          —          |      ❌      |
+| Analytics                    |      ✅      | ✅  |      —      |          —          |      ❌      |
+| "Claimed" org badge          |      ✅      |  —  |      —      |          —          |      ❌      |
+| SEO / structured data        |      ✅      | ✅  |     ✅      |         ✅          |      ❌      |
 
 _Update the Johnston column from ❌ to ✅ as deliverables are completed._
 
@@ -164,27 +164,28 @@ _Update the Johnston column from ❌ to ✅ as deliverables are completed._
 
 ## Growth Targets
 
-| Milestone                         | Target    | Status  |
-| --------------------------------- | --------- | ------- |
-| All categories populated          | Phase 1   | ✅ Done |
-| 50+ verified listings             | Phase 1   | ✅ Done (65) |
-| Keyword search                    | Phase 1   | ✅ Done |
-| Map views                         | Phase 1   | ✅ Done |
-| WCAG2AA CI enforcement            | Phase 1   | ✅ Done |
-| 100+ verified listings            | Phase 2   | Pending |
-| Community submission form live    | Phase 2   | Pending |
-| "Verified" badges on all listings | Phase 2   | Pending |
-| Spanish UI translation            | Phase 2   | Pending |
-| Analytics integrated              | Phase 2   | Pending |
-| Event calendar                    | Phase 3   | Pending |
-| 200+ verified listings            | Phase 3   | Pending |
-| PWA / offline support             | Phase 3   | Pending |
+| Milestone                         | Target  | Status       |
+| --------------------------------- | ------- | ------------ |
+| All categories populated          | Phase 1 | ✅ Done      |
+| 50+ verified listings             | Phase 1 | ✅ Done (65) |
+| Keyword search                    | Phase 1 | ✅ Done      |
+| Map views                         | Phase 1 | ✅ Done      |
+| WCAG2AA CI enforcement            | Phase 1 | ✅ Done      |
+| 100+ verified listings            | Phase 2 | Pending      |
+| Community submission form live    | Phase 2 | Pending      |
+| "Verified" badges on all listings | Phase 2 | Pending      |
+| Spanish UI translation            | Phase 2 | Pending      |
+| Analytics integrated              | Phase 2 | Pending      |
+| Event calendar                    | Phase 3 | Pending      |
+| 200+ verified listings            | Phase 3 | Pending      |
+| PWA / offline support             | Phase 3 | Pending      |
 
 ---
 
 ## Review Schedule
 
 This roadmap should be reviewed and updated:
+
 - After each phase milestone is reached
 - When a new competitive feature is observed in comparable sites
 - Quarterly at minimum to reassess priorities

@@ -68,7 +68,7 @@ _Captured March 2026. For Johnston's current status, see the competitive benchma
 | Map / geolocation view         |    ✅    | ✅  |     ✅     |         ✅          |    —     |        —        |  ✅   |
 | Detailed listing cards         |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |  ✅   |
 | "Next steps" / how-to-access   |    ✅    |  —  |     —      |          —          |    —     |        —        |   —   |
-| Community submission / suggest  |    ✅    | ✅  |     —      |          —          |    —     |        —        |  ✅   |
+| Community submission / suggest |    ✅    | ✅  |     —      |          —          |    —     |        —        |  ✅   |
 | Claimed / verified badge       |    ✅    |  —  |     —      |          —          |    —     |        —        |   —   |
 | Mobile-responsive              |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |  ✅   |
 | Accessibility (WCAG)           |    ✅    | ✅  |     ✅     | ✅ (dyslexia fonts) |    ✅    |       ✅        |   —   |
