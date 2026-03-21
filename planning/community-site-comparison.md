@@ -25,13 +25,13 @@ _Research conducted March 2026 to inform the Johnston Community Directory roadma
 | **Search / keyword lookup**        |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ❌          |
 | **Category browsing**              |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
 | **ZIP-code / location filter**     |    ✅    | ✅  |     —      |          —          |    —     |       ✅        |   — (single town)   |
-| **Map / geolocation view**         |    ✅    | ✅  |     ✅     |         ✅          |    —     |        —        |         ❌          |
+| **Map / geolocation view**         |    ✅    | ✅  |     ✅     |         ✅          |    —     |        —        |         ✅          |
 | **Detailed listing cards**         |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
 | **"Next steps" / how-to-access**   |    ✅    |  —  |     —      |          —          |    —     |        —        |         ❌          |
 | **Community submission / suggest** |    ✅    | ✅  |     —      |          —          |    —     |        —        |  🔜 (placeholder)   |
 | **Claimed / verified badge**       |    ✅    |  —  |     —      |          —          |    —     |        —        |         ❌          |
 | **Mobile-responsive**              |    ✅    | ✅  |     ✅     |         ✅          |    ✅    |       ✅        |         ✅          |
-| **Accessibility (WCAG)**           |    ✅    | ✅  |     ✅     | ✅ (dyslexia fonts) |    ✅    |       ✅        |       Partial       |
+| **Accessibility (WCAG)**           |    ✅    | ✅  |     ✅     | ✅ (dyslexia fonts) |    ✅    |       ✅        |         ✅          |
 | **Multi-language / translation**   |    ✅    | ✅  |     —      |          —          |    —     |        —        |         ❌          |
 | **Event calendar**                 |    —     |  —  |     ✅     |         ✅          |    ✅    |        —        |         ❌          |
 | **News / announcements**           |    —     |  —  |     ✅     |         ✅          |    ✅    |        —        |         ❌          |
@@ -119,12 +119,12 @@ Based on what the best sites do well and where Johnston has gaps:
 1. **Add keyword search** — Client-side filter across listing name + description + category. Every comparable site has this.
 2. **Add "Verified" date badge to listing cards** — Surface the trust that's already built into the curation process.
 3. **Fill empty categories** — Healthcare and Mental Health currently show zero results. Add at least 2–3 listings each or add "coming soon" messaging.
-4. **Accessibility audit** — Run Lighthouse + axe, fix any issues. This is table stakes for a public service site.
+4. ~~**Accessibility audit**~~ — ✅ Done. WCAG2AA enforced via pa11y-ci with axe runner in CI. Skip-to-main link, aria-labels, focus outlines, and contrast guidelines all in place.
 
 ### Medium Priority (Phase 2)
 
 5. **Add "Next Steps" to listings** — Optional field: what should someone do to access this service?
-6. **Embed maps on listing detail pages** — Even a Google Maps link per listing helps.
+6. ~~**Embed maps on listing detail pages**~~ — ✅ Done. OpenStreetMap iframe embeds on both listing detail pages and directory map view, with geocoded coordinates.
 7. **Build the Submit form** — Simple form → email notification. Keeps data fresh as the community grows.
 8. **Add a "Need immediate help?" banner** — Link to 211 and local emergency numbers. Responsible safety net.
 
