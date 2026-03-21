@@ -25,13 +25,15 @@ function buildMultiMarkerSrcdoc(listings: Listing[]) {
   const padding = 0.01;
   const bounds = `[[${Math.min(...lats) - padding},${Math.min(...lngs) - padding}],[${Math.max(...lats) + padding},${Math.max(...lngs) + padding}]]`;
 
-  return `<!DOCTYPE html>
+  return (
+    `<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><` + `/script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><` +
+    `/script>
 <style>html,body,#map{margin:0;padding:0;width:100%;height:100%}</style>
 </head>
 <body>
@@ -44,9 +46,11 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
 }).addTo(map);
 ${markers.join("\n")}
 map.fitBounds(${bounds});
-<` + `/script>
+<` +
+    `/script>
 </body>
-</html>`;
+</html>`
+  );
 }
 
 function buildLargeMapUrl(listings: Listing[], singleListing: boolean) {
