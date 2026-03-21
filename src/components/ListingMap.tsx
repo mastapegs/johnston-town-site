@@ -43,10 +43,14 @@ function ListingMap({
         zoom={zoom}
         scrollWheelZoom={false}
         attributionControl={false}
+        zoomControl={false}
         className="h-full w-full"
         style={{ minHeight: singleListing ? "250px" : "400px" }}
       >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution=""
+        />
         {listings.map((listing) => (
           <Marker
             key={listing.id}
@@ -56,11 +60,12 @@ function ListingMap({
             <Popup>
               <div className="text-sm">
                 <p className="font-semibold">{listing.name}</p>
-                <p className="text-gray-600">{listing.address}</p>
+                <p style={{ color: "#4b5563" }}>{listing.address}</p>
                 {!singleListing && (
                   <Link
                     to={`/directory/${listing.id}`}
-                    className="mt-1 inline-block text-blue-600 hover:underline"
+                    className="mt-1 inline-block underline"
+                    style={{ color: "#1d4ed8" }}
                   >
                     View details
                   </Link>
@@ -70,13 +75,17 @@ function ListingMap({
           </Marker>
         ))}
       </MapContainer>
-      <p className="bg-white px-2 py-1 text-xs text-gray-900">
+      <p
+        className="px-2 py-1 text-xs"
+        style={{ backgroundColor: "#fff", color: "#111827" }}
+      >
         &copy;{" "}
         <a
           href="https://www.openstreetmap.org/copyright"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-blue-700 underline"
+          className="underline"
+          style={{ color: "#1d4ed8" }}
         >
           OpenStreetMap
         </a>{" "}
