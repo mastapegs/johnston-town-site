@@ -5,6 +5,7 @@ interface ListingMapProps {
   listings: Listing[];
   className?: string;
   singleListing?: boolean;
+  userLocation?: { lat: number; lng: number } | null;
 }
 
 function buildSingleEmbedUrl(listing: Listing) {
@@ -14,7 +15,10 @@ function buildSingleEmbedUrl(listing: Listing) {
   return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
 }
 
-function buildMultiMarkerSrcdoc(listings: Listing[]) {
+function buildMultiMarkerSrcdoc(
+  listings: Listing[],
+  userLocation?: { lat: number; lng: number } | null,
+) {
   const markers = listings.map(
     (l) =>
       `L.marker([${l.lat},${l.lng}]).addTo(map).bindPopup(${JSON.stringify(`<strong>${l.name}</strong><br>${l.address}`)});`,
@@ -22,8 +26,18 @@ function buildMultiMarkerSrcdoc(listings: Listing[]) {
 
   const lats = listings.map((l) => l.lat);
   const lngs = listings.map((l) => l.lng);
+
+  if (userLocation) {
+    lats.push(userLocation.lat);
+    lngs.push(userLocation.lng);
+  }
+
   const padding = 0.01;
   const bounds = `[[${Math.min(...lats) - padding},${Math.min(...lngs) - padding}],[${Math.max(...lats) + padding},${Math.max(...lngs) + padding}]]`;
+
+  const userMarkerScript = userLocation
+    ? `L.circleMarker([${userLocation.lat},${userLocation.lng}],{radius:8,fillColor:'#4285F4',color:'#fff',weight:2,opacity:1,fillOpacity:0.9}).addTo(map).bindPopup('<strong>Your location</strong>');`
+    : "";
 
   return (
     `<!DOCTYPE html>
@@ -45,6 +59,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
   maxZoom:19
 }).addTo(map);
 ${markers.join("\n")}
+${userMarkerScript}
 map.fitBounds(${bounds});
 <` +
     `/script>
@@ -65,13 +80,14 @@ function ListingMap({
   listings,
   className = "",
   singleListing = false,
+  userLocation,
 }: ListingMapProps) {
   const srcdoc = useMemo(
     () =>
       !singleListing && listings.length > 0
-        ? buildMultiMarkerSrcdoc(listings)
+        ? buildMultiMarkerSrcdoc(listings, userLocation)
         : undefined,
-    [listings, singleListing],
+    [listings, singleListing, userLocation],
   );
 
   if (listings.length === 0) return null;
