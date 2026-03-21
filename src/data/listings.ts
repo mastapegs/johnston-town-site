@@ -83,8 +83,8 @@ export const listings: Listing[] = [
     hours: "Mon–Fri 7:00 AM – 5:30 PM",
     description:
       "Licensed childcare center for ages 2 months to 5 years. DCYF-certified with qualified teachers and an on-site nurse. Curriculum focused on language, reading readiness, and physical, social, and emotional development.",
-    lat: 41.8262,
-    lng: -71.5089,
+    lat: 41.8333,
+    lng: -71.5587,
   },
   {
     id: "operation-stand-down-ri",
