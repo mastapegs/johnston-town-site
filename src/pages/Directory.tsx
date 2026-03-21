@@ -1,9 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { categories, listings } from "../data/listings";
+import ListingMap from "../components/ListingMap";
 
 function Directory() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [view, setView] = useState<"list" | "map">("list");
 
   useEffect(() => {
     document.title = "Directory — Johnston Community Directory";
@@ -16,10 +18,42 @@ function Directory() {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold text-gray-900">Directory</h1>
-      <p className="mt-2 text-gray-600">
-        Browse verified local services and resources in Johnston.
-      </p>
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-gray-900">Directory</h1>
+          <p className="mt-2 text-gray-600">
+            Browse verified local services and resources in Johnston.
+          </p>
+        </div>
+        <div
+          className="flex rounded-lg border border-gray-200"
+          role="group"
+          aria-label="View mode"
+        >
+          <button
+            onClick={() => setView("list")}
+            aria-pressed={view === "list"}
+            className={`rounded-l-lg px-3 py-2 text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 ${
+              view === "list"
+                ? "bg-blue-600 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-50"
+            }`}
+          >
+            List
+          </button>
+          <button
+            onClick={() => setView("map")}
+            aria-pressed={view === "map"}
+            className={`rounded-r-lg px-3 py-2 text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 ${
+              view === "map"
+                ? "bg-blue-600 text-white"
+                : "bg-white text-gray-700 hover:bg-gray-50"
+            }`}
+          >
+            Map
+          </button>
+        </div>
+      </div>
 
       <div className="mt-6 flex flex-wrap gap-2">
         <button
@@ -47,26 +81,32 @@ function Directory() {
         ))}
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
-        {filtered.map((listing) => (
-          <Link
-            key={listing.id}
-            to={`/directory/${listing.id}`}
-            className="rounded-lg border border-gray-200 bg-white p-5 hover:border-blue-300 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
-          >
-            <span className="text-xs font-medium text-blue-600">
-              {listing.category}
-            </span>
-            <h2 className="mt-1 text-lg font-semibold text-gray-900">
-              {listing.name}
-            </h2>
-            <p className="mt-1 text-sm text-gray-600">{listing.address}</p>
-            <p className="mt-2 text-sm text-gray-600 line-clamp-2">
-              {listing.description}
-            </p>
-          </Link>
-        ))}
-      </div>
+      {view === "map" ? (
+        <div className="mt-8">
+          <ListingMap listings={filtered} className="h-[500px]" />
+        </div>
+      ) : (
+        <div className="mt-8 grid gap-4 sm:grid-cols-2">
+          {filtered.map((listing) => (
+            <Link
+              key={listing.id}
+              to={`/directory/${listing.id}`}
+              className="rounded-lg border border-gray-200 bg-white p-5 hover:border-blue-300 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            >
+              <span className="text-xs font-medium text-blue-600">
+                {listing.category}
+              </span>
+              <h2 className="mt-1 text-lg font-semibold text-gray-900">
+                {listing.name}
+              </h2>
+              <p className="mt-1 text-sm text-gray-600">{listing.address}</p>
+              <p className="mt-2 text-sm text-gray-600 line-clamp-2">
+                {listing.description}
+              </p>
+            </Link>
+          ))}
+        </div>
+      )}
 
       {filtered.length === 0 && (
         <p className="mt-8 text-center text-gray-500">

@@ -1,3 +1,8 @@
+import coordinatesData from "./coordinates.generated.json";
+
+const coordinates: Record<string, { lat: number; lng: number }> =
+  coordinatesData;
+
 export interface Listing {
   id: string;
   name: string;
@@ -7,6 +12,8 @@ export interface Listing {
   website?: string;
   hours?: string;
   description: string;
+  lat: number;
+  lng: number;
 }
 
 export const categories = [
@@ -19,7 +26,18 @@ export const categories = [
   "Shelters",
 ] as const;
 
-export const listings: Listing[] = [
+interface ListingInput {
+  id: string;
+  name: string;
+  category: string;
+  address: string;
+  phone: string;
+  website?: string;
+  hours?: string;
+  description: string;
+}
+
+const listingData: ListingInput[] = [
   {
     id: "johnston-senior-center",
     name: "Johnston Senior Center",
@@ -119,3 +137,17 @@ export const listings: Listing[] = [
       "Nonprofit providing shelter housing, the state's largest soup kitchen, and social services for individuals who are hungry, homeless, or in crisis. Offers case management, mental health care, and recovery support.",
   },
 ];
+
+export const listings: Listing[] = listingData.map((listing) => {
+  const coords = coordinates[listing.id];
+  if (!coords) {
+    console.warn(
+      `Missing coordinates for "${listing.id}". Run: npm run geocode`,
+    );
+  }
+  return {
+    ...listing,
+    lat: coords?.lat ?? 0,
+    lng: coords?.lng ?? 0,
+  };
+});

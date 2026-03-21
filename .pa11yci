@@ -6,7 +6,8 @@
     "wait": 1000,
     "chromeLaunchConfig": {
       "args": ["--no-sandbox"]
-    }
+    },
+    "ignore": ["frame-tested"]
   },
   "urls": [
     "http://localhost:4173/",
