@@ -8,15 +8,17 @@ The Johnston Community Directory brings them together in one place — simple, a
 
 ## What You'll Find
 
-The directory focuses first on the services that matter most:
+The directory covers the services and resources that matter most:
 
 - **Food Assistance** — food banks, pantries, and emergency food programs
-- **Healthcare** — clinics, dental care, and health services
+- **Healthcare & Mental Health** — clinics, dental care, counseling, substance abuse resources, and crisis support
 - **Childcare** — daycare, after-school programs, and family resources
 - **Senior Services** — programs, meals, transportation, and social activities
-- **Mental Health** — counseling, substance abuse resources, and crisis support
-- **Municipal Services** — Town Hall, libraries, schools, parks, and public works
+- **Municipal Services** — Town Hall, libraries, public works, and government offices
 - **Shelters** — housing assistance and emergency shelter
+- **Parks & Recreation** — parks, playgrounds, trails, and recreational facilities
+- **Entertainment** — local attractions, venues, and activities
+- **Schools** — public schools, private schools, and educational programs
 
 Use the **keyword search** to find what you need by name, description, or address — or browse by category. Every listing is researched and verified by hand. Accuracy matters more than volume — if it's in the directory, you can trust it.
 
@@ -51,12 +53,14 @@ npm install
 ### Development
 
 ```bash
-npm run dev          # Start the local dev server
-npm run build        # Build for production
-npm run preview      # Preview the production build
-npm run lint         # Run the linter
-npm run format       # Format code with Prettier
-npm run geocode      # Resolve listing addresses to map coordinates
+npm run dev            # Start the local dev server
+npm run build          # Build for production
+npm run preview        # Preview the production build
+npm run lint           # Run the linter
+npm run format         # Format code with Prettier
+npm run format:check   # Check formatting without modifying files
+npm run a11y           # Run WCAG2AA accessibility tests
+npm run geocode        # Resolve listing addresses to map coordinates
 ```
 
 ### Maps & Geocoding
@@ -71,6 +75,7 @@ Each listing includes an interactive map powered by OpenStreetMap. Addresses are
 - [Vite](https://vite.dev/) — Build tool and dev server
 - [TypeScript](https://www.typescriptlang.org/) — Type safety
 - [OpenStreetMap](https://www.openstreetmap.org/) — Maps and geocoding
+- [pa11y-ci](https://github.com/pa11y/pa11y-ci) — Automated WCAG2AA accessibility testing
 
 ## Contributing
 
