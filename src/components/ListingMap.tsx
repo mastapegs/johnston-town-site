@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import type { Listing } from "../data/listings";
 
 interface ListingMapProps {
@@ -6,24 +7,46 @@ interface ListingMapProps {
   singleListing?: boolean;
 }
 
-function buildEmbedUrl(listings: Listing[], singleListing: boolean) {
-  if (singleListing) {
-    const { lat, lng } = listings[0];
-    const offset = 0.005;
-    const bbox = `${lng - offset},${lat - offset},${lng + offset},${lat + offset}`;
-    return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
-  }
+function buildSingleEmbedUrl(listing: Listing) {
+  const { lat, lng } = listing;
+  const offset = 0.005;
+  const bbox = `${lng - offset},${lat - offset},${lng + offset},${lat + offset}`;
+  return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat},${lng}`;
+}
+
+function buildMultiMarkerSrcdoc(listings: Listing[]) {
+  const markers = listings.map(
+    (l) =>
+      `L.marker([${l.lat},${l.lng}]).addTo(map).bindPopup(${JSON.stringify(`<strong>${l.name}</strong><br>${l.address}`)});`,
+  );
 
   const lats = listings.map((l) => l.lat);
   const lngs = listings.map((l) => l.lng);
-  const padding = 0.02;
-  const bbox = [
-    Math.min(...lngs) - padding,
-    Math.min(...lats) - padding,
-    Math.max(...lngs) + padding,
-    Math.max(...lats) + padding,
-  ].join(",");
-  return `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik`;
+  const padding = 0.01;
+  const bounds = `[[${Math.min(...lats) - padding},${Math.min(...lngs) - padding}],[${Math.max(...lats) + padding},${Math.max(...lngs) + padding}]]`;
+
+  return `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"><` + `/script>
+<style>html,body,#map{margin:0;padding:0;width:100%;height:100%}</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+var map=L.map('map',{scrollWheelZoom:false});
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+  attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+  maxZoom:19
+}).addTo(map);
+${markers.join("\n")}
+map.fitBounds(${bounds});
+<` + `/script>
+</body>
+</html>`;
 }
 
 function buildLargeMapUrl(listings: Listing[], singleListing: boolean) {
@@ -39,28 +62,41 @@ function ListingMap({
   className = "",
   singleListing = false,
 }: ListingMapProps) {
+  const srcdoc = useMemo(
+    () =>
+      !singleListing && listings.length > 0
+        ? buildMultiMarkerSrcdoc(listings)
+        : undefined,
+    [listings, singleListing],
+  );
+
   if (listings.length === 0) return null;
 
-  const embedUrl = buildEmbedUrl(listings, singleListing);
   const largeMapUrl = buildLargeMapUrl(listings, singleListing);
   const height = singleListing ? "250" : "450";
 
   return (
     <div className={className}>
       <div className="overflow-hidden rounded-lg border border-gray-200">
-        <iframe
-          title={
-            singleListing
-              ? `Map showing ${listings[0].name}`
-              : "Map of community resources in Johnston, RI"
-          }
-          src={embedUrl}
-          width="100%"
-          height={height}
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer"
-        />
+        {singleListing ? (
+          <iframe
+            title={`Map showing ${listings[0].name}`}
+            src={buildSingleEmbedUrl(listings[0])}
+            width="100%"
+            height={height}
+            style={{ border: 0 }}
+            loading="lazy"
+            referrerPolicy="no-referrer"
+          />
+        ) : (
+          <iframe
+            title="Map of community resources in Johnston, RI"
+            srcDoc={srcdoc}
+            width="100%"
+            height={height}
+            style={{ border: 0 }}
+          />
+        )}
       </div>
       <p className="mt-1 text-xs text-gray-700">
         <a
