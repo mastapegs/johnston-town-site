@@ -156,7 +156,7 @@ function Home() {
         </p>
         <ul className="mt-4 grid gap-3 text-sm text-gray-700 sm:grid-cols-2">
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-blue-700" aria-hidden="true">
+            <span className="mt-0.5 text-blue-900" aria-hidden="true">
               &#10003;
             </span>
             <span>
@@ -164,7 +164,7 @@ function Home() {
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-blue-700" aria-hidden="true">
+            <span className="mt-0.5 text-blue-900" aria-hidden="true">
               &#10003;
             </span>
             <span>
@@ -173,7 +173,7 @@ function Home() {
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-blue-700" aria-hidden="true">
+            <span className="mt-0.5 text-blue-900" aria-hidden="true">
               &#10003;
             </span>
             <span>
@@ -182,7 +182,7 @@ function Home() {
             </span>
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-0.5 text-blue-700" aria-hidden="true">
+            <span className="mt-0.5 text-blue-900" aria-hidden="true">
               &#10003;
             </span>
             <span>
