@@ -43,5 +43,70 @@
     "lat": 41.8127,
     "lng": -71.4195,
     "address": "460 Pine St, Providence, RI 02907"
+  },
+  "ocean-state-medical": {
+    "lat": 41.8384,
+    "lng": -71.4724,
+    "address": "1539 Atwood Ave, Suite 101, Johnston, RI 02919"
+  },
+  "tricounty-community-health-center": {
+    "lat": 41.8225,
+    "lng": -71.4866,
+    "address": "1126 Hartford Ave, Johnston, RI 02919"
+  },
+  "brown-health-urgent-care-johnston": {
+    "lat": 41.8197,
+    "lng": -71.4802,
+    "address": "11 Commerce Way, Unit 5, Johnston, RI 02919"
+  },
+  "johnston-urgent-care-mdri": {
+    "lat": 41.8235,
+    "lng": -71.4925,
+    "address": "1239 Hartford Ave, Johnston, RI 02919"
+  },
+  "atmed-treatment-center": {
+    "lat": 41.8383,
+    "lng": -71.4725,
+    "address": "1526 Atwood Ave, Suite 100, Johnston, RI 02919"
+  },
+  "inner-you-counseling-center": {
+    "lat": 41.8495,
+    "lng": -71.5505,
+    "address": "190 Putnam Pike, Suite 1, Johnston, RI 02919"
+  },
+  "ellie-mental-health-johnston": {
+    "lat": 41.8383,
+    "lng": -71.4725,
+    "address": "1526 Atwood Ave, Suite 104, Johnston, RI 02919"
+  },
+  "johnston-war-memorial-park": {
+    "lat": 41.8258,
+    "lng": -71.5018,
+    "address": "1583 Hartford Ave, Johnston, RI 02919"
+  },
+  "snake-den-state-park": {
+    "lat": 41.8355,
+    "lng": -71.5365,
+    "address": "2321 Hartford Ave, Johnston, RI 02919"
+  },
+  "buttonhole-golf-course": {
+    "lat": 41.8445,
+    "lng": -71.4645,
+    "address": "1 Button Hole Dr, Providence, RI 02908"
+  },
+  "cw-theaters-lanes-games": {
+    "lat": 41.8915,
+    "lng": -71.4535,
+    "address": "622 George Washington Hwy, Lincoln, RI 02865"
+  },
+  "apple-cinemas-warwick": {
+    "lat": 41.7235,
+    "lng": -71.4795,
+    "address": "400 Bald Hill Rd, Warwick, RI 02886"
+  },
+  "showcase-cinemas-warwick": {
+    "lat": 41.7175,
+    "lng": -71.4685,
+    "address": "1200 Quaker Ln, Warwick, RI 02886"
   }
 }

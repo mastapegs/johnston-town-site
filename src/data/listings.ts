@@ -18,12 +18,13 @@ export interface Listing {
 
 export const categories = [
   "Food Assistance",
-  "Healthcare",
+  "Healthcare & Mental Health",
   "Childcare",
   "Senior Services",
-  "Mental Health",
   "Municipal Services",
   "Shelters",
+  "Parks",
+  "Entertainment",
 ] as const;
 
 interface ListingInput {
@@ -135,6 +136,150 @@ const listingData: ListingInput[] = [
     hours: "Mon–Thu 8:00 AM – 4:00 PM, Fri 8:00 AM – 1:00 PM",
     description:
       "Nonprofit providing shelter housing, the state's largest soup kitchen, and social services for individuals who are hungry, homeless, or in crisis. Offers case management, mental health care, and recovery support.",
+  },
+  {
+    id: "ocean-state-medical",
+    name: "Ocean State Medical",
+    category: "Healthcare & Mental Health",
+    address: "1539 Atwood Ave, Suite 101, Johnston, RI 02919",
+    phone: "(401) 272-3410",
+    website: "https://www.oceanstatemedical.org",
+    hours:
+      "Mon–Thu 6:00 AM – 5:00 PM, Fri 7:00 AM – 12:00 PM, Sat 8:00 AM – 12:00 PM",
+    description:
+      "Comprehensive primary care practice offering preventative medicine and telehealth services. Patient-Centered Medical Home located inside the Johnston Medical Center.",
+  },
+  {
+    id: "tricounty-community-health-center",
+    name: "TriCounty Community Health Center",
+    category: "Healthcare & Mental Health",
+    address: "1126 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 351-2750",
+    website: "https://www.tricountyri.org/services/health-center",
+    hours: "Mon–Wed 8:00 AM – 8:00 PM, Thu–Fri 8:00 AM – 5:00 PM",
+    description:
+      "Federally Qualified Health Center offering family medicine, behavioral health, substance abuse treatment, counseling, and dental care. Sliding fee scale available.",
+  },
+  {
+    id: "brown-health-urgent-care-johnston",
+    name: "Brown University Health Urgent Care",
+    category: "Healthcare & Mental Health",
+    address: "11 Commerce Way, Unit 5, Johnston, RI 02919",
+    phone: "(401) 606-2610",
+    website: "https://www.brownhealth.org",
+    hours: "Mon–Fri 8:00 AM – 8:00 PM, Sat–Sun 8:00 AM – 6:00 PM",
+    description:
+      "Walk-in urgent care clinic treating adults and children 18 months and older. Offers X-rays, flu and tetanus shots, COVID testing, and sports physicals.",
+  },
+  {
+    id: "johnston-urgent-care-mdri",
+    name: "Johnston Urgent Care (MDRI)",
+    category: "Healthcare & Mental Health",
+    address: "1239 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 209-1730",
+    website: "https://mymdri.com/johnstonuc",
+    hours: "Mon–Fri 9:00 AM – 4:30 PM, Sat 9:00 AM – 2:00 PM",
+    description:
+      "Local urgent care treating minor injuries, sprains, fractures, colds, flu, and infections. On-site X-rays, lab testing, and physicals available.",
+  },
+  {
+    id: "atmed-treatment-center",
+    name: "Atmed Treatment Center",
+    category: "Healthcare & Mental Health",
+    address: "1526 Atwood Ave, Suite 100, Johnston, RI 02919",
+    phone: "(401) 273-9400",
+    website: "https://www.atmedurgentcare.net",
+    hours: "Open 7 days a week",
+    description:
+      "Urgent care providing comprehensive outpatient health care for non-life-threatening illnesses and injuries. Walk-ins welcome, no appointment necessary.",
+  },
+  {
+    id: "inner-you-counseling-center",
+    name: "Inner You Counseling Center",
+    category: "Healthcare & Mental Health",
+    address: "190 Putnam Pike, Suite 1, Johnston, RI 02919",
+    phone: "(401) 773-7116",
+    website: "https://inneryoucounselingri.com",
+    hours: "Mon–Fri 9:00 AM – 9:00 PM, Sat–Sun 9:00 AM – 5:00 PM",
+    description:
+      "Counseling center offering individual, couples, and family therapy. Accepts all insurances with a sliding scale for uninsured clients.",
+  },
+  {
+    id: "ellie-mental-health-johnston",
+    name: "Ellie Mental Health - Johnston",
+    category: "Healthcare & Mental Health",
+    address: "1526 Atwood Ave, Suite 104, Johnston, RI 02919",
+    phone: "(401) 361-3788",
+    website: "https://elliementalhealth.com",
+    hours: "Mon–Fri 7:00 AM – 9:00 PM, Sat 9:00 AM – 5:00 PM",
+    description:
+      "Individual, family, and couples therapy for ages 5 and up. Treats anxiety, depression, trauma, substance use, and relationship challenges. In-person and telehealth sessions available.",
+  },
+  {
+    id: "johnston-war-memorial-park",
+    name: "Johnston War Memorial Park",
+    category: "Parks",
+    address: "1583 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 272-3460",
+    website: "https://johnstonrec.com",
+    hours: "Daily 6:00 AM – 10:00 PM",
+    description:
+      "26-acre town park with baseball and softball diamonds, basketball and tennis courts, an ADA-accessible inclusive playground, splash pad, fishing pond, one-mile walking trail, picnic areas, and a veterans memorial.",
+  },
+  {
+    id: "snake-den-state-park",
+    name: "Snake Den State Park",
+    category: "Parks",
+    address: "2321 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 222-2632",
+    website: "https://riparks.ri.gov",
+    hours: "Daily 6:00 AM – 8:00 PM",
+    description:
+      "1,000-acre state park featuring hiking trails, open fields, and the historic Dame Farm. A largely undeveloped natural setting ideal for hiking, nature walks, and birdwatching.",
+  },
+  {
+    id: "buttonhole-golf-course",
+    name: "Buttonhole Golf Course",
+    category: "Parks",
+    address: "1 Button Hole Dr, Providence, RI 02908",
+    phone: "(401) 421-1664",
+    website: "https://www.buttonhole.org",
+    description:
+      "Non-profit 9-hole public golf course on the Johnston border along the Woonasquatucket River Greenway. Focused on youth golf education and accessible play.",
+  },
+  {
+    id: "cw-theaters-lanes-games",
+    name: "CW Theaters, Lanes & Games",
+    category: "Entertainment",
+    address: "622 George Washington Hwy, Lincoln, RI 02865",
+    phone: "(401) 288-3543",
+    website: "https://www.cwtheaters.com",
+    hours:
+      "Mon–Thu 3:00 – 10:00 PM, Fri 3:00 – 11:00 PM, Sat 11:00 AM – 11:00 PM, Sun 11:00 AM – 10:00 PM",
+    description:
+      "All-in-one entertainment complex adjacent to Johnston with a 16-screen movie theater, 22 bowling lanes, laser tag, arcade, and full-service restaurant and bar.",
+  },
+  {
+    id: "apple-cinemas-warwick",
+    name: "Apple Cinemas - Warwick Mall",
+    category: "Entertainment",
+    address: "400 Bald Hill Rd, Warwick, RI 02886",
+    phone: "(401) 735-0088",
+    website: "https://www.applecinemas.com",
+    hours: "Daily 11:00 AM – 10:30 PM",
+    description:
+      "12-screen movie theater with laser projectors, Dolby 7.1 surround sound, luxury reclining seats, and a full bar. About 15 minutes from Johnston.",
+  },
+  {
+    id: "showcase-cinemas-warwick",
+    name: "Showcase Cinemas Warwick",
+    category: "Entertainment",
+    address: "1200 Quaker Ln, Warwick, RI 02886",
+    phone: "(800) 315-4000",
+    website: "https://www.showcasecinemas.com",
+    hours: "Mon–Fri 12:00 – 10:00 PM, Sat–Sun 12:00 – 11:00 PM",
+    description:
+      "Modern cinema with luxury recliners, reserved seating, RealD 3D, and XPlus Laser auditorium with Dolby Atmos. Offers Bargain Tuesdays and Senior Wednesdays.",
   },
 ];
 
