@@ -313,5 +313,35 @@
     "lat": 41.7685,
     "lng": -71.3625,
     "address": "10 Tripps Ln, Riverside, RI 02915"
+  },
+  "woodlake-park": {
+    "lat": 41.8345,
+    "lng": -71.4855,
+    "address": "103 Reservoir Ave, Johnston, RI 02919"
+  },
+  "cricket-field": {
+    "lat": 41.8415,
+    "lng": -71.4665,
+    "address": "15 Riverside Ave, Johnston, RI 02919"
+  },
+  "johnston-indoor-rec-center": {
+    "lat": 41.8435,
+    "lng": -71.4795,
+    "address": "1741 Atwood Ave, Johnston, RI 02919"
+  },
+  "woonasquatucket-river-greenway": {
+    "lat": 41.8405,
+    "lng": -71.4685,
+    "address": "Hillside Ave, Johnston, RI 02919"
+  },
+  "deerfield-park": {
+    "lat": 41.8625,
+    "lng": -71.5415,
+    "address": "25 Lisa Ann Cir, Smithfield, RI 02828"
+  },
+  "smithfield-ymca": {
+    "lat": 41.8635,
+    "lng": -71.5425,
+    "address": "15 Deerfield Dr, Greenville, RI 02828"
   }
 }

@@ -23,7 +23,7 @@ export const categories = [
   "Senior Services",
   "Municipal Services",
   "Shelters",
-  "Parks",
+  "Parks & Recreation",
   "Entertainment",
   "Schools",
 ] as const;
@@ -549,7 +549,7 @@ const listingData: ListingInput[] = [
   {
     id: "johnston-war-memorial-park",
     name: "Johnston War Memorial Park",
-    category: "Parks",
+    category: "Parks & Recreation",
     address: "1583 Hartford Ave, Johnston, RI 02919",
     phone: "(401) 272-3460",
     website: "https://johnstonrec.com",
@@ -560,7 +560,7 @@ const listingData: ListingInput[] = [
   {
     id: "snake-den-state-park",
     name: "Snake Den State Park",
-    category: "Parks",
+    category: "Parks & Recreation",
     address: "2321 Hartford Ave, Johnston, RI 02919",
     phone: "(401) 222-2632",
     website: "https://riparks.ri.gov",
@@ -571,12 +571,77 @@ const listingData: ListingInput[] = [
   {
     id: "buttonhole-golf-course",
     name: "Buttonhole Golf Course",
-    category: "Parks",
+    category: "Parks & Recreation",
     address: "1 Button Hole Dr, Providence, RI 02908",
     phone: "(401) 421-1664",
     website: "https://www.buttonhole.org",
     description:
       "Non-profit 9-hole public golf course on the Johnston border along the Woonasquatucket River Greenway. Focused on youth golf education and accessible play.",
+  },
+  {
+    id: "woodlake-park",
+    name: "Woodlake Park Complex & Dog Park",
+    category: "Parks & Recreation",
+    address: "103 Reservoir Ave, Johnston, RI 02919",
+    phone: "(401) 272-3460",
+    website: "https://johnstonrec.com/our-facilities",
+    hours: "Dawn to dusk",
+    description:
+      "Multi-use park with baseball and softball fields, soccer field, renovated playground, and a fenced dog park. Trails wind around Almy Reservoir for approximately 2.5 miles.",
+  },
+  {
+    id: "cricket-field",
+    name: "Cricket Field",
+    category: "Parks & Recreation",
+    address: "15 Riverside Ave, Johnston, RI 02919",
+    phone: "(401) 861-9046",
+    website: "https://wrwc.org/what-we-do/greenway/parks/cricket-field",
+    hours: "Dawn to dusk",
+    description:
+      "2.6-acre park along the Woonasquatucket River with brick walking paths, a wetlands boardwalk, dam overlook, gazebo, canoe/kayak launch, and native plant gardens.",
+  },
+  {
+    id: "johnston-indoor-rec-center",
+    name: "Johnston Indoor Recreation Center & Soccer Complex",
+    category: "Parks & Recreation",
+    address: "1741 Atwood Ave, Johnston, RI 02919",
+    phone: "(401) 437-6326",
+    website: "https://johnstonrec.com/our-facilities",
+    hours: "Daily 11:00 AM – 9:00 PM",
+    description:
+      "26,000 sq ft indoor recreation facility hosting wrestling, volleyball, Special Olympics, and more. Adjacent outdoor soccer complex with artificial turf fields.",
+  },
+  {
+    id: "woonasquatucket-river-greenway",
+    name: "Woonasquatucket River Greenway",
+    category: "Parks & Recreation",
+    address: "Hillside Ave, Johnston, RI 02919",
+    phone: "(401) 861-9046",
+    website: "https://wrwc.org/what-we-do/greenway",
+    hours: "Dawn to dusk",
+    description:
+      "Paved multi-use trail following the Woonasquatucket River. ADA-accessible, at least 8 feet wide, passing by two large ponds. Free monthly Greenway Wild Walks for families.",
+  },
+  {
+    id: "deerfield-park",
+    name: "Deerfield Park",
+    category: "Parks & Recreation",
+    address: "25 Lisa Ann Cir, Smithfield, RI 02828",
+    phone: "(401) 349-0612",
+    hours: "Dawn to dusk",
+    description:
+      "Large park in neighboring Smithfield with soccer and lacrosse fields, little league fields, basketball and tennis courts, two playgrounds, a splash pad, hiking trails, and a Veterans Memorial.",
+  },
+  {
+    id: "smithfield-ymca",
+    name: "Smithfield YMCA",
+    category: "Parks & Recreation",
+    address: "15 Deerfield Dr, Greenville, RI 02828",
+    phone: "(401) 949-2480",
+    website: "https://ymca1.org",
+    hours: "Mon–Fri 5:00 AM – 8:00 PM, Sat 7:00 AM – 2:00 PM",
+    description:
+      "The closest YMCA to Johnston, offering a fitness center, pool, youth programs, swim lessons, summer camp, childcare, personal training, and financial assistance for memberships.",
   },
   {
     id: "cw-theaters-lanes-games",
