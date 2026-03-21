@@ -6,7 +6,7 @@ const coordinates: Record<string, { lat: number; lng: number }> =
 export interface Listing {
   id: string;
   name: string;
-  category: string;
+  category: Category;
   address: string;
   phone: string;
   website?: string;
@@ -27,10 +27,12 @@ export const categories = [
   "Entertainment",
 ] as const;
 
+export type Category = (typeof categories)[number];
+
 interface ListingInput {
   id: string;
   name: string;
-  category: string;
+  category: Category;
   address: string;
   phone: string;
   website?: string;
