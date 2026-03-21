@@ -53,6 +53,57 @@ const listingData: ListingInput[] = [
       "Programs, meals, and social activities for Johnston seniors. Transportation assistance available.",
   },
   {
+    id: "bridge-at-cherry-hill",
+    name: "The Bridge at Cherry Hill",
+    category: "Senior Services",
+    address: "1 Cherry Hill Rd, Johnston, RI 02919",
+    phone: "(401) 233-2880",
+    website: "https://thebridgeatcherryhill.com",
+    description:
+      "Assisted living community offering independent and assisted living apartments with resort-style amenities. Named a 2025 U.S. News & World Report best senior living community.",
+  },
+  {
+    id: "cherry-hill-manor",
+    name: "Cherry Hill Manor Nursing & Rehabilitation",
+    category: "Senior Services",
+    address: "2 Cherry Hill Rd, Johnston, RI 02919",
+    phone: "(401) 231-3102",
+    website: "https://lcca.com/locations/ri/cherry-hill-manor",
+    description:
+      "Skilled nursing and rehabilitation center offering short-term rehab and long-term care. Named a U.S. News & World Report 2026 Best Nursing Home.",
+  },
+  {
+    id: "anchor-bay-pocasset",
+    name: "Anchor Bay at Pocasset",
+    category: "Senior Services",
+    address: "12 Old Pocasset Ln, Johnston, RI 02919",
+    phone: "(401) 648-6399",
+    website:
+      "https://elegance-living.com/senior-living/ri/johnston/anchor-bay-at-pocasset",
+    description:
+      "Senior living community on 16+ acres offering independent living, assisted living, and memory care. Established in 2004.",
+  },
+  {
+    id: "briarcliffe-manor",
+    name: "Briarcliffe Manor",
+    category: "Senior Services",
+    address: "49 Old Pocasset Rd, Johnston, RI 02919",
+    phone: "(401) 944-2450",
+    website: "https://briarclifferi.com",
+    description:
+      "30-acre campus with 5-star-rated skilled nursing and rehabilitation, memory care assisted living, and independent living options.",
+  },
+  {
+    id: "pace-ri",
+    name: "PACE Organization of Rhode Island",
+    category: "Senior Services",
+    address: "10 Tripps Ln, Riverside, RI 02915",
+    phone: "(401) 434-1400",
+    website: "https://pace-ri.org",
+    description:
+      "Nonprofit health plan for adults 55+ with complex health needs who want to remain at home. Provides adult day care, medical care, transportation, meals, and social services.",
+  },
+  {
     id: "johnston-town-hall",
     name: "Johnston Town Hall",
     category: "Municipal Services",
@@ -73,6 +124,71 @@ const listingData: ListingInput[] = [
     hours: "Mon–Fri 8:00 AM – 4:00 PM",
     description:
       "Food pantry, fuel assistance, and emergency services for individuals and families in need.",
+  },
+  {
+    id: "st-robert-bellarmine-food-closet",
+    name: "St. Robert Bellarmine Parish Food Closet",
+    category: "Food Assistance",
+    address: "1804 Atwood Ave, Johnston, RI 02919",
+    phone: "(401) 232-5600",
+    website: "https://strobertsparish.org",
+    hours: "Thu 9:00 AM – 11:00 AM",
+    description:
+      "Parish food closet serving Johnston residents with non-perishable food items, breads, bakery items, and fresh produce when available. Visitors may come once every five weeks. Bring photo ID and proof of address.",
+  },
+  {
+    id: "johnston-sda-food-pantry",
+    name: "Johnston Seventh-day Adventist Church Food Pantry",
+    category: "Food Assistance",
+    address: "2693 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 934-2310",
+    hours: "First 3 Wednesdays of the month, 10:00 AM – 2:00 PM",
+    description:
+      "Community food pantry operated by the Johnston SDA church. Call ahead to confirm hours and availability.",
+  },
+  {
+    id: "allendale-baptist-food-pantry",
+    name: "Allendale Baptist Church Food Pantry",
+    category: "Food Assistance",
+    address: "545 Woonasquatucket Ave, North Providence, RI 02911",
+    phone: "(401) 231-7669",
+    hours: "3rd Sat 9:00 AM – 11:30 AM, 2nd Wed 5:00 – 6:30 PM",
+    description:
+      "Serves North Providence and Johnston residents at no cost. Handicapped accessible. Donations accepted but no fees charged.",
+  },
+  {
+    id: "salvation-army-providence-food",
+    name: "The Salvation Army - Providence Corps Food Pantry",
+    category: "Food Assistance",
+    address: "386 Broad St, Providence, RI 02907",
+    phone: "(401) 831-1119",
+    website:
+      "https://easternusa.salvationarmy.org/southern-new-england/providence",
+    description:
+      "RI Community Food Bank member agency serving Johnston, Cranston, Providence, and nearby communities. Photo ID required. Guests may visit monthly. Spanish spoken. Handicapped accessible.",
+  },
+  {
+    id: "ccap-food-bank",
+    name: "CCAP Client Choice Food Bank",
+    category: "Food Assistance",
+    address: "311 Doric Ave, Cranston, RI 02910",
+    phone: "(401) 467-7013",
+    website: "https://www.comcap.org",
+    hours:
+      "Mon–Tue, Fri 9:30 AM – 4:00 PM, Wed 9:30 AM – 6:30 PM, Thu 10:00 AM – 1:00 PM",
+    description:
+      "Client-choice food bank where people shop through a selection process similar to a grocery store. Serves Cranston, Johnston, and surrounding communities.",
+  },
+  {
+    id: "meals-on-wheels-ri",
+    name: "Meals on Wheels of Rhode Island",
+    category: "Food Assistance",
+    address: "70 Bath St, Providence, RI 02908",
+    phone: "(401) 351-6700",
+    website: "https://www.rimeals.org",
+    hours: "Deliveries weekdays",
+    description:
+      "Home-delivered meals for homebound seniors 60+ throughout Rhode Island including Johnston. Also runs a Senior Restaurant Program with vouchers usable at Uncle Tony's Pizza in Johnston.",
   },
   {
     id: "johnston-public-library",

@@ -258,5 +258,60 @@
     "lat": 41.8325,
     "lng": -71.5285,
     "address": "2119 Hartford Ave, Johnston, RI 02919"
+  },
+  "st-robert-bellarmine-food-closet": {
+    "lat": 41.8425,
+    "lng": -71.4785,
+    "address": "1804 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-sda-food-pantry": {
+    "lat": 41.8335,
+    "lng": -71.5545,
+    "address": "2693 Hartford Ave, Johnston, RI 02919"
+  },
+  "allendale-baptist-food-pantry": {
+    "lat": 41.8455,
+    "lng": -71.4715,
+    "address": "545 Woonasquatucket Ave, North Providence, RI 02911"
+  },
+  "salvation-army-providence-food": {
+    "lat": 41.8145,
+    "lng": -71.4165,
+    "address": "386 Broad St, Providence, RI 02907"
+  },
+  "ccap-food-bank": {
+    "lat": 41.7835,
+    "lng": -71.4375,
+    "address": "311 Doric Ave, Cranston, RI 02910"
+  },
+  "meals-on-wheels-ri": {
+    "lat": 41.8385,
+    "lng": -71.4155,
+    "address": "70 Bath St, Providence, RI 02908"
+  },
+  "bridge-at-cherry-hill": {
+    "lat": 41.8215,
+    "lng": -71.5165,
+    "address": "1 Cherry Hill Rd, Johnston, RI 02919"
+  },
+  "cherry-hill-manor": {
+    "lat": 41.8218,
+    "lng": -71.5168,
+    "address": "2 Cherry Hill Rd, Johnston, RI 02919"
+  },
+  "anchor-bay-pocasset": {
+    "lat": 41.8375,
+    "lng": -71.5255,
+    "address": "12 Old Pocasset Ln, Johnston, RI 02919"
+  },
+  "briarcliffe-manor": {
+    "lat": 41.8365,
+    "lng": -71.5245,
+    "address": "49 Old Pocasset Rd, Johnston, RI 02919"
+  },
+  "pace-ri": {
+    "lat": 41.7685,
+    "lng": -71.3625,
+    "address": "10 Tripps Ln, Riverside, RI 02915"
   }
 }
