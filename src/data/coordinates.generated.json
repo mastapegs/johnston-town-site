@@ -1,0 +1,47 @@
+{
+  "johnston-senior-center": {
+    "lat": 41.8232,
+    "lng": -71.4951,
+    "address": "1291 Hartford Ave, Johnston, RI 02919"
+  },
+  "johnston-town-hall": {
+    "lat": 41.8243,
+    "lng": -71.4988,
+    "address": "1385 Hartford Ave, Johnston, RI 02919"
+  },
+  "tri-county-community-action": {
+    "lat": 41.8225,
+    "lng": -71.4866,
+    "address": "1126 Hartford Ave, Johnston, RI 02919"
+  },
+  "johnston-public-library": {
+    "lat": 41.8305,
+    "lng": -71.5024,
+    "address": "1 Memorial Ave, Johnston, RI 02919"
+  },
+  "lollipop-learning-center": {
+    "lat": 41.8333,
+    "lng": -71.5587,
+    "address": "2766B Hartford Ave, Johnston, RI 02919"
+  },
+  "operation-stand-down-ri": {
+    "lat": 41.8218,
+    "lng": -71.4837,
+    "address": "1010 Hartford Ave, Johnston, RI 02919"
+  },
+  "crossroads-rhode-island": {
+    "lat": 41.817,
+    "lng": -71.4175,
+    "address": "160 Broad St, Providence, RI 02903"
+  },
+  "providence-rescue-mission": {
+    "lat": 41.8067,
+    "lng": -71.4362,
+    "address": "627 Cranston St, Providence, RI 02907"
+  },
+  "amos-house": {
+    "lat": 41.8127,
+    "lng": -71.4195,
+    "address": "460 Pine St, Providence, RI 02907"
+  }
+}
