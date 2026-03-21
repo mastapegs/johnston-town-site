@@ -42,13 +42,11 @@ function ListingMap({
         center={center}
         zoom={zoom}
         scrollWheelZoom={false}
+        attributionControl={false}
         className="h-full w-full"
         style={{ minHeight: singleListing ? "250px" : "400px" }}
       >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
         {listings.map((listing) => (
           <Marker
             key={listing.id}
@@ -72,6 +70,18 @@ function ListingMap({
           </Marker>
         ))}
       </MapContainer>
+      <p className="bg-white px-2 py-1 text-xs text-gray-900">
+        &copy;{" "}
+        <a
+          href="https://www.openstreetmap.org/copyright"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-700 underline"
+        >
+          OpenStreetMap
+        </a>{" "}
+        contributors
+      </p>
     </div>
   );
 }

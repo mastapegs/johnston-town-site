@@ -1,15 +1,1 @@
 @import "tailwindcss";
-
-/* Leaflet attribution contrast fix for WCAG AA compliance */
-.leaflet-container .leaflet-control-attribution {
-  background: #fff !important;
-  color: #1f2937 !important;
-}
-
-.leaflet-container .leaflet-control-attribution a {
-  color: #1d4ed8 !important;
-}
-
-.leaflet-container .leaflet-control-attribution span {
-  color: #1f2937 !important;
-}
