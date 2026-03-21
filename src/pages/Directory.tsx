@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { categories, listings } from "../data/listings";
 import ListingMap from "../components/ListingMap";
@@ -11,10 +11,26 @@ function Directory() {
     document.title = "Directory — Johnston Community Directory";
   }, []);
   const activeCategory = searchParams.get("category");
+  const searchQuery = searchParams.get("q") || "";
 
-  const filtered = activeCategory
-    ? listings.filter((l) => l.category === activeCategory)
-    : listings;
+  const filtered = useMemo(() => {
+    let results = activeCategory
+      ? listings.filter((l) => l.category === activeCategory)
+      : listings;
+
+    if (searchQuery.trim()) {
+      const query = searchQuery.trim().toLowerCase();
+      results = results.filter(
+        (l) =>
+          l.name.toLowerCase().includes(query) ||
+          l.description.toLowerCase().includes(query) ||
+          l.address.toLowerCase().includes(query) ||
+          l.category.toLowerCase().includes(query),
+      );
+    }
+
+    return results;
+  }, [activeCategory, searchQuery]);
 
   return (
     <div>
@@ -55,9 +71,35 @@ function Directory() {
         </div>
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-6">
+        <label htmlFor="directory-search" className="sr-only">
+          Search listings
+        </label>
+        <input
+          id="directory-search"
+          type="search"
+          placeholder="Search by name, description, or address..."
+          value={searchQuery}
+          onChange={(e) => {
+            const next = new URLSearchParams(searchParams);
+            if (e.target.value) {
+              next.set("q", e.target.value);
+            } else {
+              next.delete("q");
+            }
+            setSearchParams(next);
+          }}
+          className="w-full rounded-lg border border-gray-200 px-4 py-2 text-sm text-gray-900 placeholder:text-gray-500 focus:border-blue-600 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+        />
+      </div>
+
+      <div className="mt-4 flex flex-wrap gap-2">
         <button
-          onClick={() => setSearchParams({})}
+          onClick={() => {
+            const next = new URLSearchParams();
+            if (searchQuery) next.set("q", searchQuery);
+            setSearchParams(next);
+          }}
           className={`rounded-full px-3 py-1 text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 ${
             !activeCategory
               ? "bg-blue-600 text-white"
@@ -69,7 +111,11 @@ function Directory() {
         {categories.map((category) => (
           <button
             key={category}
-            onClick={() => setSearchParams({ category })}
+            onClick={() => {
+              const next = new URLSearchParams({ category });
+              if (searchQuery) next.set("q", searchQuery);
+              setSearchParams(next);
+            }}
             className={`rounded-full px-3 py-1 text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 ${
               activeCategory === category
                 ? "bg-blue-600 text-white"
@@ -110,7 +156,7 @@ function Directory() {
 
       {filtered.length === 0 && (
         <p className="mt-8 text-center text-gray-500">
-          No listings found in this category yet.
+          No listings found. Try a different search term or category.
         </p>
       )}
     </div>

@@ -37,7 +37,7 @@ src/
 │   └── WeatherDisplay.tsx   # Live weather widget (Open Meteo API, no auth needed)
 ├── pages/
 │   ├── Home.tsx             # Landing page with category grid
-│   ├── Directory.tsx        # Browse/filter listings by category (list + map views)
+│   ├── Directory.tsx        # Browse/filter listings by category + keyword search (list + map views)
 │   ├── ListingDetail.tsx    # Single listing detail view with map
 │   ├── About.tsx            # Project information
 │   └── Submit.tsx           # Placeholder for future submission form
@@ -65,13 +65,13 @@ scripts/
 
 ## Routes
 
-| Path             | Component     | Description                                                                     |
-| ---------------- | ------------- | ------------------------------------------------------------------------------- |
-| `/`              | Home          | Category overview grid                                                          |
-| `/directory`     | Directory     | Browsable listing directory with category filter (via `?category=` query param) |
-| `/directory/:id` | ListingDetail | Detail page for a single listing                                                |
-| `/about`         | About         | Project information                                                             |
-| `/submit`        | Submit        | Placeholder for community submissions                                           |
+| Path             | Component     | Description                                                                                |
+| ---------------- | ------------- | ------------------------------------------------------------------------------------------ |
+| `/`              | Home          | Category overview grid                                                                     |
+| `/directory`     | Directory     | Browsable listing directory with keyword search (`?q=`) and category filter (`?category=`) |
+| `/directory/:id` | ListingDetail | Detail page for a single listing                                                           |
+| `/about`         | About         | Project information                                                                        |
+| `/submit`        | Submit        | Placeholder for community submissions                                                      |
 
 ## Data Model
 
