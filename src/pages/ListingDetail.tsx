@@ -50,16 +50,16 @@ function ListingDetail() {
 
         <dl className="mt-6 space-y-3 text-sm">
           <div>
-            <dt className="font-medium text-gray-600">Address</dt>
+            <dt className="font-medium text-gray-700">Address</dt>
             <dd className="text-gray-900">{listing.address}</dd>
           </div>
           <div>
-            <dt className="font-medium text-gray-600">Phone</dt>
+            <dt className="font-medium text-gray-700">Phone</dt>
             <dd className="text-gray-900">
               <a
                 href={`tel:${listing.phone.replace(/[^\d+]/g, "")}`}
                 aria-label={`Call ${listing.name}`}
-                className="text-blue-600 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+                className="text-blue-700 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
               >
                 {listing.phone}
               </a>
@@ -67,20 +67,20 @@ function ListingDetail() {
           </div>
           {listing.hours && (
             <div>
-              <dt className="font-medium text-gray-600">Hours</dt>
+              <dt className="font-medium text-gray-700">Hours</dt>
               <dd className="text-gray-900">{listing.hours}</dd>
             </div>
           )}
           {listing.website && (
             <div>
-              <dt className="font-medium text-gray-600">Website</dt>
+              <dt className="font-medium text-gray-700">Website</dt>
               <dd>
                 <a
                   href={listing.website}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit ${listing.name} website (opens in new tab)`}
-                  className="text-blue-600 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+                  className="text-blue-700 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
                 >
                   {listing.website}
                   <span className="sr-only"> (opens in new tab)</span>
