@@ -96,6 +96,153 @@ const listingData: ListingInput[] = [
       "Licensed childcare center for ages 2 months to 5 years. DCYF-certified with qualified teachers and an on-site nurse. Curriculum focused on language, reading readiness, and physical, social, and emotional development.",
   },
   {
+    id: "johnston-child-care-center",
+    name: "Johnston Child Care Center",
+    category: "Childcare",
+    address: "87 Putnam Pike, Johnston, RI 02919",
+    phone: "(401) 233-3360",
+    website: "https://www.johnstonchildcare.com",
+    hours: "Mon–Fri 7:00 AM – 5:15 PM",
+    description:
+      "Licensed center established in 1996 serving children ages 6 weeks to 12 years. Offers infant/toddler care, preschool, extended care, and summer camp with a 5,000 sq ft outdoor playground.",
+  },
+  {
+    id: "little-angels-academy",
+    name: "Little Angels Academy Childcare Center",
+    category: "Childcare",
+    address: "415 Central Ave, Johnston, RI 02919",
+    phone: "(401) 944-1285",
+    website: "https://www.littleangelsri.net",
+    hours: "Mon–Fri 7:30 AM – 5:00 PM",
+    description:
+      "Serves children ages 3 months to 5 years with infant, toddler, and preschool programs. Full-time, part-time, and occasional care available.",
+  },
+  {
+    id: "creative-early-learning-center",
+    name: "Creative Early Learning Center",
+    category: "Childcare",
+    address: "2952 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 934-2807",
+    website: "https://www.creativeelc.org",
+    hours: "Mon–Fri 7:00 AM – 5:30 PM",
+    description:
+      "Childcare for ages 6 weeks to 5 years with a bilingual enrichment program introducing Spanish and Sign Language to children ages 3 to 5.",
+  },
+  {
+    id: "strawberry-fields-early-learning",
+    name: "Strawberry Fields Early Learning Academy",
+    category: "Childcare",
+    address: "700 Greenville Ave, Johnston, RI 02919",
+    phone: "(401) 618-5384",
+    website: "https://www.strawberryfieldsela.com",
+    hours: "Mon–Fri 6:30 AM – 6:00 PM",
+    description:
+      "Private early learning academy serving children ages 6 months to 5 years in a nurturing environment.",
+  },
+  {
+    id: "scribbles-academy",
+    name: "Scribbles Academy",
+    category: "Childcare",
+    address: "678 Killingly St, Johnston, RI 02919",
+    phone: "(401) 861-1616",
+    hours: "Mon–Fri 6:30 AM – 6:30 PM",
+    description:
+      "NAEYC-accredited, 5-star BrightStars rated childcare center serving ages 6 weeks to 12 years. Established 1994 with a maximum capacity of 77 children.",
+  },
+  {
+    id: "dreamland-learning-center",
+    name: "Dreamland Learning Center",
+    category: "Childcare",
+    address: "1253 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 280-1400",
+    website: "https://dreamlandlearningcenter.com",
+    hours: "Mon–Fri 6:30 AM – 6:00 PM",
+    description:
+      "Family-owned and operated facility serving children ages 6 weeks to 12 years. Part of a three-location operation across Rhode Island.",
+  },
+  {
+    id: "over-the-rainbow-learning-center",
+    name: "Over the Rainbow Learning Center",
+    category: "Childcare",
+    address: "1269 Plainfield St, Johnston, RI 02919",
+    phone: "(401) 383-4664",
+    website: "https://www.overtherainbowlearningcentersri.com",
+    hours: "Mon–Fri 6:30 AM – 6:00 PM",
+    description:
+      "Established in 2006, serving children ages 12 months to 12 years. Two locations in Johnston and Providence.",
+  },
+  {
+    id: "amazing-kids-academy",
+    name: "Amazing Kids Academy",
+    category: "Childcare",
+    address: "2 Morgan Mill Rd, Johnston, RI 02919",
+    phone: "(401) 383-1030",
+    hours: "Mon–Fri 6:00 AM – 6:00 PM",
+    description:
+      "Licensed center-based childcare serving children ages 12 months to 12 years with a maximum capacity of 93 children. Established 2010.",
+  },
+  {
+    id: "tots-town-child-care",
+    name: "Tots' Town Child Care Center",
+    category: "Childcare",
+    address: "29 George Waterman Rd, Johnston, RI 02919",
+    phone: "(401) 231-6886",
+    website: "https://totstownchildcare.com",
+    hours: "Mon–Fri 7:00 AM – 5:00 PM",
+    description:
+      "Serves children ages 18 months to 12 years with toddler care, preschool, and after-school programs for school-age children.",
+  },
+  {
+    id: "the-schoolhouse-preschool",
+    name: "The Schoolhouse Preschool",
+    category: "Childcare",
+    address: "350 Central Ave, Johnston, RI 02919",
+    phone: "(401) 808-6243",
+    hours: "Mon–Fri 7:00 AM – 5:30 PM",
+    description:
+      "Year-round preschool serving children ages 6 weeks to 5 years.",
+  },
+  {
+    id: "the-farm-house-preschool",
+    name: "The Farm House Preschool",
+    category: "Childcare",
+    address: "2320 Plainfield Pike, Johnston, RI 02919",
+    phone: "(401) 432-7776",
+    description:
+      "Licensed DCYF center serving children ages 6 weeks to 6 years with infant, toddler, and preschool programs. Maximum capacity of 48 children.",
+  },
+  {
+    id: "imagination-station-early-learning",
+    name: "Imagination Station Early Learning Center",
+    category: "Childcare",
+    address: "47 Lincoln Dr, Johnston, RI 02919",
+    phone: "(401) 861-5401",
+    website: "https://imaginationstationri.com",
+    hours: "Mon–Fri 6:30 AM – 5:30 PM",
+    description:
+      "Serves children ages 6 weeks to 12 years. Offers before/after school care, summer camps, and enrichment classes including yoga and cooking.",
+  },
+  {
+    id: "growing-minds-preschool",
+    name: "Growing Minds Preschool and Enrichment Center",
+    category: "Childcare",
+    address: "1535 Hartford Ave, Johnston, RI 02919",
+    phone: "(401) 351-3230",
+    website: "https://growingmindsri.org",
+    description:
+      "Early learning center for children ages 6 weeks to 5 years emphasizing high-quality inclusive practices for all children regardless of background or ability.",
+  },
+  {
+    id: "tricounty-head-start-johnston",
+    name: "TriCounty Head Start - Johnston",
+    category: "Childcare",
+    address: "7 Waveland St, Johnston, RI 02919",
+    phone: "(401) 351-2750",
+    website: "https://www.tricountyri.org",
+    description:
+      "Free Head Start and Early Head Start programs for pregnant women and children birth to age 5. DCYF-licensed and BrightStars rated. No cost to participate.",
+  },
+  {
     id: "operation-stand-down-ri",
     name: "Operation Stand Down Rhode Island",
     category: "Shelters",

@@ -108,5 +108,75 @@
     "lat": 41.7175,
     "lng": -71.4685,
     "address": "1200 Quaker Ln, Warwick, RI 02886"
+  },
+  "johnston-child-care-center": {
+    "lat": 41.8488,
+    "lng": -71.5215,
+    "address": "87 Putnam Pike, Johnston, RI 02919"
+  },
+  "little-angels-academy": {
+    "lat": 41.8275,
+    "lng": -71.5105,
+    "address": "415 Central Ave, Johnston, RI 02919"
+  },
+  "creative-early-learning-center": {
+    "lat": 41.8345,
+    "lng": -71.5645,
+    "address": "2952 Hartford Ave, Johnston, RI 02919"
+  },
+  "strawberry-fields-early-learning": {
+    "lat": 41.8525,
+    "lng": -71.5195,
+    "address": "700 Greenville Ave, Johnston, RI 02919"
+  },
+  "scribbles-academy": {
+    "lat": 41.8285,
+    "lng": -71.4575,
+    "address": "678 Killingly St, Johnston, RI 02919"
+  },
+  "dreamland-learning-center": {
+    "lat": 41.8228,
+    "lng": -71.4895,
+    "address": "1253 Hartford Ave, Johnston, RI 02919"
+  },
+  "over-the-rainbow-learning-center": {
+    "lat": 41.8155,
+    "lng": -71.4935,
+    "address": "1269 Plainfield St, Johnston, RI 02919"
+  },
+  "amazing-kids-academy": {
+    "lat": 41.8315,
+    "lng": -71.4685,
+    "address": "2 Morgan Mill Rd, Johnston, RI 02919"
+  },
+  "tots-town-child-care": {
+    "lat": 41.8345,
+    "lng": -71.5075,
+    "address": "29 George Waterman Rd, Johnston, RI 02919"
+  },
+  "the-schoolhouse-preschool": {
+    "lat": 41.8268,
+    "lng": -71.5085,
+    "address": "350 Central Ave, Johnston, RI 02919"
+  },
+  "the-farm-house-preschool": {
+    "lat": 41.8095,
+    "lng": -71.5565,
+    "address": "2320 Plainfield Pike, Johnston, RI 02919"
+  },
+  "imagination-station-early-learning": {
+    "lat": 41.8335,
+    "lng": -71.4985,
+    "address": "47 Lincoln Dr, Johnston, RI 02919"
+  },
+  "growing-minds-preschool": {
+    "lat": 41.8255,
+    "lng": -71.5005,
+    "address": "1535 Hartford Ave, Johnston, RI 02919"
+  },
+  "tricounty-head-start-johnston": {
+    "lat": 41.8295,
+    "lng": -71.5045,
+    "address": "7 Waveland St, Johnston, RI 02919"
   }
 }
