@@ -8,7 +8,7 @@ export const listingInputSchema = z
     category: z.enum(categories),
     address: z.string().min(1),
     phone: z.string().min(1),
-    website: z.string().url().optional(),
+    website: z.url().optional(),
     hours: z.string().optional(),
     description: z.string().min(1),
   })
