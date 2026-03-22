@@ -15,7 +15,7 @@ Government webmasters evaluate external links on criteria that go beyond feature
 
 ## Current State
 
-**Tier 1 deliverables are complete.** The site now has the legal and operational infrastructure needed to request government links. Tier 2 and 3 items remain for further confidence-building.
+**Tier 1 and Tier 2 deliverables are complete.** The site now has the legal and operational infrastructure needed to request government links, plus trust-building signals like error reporting, a "Last Updated" date, and a data freshness commitment. Tier 3 items remain for further professional polish.
 
 | Requirement                             | Status  | Risk Level |
 | --------------------------------------- | ------- | ---------- |
@@ -23,10 +23,10 @@ Government webmasters evaluate external links on criteria that go beyond feature
 | Terms of Service / Disclaimer           | ✅ Done | —          |
 | Data accuracy disclaimer                | ✅ Done | —          |
 | "Not an official government site" label | ✅ Done | —          |
-| Error reporting mechanism               | Missing | Medium     |
+| Error reporting mechanism               | ✅ Done | —          |
 | Webmaster contact information           | ✅ Done | —          |
 | Multi-language support                  | Planned | Medium     |
-| Data freshness commitment               | Planned | Medium     |
+| Data freshness commitment               | ✅ Done | —          |
 | Continuity / succession plan            | Missing | Low        |
 | Uptime / hosting reliability            | Netlify | Low        |
 | WCAG2AA accessibility                   | ✅ Done | —          |
@@ -39,11 +39,11 @@ Government webmasters evaluate external links on criteria that go beyond feature
 Government websites follow link policies that generally require external links to be:
 
 1. **Relevant** — Directly useful to constituents ✅
-2. **Accurate** — Information is current and verifiable ⚠️ (no freshness dates yet — Tier 2)
+2. **Accurate** — Information is current and verifiable ✅ (freshness commitment + error reporting added)
 3. **Non-commercial** — Not primarily an advertising or revenue vehicle ✅
 4. **Accessible** — Meets WCAG standards ✅
 5. **Legally safe** — Won't create liability for the linking agency ✅ (Privacy Policy, Terms of Service, disclaimers added)
-6. **Maintained** — Evidence of active upkeep ⚠️ (no public update history yet — Tier 2)
+6. **Maintained** — Evidence of active upkeep ✅ ("Last updated" date in footer)
 7. **Transparent** — Clear about who runs it and what it is ✅ (community project disclaimer, contact email added)
 
 ---
@@ -70,23 +70,22 @@ Government websites follow link policies that generally require external links t
 
 ### Tier 2 — Strongly Recommended (Builds Confidence)
 
-- [ ] **Add an error reporting mechanism**
-  - "Report an issue with this listing" link on each `ListingDetail` page
-  - Can be as simple as a `mailto:` link with a pre-filled subject line (`?subject=Issue with [Listing Name]`)
-  - Or a lightweight form (Netlify Forms / GitHub Issue, similar to Submit form)
-  - This is the single biggest trust signal for data accuracy — it shows you have a correction pipeline
+- [x] **Add an error reporting mechanism** _(Done)_
+  - "Report an issue" link on each `ListingDetail` page
+  - Links to GitHub Issues with pre-filled title, listing name, and page URL
+  - Uses `listing-correction` label for easy triage
   - Notes:
 
-- [ ] **Add a "Last Updated" date to the site footer**
+- [x] **Add a "Last Updated" date to the site footer** _(Done)_
   - Shows the site is actively maintained
-  - Can be auto-generated from the last git commit date, or manually updated
-  - Example: "Last updated March 2026"
+  - Auto-generated from the last git commit date at build time via Vite `define`
+  - Displays in footer on every page (e.g., "Last updated March 22, 2026")
   - Notes:
 
-- [ ] **Document a data freshness commitment**
-  - State on the About page how often listings are reviewed (e.g., "All listings are reviewed at least every 6 months")
-  - This pairs with the "Verified" badge work in the growth roadmap (Phase 2A)
-  - Government webmasters periodically re-audit links; a stated commitment gives them confidence
+- [x] **Document a data freshness commitment** _(Done)_
+  - "Data Freshness" section added to the About page
+  - States: "All listings are reviewed at least every 6 months"
+  - References the "Report an issue" link for community-driven corrections
   - Notes:
 
 ### Tier 3 — Nice to Have (Professional Polish)
