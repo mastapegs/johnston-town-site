@@ -19,7 +19,7 @@ function Directory() {
   }, []);
 
   const filtered = useMemo(() => {
-    if (!listingsResult.success) return [];
+    if (!listingsResult.success) throw listingsResult.error;
     const { listings } = listingsResult;
 
     let results = activeCategory
