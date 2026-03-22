@@ -136,15 +136,15 @@ These are strengths to highlight when making the case for linking:
 
 Once Tier 1 items are done, the site is ready for outreach. Potential government and institutional partners:
 
-| Target                                | Contact Point                    | Link Placement                           |
-| ------------------------------------- | -------------------------------- | ---------------------------------------- |
-| Town of Johnston website              | Webmaster / Town Manager's office | "Community Resources" or "Helpful Links" |
-| Johnston Senior Center                | Director                         | Resource handout / website               |
-| Johnston Public Library               | Library Director                 | Community bulletin / website links       |
-| Johnston School Department            | Communications office            | Parent resource page                     |
-| RI Secretary of State (civic engagement) | Digital team                  | Community resources section              |
-| United Way of Rhode Island / 211 RI   | Partner relations                | Complementary local resource             |
-| Local nonprofits (food banks, shelters) | Program directors              | Cross-linking                            |
+| Target                                   | Contact Point                     | Link Placement                           |
+| ---------------------------------------- | --------------------------------- | ---------------------------------------- |
+| Town of Johnston website                 | Webmaster / Town Manager's office | "Community Resources" or "Helpful Links" |
+| Johnston Senior Center                   | Director                          | Resource handout / website               |
+| Johnston Public Library                  | Library Director                  | Community bulletin / website links       |
+| Johnston School Department               | Communications office             | Parent resource page                     |
+| RI Secretary of State (civic engagement) | Digital team                      | Community resources section              |
+| United Way of Rhode Island / 211 RI      | Partner relations                 | Complementary local resource             |
+| Local nonprofits (food banks, shelters)  | Program directors                 | Cross-linking                            |
 
 **Pitch framing:** "We're a free, accessible, ad-free community directory for Johnston. We'd like to be listed as a community resource on your site. Here's a suggested description you can use."
 
