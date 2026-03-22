@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import { CONTACT_EMAIL, SITE_NAME } from "../config";
 
 function About() {
   useEffect(() => {
-    document.title = "About — Johnston Community Directory";
+    document.title = `About — ${SITE_NAME}`;
   }, []);
 
   return (
@@ -72,10 +73,10 @@ function About() {
       <p className="mt-4 text-gray-700">
         Have a question, correction, or suggestion? Reach out at{" "}
         <a
-          href="mailto:mastapegs01@gmail.com"
+          href={`mailto:${CONTACT_EMAIL}`}
           className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
         >
-          mastapegs01@gmail.com
+          {CONTACT_EMAIL}
         </a>
         .
       </p>

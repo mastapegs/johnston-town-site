@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import { CONTACT_EMAIL, SITE_NAME } from "../config";
 
 function Privacy() {
   useEffect(() => {
-    document.title = "Privacy Policy — Johnston Community Directory";
+    document.title = `Privacy Policy — ${SITE_NAME}`;
   }, []);
 
   return (
@@ -61,10 +62,10 @@ function Privacy() {
         <p>
           If you have questions about this privacy policy, please contact us at{" "}
           <a
-            href="mailto:mastapegs01@gmail.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
           >
-            mastapegs01@gmail.com
+            {CONTACT_EMAIL}
           </a>
           .
         </p>
