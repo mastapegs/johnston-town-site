@@ -55,6 +55,36 @@ function Layout() {
             neighbors.
           </p>
           <p className="mt-1">Free to use, always.</p>
+          <p className="mt-3 text-gray-700">
+            This is an independent community project. It is not affiliated with
+            or endorsed by the Town of Johnston or any government agency.
+          </p>
+          <nav
+            aria-label="Footer navigation"
+            className="mt-3 flex justify-center gap-4"
+          >
+            <Link
+              to="/privacy"
+              className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            >
+              Privacy Policy
+            </Link>
+            <Link
+              to="/terms"
+              className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            >
+              Terms of Service
+            </Link>
+          </nav>
+          <p className="mt-3 text-gray-700">
+            Contact:{" "}
+            <a
+              href="mailto:mastapegs01@gmail.com"
+              className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+            >
+              mastapegs01@gmail.com
+            </a>
+          </p>
         </div>
       </footer>
     </div>
