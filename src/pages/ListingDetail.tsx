@@ -1,32 +1,13 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { listings } from "../data/listings";
 import ListingMap from "../components/ListingMap";
+import { useUserLocation } from "../useUserLocation";
 
 function ListingDetail() {
   const { id } = useParams<{ id: string }>();
   const listing = listings.find((l) => l.id === id);
-  const [userLocation, setUserLocation] = useState<{
-    lat: number;
-    lng: number;
-  } | null>(null);
-  const [locationRequested, setLocationRequested] = useState(false);
-
-  const requestLocation = useCallback(() => {
-    if (locationRequested) return;
-    setLocationRequested(true);
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setUserLocation({
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude,
-        });
-      },
-      () => {
-        // Permission denied or error — continue without user marker
-      },
-    );
-  }, [locationRequested]);
+  const userLocation = useUserLocation();
 
   useEffect(() => {
     document.title = listing
@@ -113,17 +94,7 @@ function ListingDetail() {
       </div>
 
       <div className="mt-6">
-        <div className="mb-3 flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-gray-900">Location</h2>
-          {!userLocation && (
-            <button
-              onClick={requestLocation}
-              className="rounded-lg border border-gray-200 bg-white px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
-            >
-              Show my location
-            </button>
-          )}
-        </div>
+        <h2 className="mb-3 text-lg font-semibold text-gray-900">Location</h2>
         <ListingMap
           listings={[listing]}
           singleListing

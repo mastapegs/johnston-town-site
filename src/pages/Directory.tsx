@@ -1,30 +1,13 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { categories, listings } from "../data/listings";
 import ListingMap from "../components/ListingMap";
+import { useUserLocation } from "../useUserLocation";
 
 function Directory() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [view, setView] = useState<"list" | "map">("list");
-  const [userLocation, setUserLocation] = useState<{
-    lat: number;
-    lng: number;
-  } | null>(null);
-
-  const requestLocation = useCallback(() => {
-    if (userLocation) return;
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setUserLocation({
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude,
-        });
-      },
-      () => {
-        // Permission denied or error — silently continue without user marker
-      },
-    );
-  }, [userLocation]);
+  const userLocation = useUserLocation();
 
   useEffect(() => {
     document.title = "Directory — Johnston Community Directory";
@@ -77,10 +60,7 @@ function Directory() {
             List
           </button>
           <button
-            onClick={() => {
-              setView("map");
-              requestLocation();
-            }}
+            onClick={() => setView("map")}
             aria-pressed={view === "map"}
             className={`rounded-r-lg px-3 py-2 text-sm focus:outline-2 focus:outline-offset-2 focus:outline-blue-600 ${
               view === "map"
