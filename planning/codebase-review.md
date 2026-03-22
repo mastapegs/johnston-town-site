@@ -13,15 +13,15 @@ This document captures the results of a comprehensive code review performed befo
 
 ## Current State (Snapshot)
 
-| Metric | Value |
-| --- | --- |
-| **Source lines** | ~2,000 (excluding data) |
-| **Listings** | 71 across 9 categories |
-| **Largest file** | `listings.ts` — 794 lines |
-| **Largest component** | `Home.tsx` — 205 lines |
-| **Dependencies** | React 19, React Router 7, Vite 8, Tailwind v4, TypeScript 5.9 |
-| **CI checks** | Lint, format, type check, WCAG2AA (pa11y-ci) |
-| **Deployment** | Netlify via GitHub Actions (production + PR previews) |
+| Metric                | Value                                                         |
+| --------------------- | ------------------------------------------------------------- |
+| **Source lines**      | ~2,000 (excluding data)                                       |
+| **Listings**          | 71 across 9 categories                                        |
+| **Largest file**      | `listings.ts` — 794 lines                                     |
+| **Largest component** | `Home.tsx` — 205 lines                                        |
+| **Dependencies**      | React 19, React Router 7, Vite 8, Tailwind v4, TypeScript 5.9 |
+| **CI checks**         | Lint, format, type check, WCAG2AA (pa11y-ci)                  |
+| **Deployment**        | Netlify via GitHub Actions (production + PR previews)         |
 
 ---
 
@@ -46,12 +46,12 @@ These patterns are strong and should be preserved as the codebase grows:
 
 **File:** `src/data/listings.ts` (794 lines)
 
-| Issue | Impact | Threshold |
-| --- | --- | --- |
-| All 71 listings in a single TypeScript array | Hard to navigate, edit, review diffs | Painful at ~150 listings |
-| No runtime data validation | Malformed phone, duplicate ID, bad category slip through silently | Risk grows with each new listing |
-| No search indexing | `Directory.tsx` does 4× `toLowerCase().includes()` per listing per keystroke | Noticeable lag at ~300 listings |
-| Coordinates default to `(0, 0)` if missing | Maps silently render at null island instead of failing visibly | Any missing geocode result |
+| Issue                                        | Impact                                                                       | Threshold                        |
+| -------------------------------------------- | ---------------------------------------------------------------------------- | -------------------------------- |
+| All 71 listings in a single TypeScript array | Hard to navigate, edit, review diffs                                         | Painful at ~150 listings         |
+| No runtime data validation                   | Malformed phone, duplicate ID, bad category slip through silently            | Risk grows with each new listing |
+| No search indexing                           | `Directory.tsx` does 4× `toLowerCase().includes()` per listing per keystroke | Noticeable lag at ~300 listings  |
+| Coordinates default to `(0, 0)` if missing   | Maps silently render at null island instead of failing visibly               | Any missing geocode result       |
 
 **Current search pattern** (`Directory.tsx` lines 18–35):
 
@@ -73,13 +73,13 @@ This is fine for 71 listings but creates O(n × fields) work on every keystroke.
 
 No app-wide constants file exists. Several values are repeated across multiple files:
 
-| Value | Locations | Risk |
-| --- | --- | --- |
-| `mastapegs01@gmail.com` | Layout, About, Privacy, Terms, ListingDetail (5+ files) | Email change requires 5+ edits |
-| Population `"30,000"` | Home.tsx (2 occurrences) | Stale data if population changes |
-| Johnston coordinates `41.824, -71.516` | WeatherDisplay.tsx | Inconsistency if reused elsewhere |
-| Route paths (`/directory`, `/about`, etc.) | Layout nav, Home links, Directory links | Route rename requires multi-file update |
-| Focus outline classes | Every interactive element across all pages | Style change requires global find/replace |
+| Value                                      | Locations                                               | Risk                                      |
+| ------------------------------------------ | ------------------------------------------------------- | ----------------------------------------- |
+| `mastapegs01@gmail.com`                    | Layout, About, Privacy, Terms, ListingDetail (5+ files) | Email change requires 5+ edits            |
+| Population `"30,000"`                      | Home.tsx (2 occurrences)                                | Stale data if population changes          |
+| Johnston coordinates `41.824, -71.516`     | WeatherDisplay.tsx                                      | Inconsistency if reused elsewhere         |
+| Route paths (`/directory`, `/about`, etc.) | Layout nav, Home links, Directory links                 | Route rename requires multi-file update   |
+| Focus outline classes                      | Every interactive element across all pages              | Style change requires global find/replace |
 
 **Fix:** A single `src/config.ts` exporting app-wide constants eliminates all of these.
 
@@ -87,14 +87,15 @@ No app-wide constants file exists. Several values are repeated across multiple f
 
 ### 3. Component Architecture
 
-| Component | Lines | Concern |
-| --- | --- | --- |
-| **Home.tsx** | 205 | Mixes 6 responsibilities: hero/search, stats cards, category grid, about section, mission banner, emergency help. Should extract reusable sections. |
-| **ListingMap.tsx** | 149 | Builds Leaflet HTML as concatenated template literal strings (lines 42–68). Works correctly but hard to read/maintain. Script tag splitting (`"<" + "/script"`) is a maintenance smell. |
-| **Directory.tsx** | 172 | View toggle button styles duplicated in className conditionals (lines 54–69). Map vs. list rendering is a single large conditional block. |
-| **ListingDetail.tsx** | 121 | Well-structured. Phone regex `replace(/[^\d+]/g, "")` is fragile for formatted numbers like `(401) 944-3343`. |
+| Component             | Lines | Concern                                                                                                                                                                                 |
+| --------------------- | ----- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Home.tsx**          | 205   | Mixes 6 responsibilities: hero/search, stats cards, category grid, about section, mission banner, emergency help. Should extract reusable sections.                                     |
+| **ListingMap.tsx**    | 149   | Builds Leaflet HTML as concatenated template literal strings (lines 42–68). Works correctly but hard to read/maintain. Script tag splitting (`"<" + "/script"`) is a maintenance smell. |
+| **Directory.tsx**     | 172   | View toggle button styles duplicated in className conditionals (lines 54–69). Map vs. list rendering is a single large conditional block.                                               |
+| **ListingDetail.tsx** | 121   | Well-structured. Phone regex `replace(/[^\d+]/g, "")` is fragile for formatted numbers like `(401) 944-3343`.                                                                           |
 
 **Positive patterns to keep:**
+
 - Layout.tsx is clean and properly sized (95 LOC)
 - WeatherDisplay.tsx has excellent API integration patterns (AbortController, interval cleanup, role="status")
 - useUserLocation.ts is a clean, well-scoped custom hook
@@ -103,13 +104,13 @@ No app-wide constants file exists. Several values are repeated across multiple f
 
 ### 4. Error Handling & Resilience
 
-| Gap | Impact | Severity |
-| --- | --- | --- |
-| No React error boundary | Child component crash = blank white screen | High |
-| No 404 catch-all route | `/unknown-path` renders nothing | High |
-| No coordinate validation at build time | Silent `(0, 0)` fallback breaks maps | Medium |
-| Phone regex doesn't normalize | Invalid `tel:` links for some formats | Low |
-| Leaflet CDN failure | Map iframe shows nothing, no fallback | Low |
+| Gap                                    | Impact                                     | Severity |
+| -------------------------------------- | ------------------------------------------ | -------- |
+| No React error boundary                | Child component crash = blank white screen | High     |
+| No 404 catch-all route                 | `/unknown-path` renders nothing            | High     |
+| No coordinate validation at build time | Silent `(0, 0)` fallback breaks maps       | Medium   |
+| Phone regex doesn't normalize          | Invalid `tel:` links for some formats      | Low      |
+| Leaflet CDN failure                    | Map iframe shows nothing, no fallback      | Low      |
 
 ---
 
@@ -128,26 +129,26 @@ No app-wide constants file exists. Several values are repeated across multiple f
 
 At current scale (~71 listings, ~30KB bundle), performance is not a problem. These become relevant as the app grows:
 
-| Area | Current | At Scale |
-| --- | --- | --- |
-| Search | O(n) string matching, 4 fields | Add pre-built search index at ~200 listings |
-| Bundle | All pages eager-loaded | Add `React.lazy()` code splitting at ~15 routes |
+| Area          | Current                                            | At Scale                                           |
+| ------------- | -------------------------------------------------- | -------------------------------------------------- |
+| Search        | O(n) string matching, 4 fields                     | Add pre-built search index at ~200 listings        |
+| Bundle        | All pages eager-loaded                             | Add `React.lazy()` code splitting at ~15 routes    |
 | Map rendering | `useMemo` rebuilds HTML on listing/location change | Fine for <100 markers; consider clustering at 200+ |
-| Data loading | Static import of all listings | Consider chunked loading or API at 500+ listings |
+| Data loading  | Static import of all listings                      | Consider chunked loading or API at 500+ listings   |
 
 ---
 
 ### 7. Build & Infrastructure
 
-| Area | Status | Gap |
-| --- | --- | --- |
-| ESLint | Flat config, jsx-a11y, react-hooks | Good |
-| Prettier | Double quotes, semis, trailing commas | Good |
-| TypeScript | Strict mode, all strict flags | Excellent |
-| pa11y-ci | WCAG2AA, axe runner, 7 URLs | Good |
-| Pre-commit hooks | None | No local enforcement of lint/format |
-| Bundle analysis | None | No visibility into bundle size growth |
-| Dependency updates | Manual | No Dependabot or Renovate configured |
+| Area               | Status                                | Gap                                   |
+| ------------------ | ------------------------------------- | ------------------------------------- |
+| ESLint             | Flat config, jsx-a11y, react-hooks    | Good                                  |
+| Prettier           | Double quotes, semis, trailing commas | Good                                  |
+| TypeScript         | Strict mode, all strict flags         | Excellent                             |
+| pa11y-ci           | WCAG2AA, axe runner, 7 URLs           | Good                                  |
+| Pre-commit hooks   | None                                  | No local enforcement of lint/format   |
+| Bundle analysis    | None                                  | No visibility into bundle size growth |
+| Dependency updates | Manual                                | No Dependabot or Renovate configured  |
 
 ---
 
@@ -155,16 +156,16 @@ At current scale (~71 listings, ~30KB bundle), performance is not a problem. The
 
 ### How Johnston Compares to Leading Community Directories
 
-| Feature | Johnston | findhelp.org | 211 Systems | Open Referral |
-| --- | --- | --- | --- | --- |
-| Search-first UX | Category grid first, search secondary | Keyword search is primary entry | Varies by state | N/A (data standard) |
-| "Next Steps" guidance | Not present | Standout feature (what to bring, who to call) | Some implementations | Supported in HSDS |
-| Data freshness signals | "Last Updated" site-wide date | Per-listing "verified" badges | Varies | `last_verified_on` field |
-| Community submissions | Placeholder (Submit page) | Full pipeline with review | Phone/web intake | Spec supports it |
-| Data model | Flat `Listing` interface | Organization → Services → Locations | HSDS-based | HSDS standard |
-| Accessibility | WCAG2AA in CI | WCAG2AA | Varies | N/A |
-| Maps | OpenStreetMap iframe embeds | Google Maps integration | Varies | N/A |
-| Multi-language | Not present | Spanish + others | Phone interpretation | Spec supports it |
+| Feature                | Johnston                              | findhelp.org                                  | 211 Systems          | Open Referral            |
+| ---------------------- | ------------------------------------- | --------------------------------------------- | -------------------- | ------------------------ |
+| Search-first UX        | Category grid first, search secondary | Keyword search is primary entry               | Varies by state      | N/A (data standard)      |
+| "Next Steps" guidance  | Not present                           | Standout feature (what to bring, who to call) | Some implementations | Supported in HSDS        |
+| Data freshness signals | "Last Updated" site-wide date         | Per-listing "verified" badges                 | Varies               | `last_verified_on` field |
+| Community submissions  | Placeholder (Submit page)             | Full pipeline with review                     | Phone/web intake     | Spec supports it         |
+| Data model             | Flat `Listing` interface              | Organization → Services → Locations           | HSDS-based           | HSDS standard            |
+| Accessibility          | WCAG2AA in CI                         | WCAG2AA                                       | Varies               | N/A                      |
+| Maps                   | OpenStreetMap iframe embeds           | Google Maps integration                       | Varies               | N/A                      |
+| Multi-language         | Not present                           | Spanish + others                              | Phone interpretation | Spec supports it         |
 
 ### Key Takeaways
 
@@ -233,14 +234,14 @@ Tier 1 items are independent of each other and can be tackled in any order. Tier
 
 Which files are affected by the most TODO items:
 
-| File | Tier 1 | Tier 2 | Tier 3 | Total |
-| --- | --- | --- | --- | --- |
-| `src/data/listings.ts` | 2 | 2 | 2 | 6 |
-| `src/App.tsx` | 2 | 1 | 0 | 3 |
-| `src/pages/Home.tsx` | 1 | 1 | 0 | 2 |
-| `src/pages/ListingDetail.tsx` | 1 | 0 | 2 | 3 |
-| `src/components/Layout.tsx` | 1 | 0 | 0 | 1 |
-| `package.json` | 0 | 1 | 2 | 3 |
-| New: `src/config.ts` | 1 | 0 | 0 | 1 |
-| New: `src/components/ErrorBoundary.tsx` | 1 | 0 | 0 | 1 |
-| New: `src/pages/NotFound.tsx` | 1 | 0 | 0 | 1 |
+| File                                    | Tier 1 | Tier 2 | Tier 3 | Total |
+| --------------------------------------- | ------ | ------ | ------ | ----- |
+| `src/data/listings.ts`                  | 2      | 2      | 2      | 6     |
+| `src/App.tsx`                           | 2      | 1      | 0      | 3     |
+| `src/pages/Home.tsx`                    | 1      | 1      | 0      | 2     |
+| `src/pages/ListingDetail.tsx`           | 1      | 0      | 2      | 3     |
+| `src/components/Layout.tsx`             | 1      | 0      | 0      | 1     |
+| `package.json`                          | 0      | 1      | 2      | 3     |
+| New: `src/config.ts`                    | 1      | 0      | 0      | 1     |
+| New: `src/components/ErrorBoundary.tsx` | 1      | 0      | 0      | 1     |
+| New: `src/pages/NotFound.tsx`           | 1      | 0      | 0      | 1     |
