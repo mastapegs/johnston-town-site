@@ -1,6 +1,7 @@
-import { categories, listings } from "../data/listings";
+import type { Listing } from "../data/listings";
+import { categories } from "../data/listings";
 
-function StatsSection() {
+function StatsSection({ listings }: { listings: Listing[] }) {
   return (
     <section aria-label="Directory statistics">
       <div className="grid grid-cols-3 gap-4 text-center">

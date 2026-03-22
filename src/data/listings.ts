@@ -45,12 +45,6 @@ function hydrate(data: ListingInput[]): Listing[] {
 
 const result = listingsArraySchema.safeParse(listingJson);
 
-/**
- * Validated listings array. Only safe to use in components that render
- * behind the App-level {@link listingsResult} gate.
- */
-export const listings: Listing[] = result.success ? hydrate(result.data) : [];
-
 export const listingsResult: ListingsResult = result.success
-  ? { success: true, listings }
+  ? { success: true, listings: hydrate(result.data) }
   : { success: false, error: result.error };

@@ -1,11 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
-import { categories, listings } from "../data/listings";
+import type { Listing } from "../data/listings";
+import { categories } from "../data/listings";
 import { SITE_NAME } from "../config";
 import ListingMap from "../components/ListingMap";
 import { useUserLocation } from "../useUserLocation";
 
-function Directory() {
+function Directory({ listings }: { listings: Listing[] }) {
   const [searchParams, setSearchParams] = useSearchParams();
   const [view, setView] = useState<"list" | "map">("list");
   const userLocation = useUserLocation();
@@ -34,7 +35,7 @@ function Directory() {
     }
 
     return results;
-  }, [activeCategory, searchQuery]);
+  }, [listings, activeCategory, searchQuery]);
 
   return (
     <div>

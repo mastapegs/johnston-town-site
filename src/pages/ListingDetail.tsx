@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router";
-import { listings } from "../data/listings";
+import type { Listing } from "../data/listings";
 import { CONTACT_EMAIL, SITE_NAME } from "../config";
 import ListingMap from "../components/ListingMap";
 import { useUserLocation } from "../useUserLocation";
 
-function ListingDetail() {
+function ListingDetail({ listings }: { listings: Listing[] }) {
   const { id } = useParams<{ id: string }>();
   const listing = listings.find((l) => l.id === id);
   const userLocation = useUserLocation();

@@ -17,14 +17,22 @@ function App() {
     return <DataError error={listingsResult.error} />;
   }
 
+  const { listings } = listingsResult;
+
   return (
     <BrowserRouter>
       <ErrorBoundary>
         <Routes>
           <Route element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="directory" element={<Directory />} />
-            <Route path="directory/:id" element={<ListingDetail />} />
+            <Route index element={<Home listings={listings} />} />
+            <Route
+              path="directory"
+              element={<Directory listings={listings} />}
+            />
+            <Route
+              path="directory/:id"
+              element={<ListingDetail listings={listings} />}
+            />
             <Route path="about" element={<About />} />
             <Route path="submit" element={<Submit />} />
             <Route path="privacy" element={<Privacy />} />

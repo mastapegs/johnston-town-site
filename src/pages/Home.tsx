@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import type { Listing } from "../data/listings";
 import { SITE_NAME } from "../config";
 import HeroSearch from "../components/HeroSearch";
 import StatsSection from "../components/StatsSection";
 import CategoryGrid from "../components/CategoryGrid";
 import MissionBanner from "../components/MissionBanner";
 
-function Home() {
+function Home({ listings }: { listings: Listing[] }) {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
@@ -32,7 +33,7 @@ function Home() {
         onSearchSubmit={handleSearch}
       />
 
-      <StatsSection />
+      <StatsSection listings={listings} />
 
       <CategoryGrid />
 
