@@ -100,14 +100,11 @@ function ListingDetail() {
         <p>
           See something wrong with this listing?{" "}
           <a
-            href={`https://github.com/mastapegs/johnston-town-site/issues/new?title=${encodeURIComponent(`Issue with listing: ${listing.name}`)}&body=${encodeURIComponent(`**Listing:** ${listing.name}\n**Page:** /directory/${listing.id}\n\n**What's incorrect or outdated?**\n\n`)}&labels=listing-correction`}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`Report an issue with ${listing.name} (opens in new tab)`}
+            href={`mailto:mastapegs01@gmail.com?subject=${encodeURIComponent(`Issue with listing: ${listing.name}`)}&body=${encodeURIComponent(`Listing: ${listing.name}\nPage: /directory/${listing.id}\n\nWhat's incorrect or outdated?\n\n`)}`}
+            aria-label={`Report an issue with ${listing.name} via email`}
             className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
           >
             Report an issue
-            <span className="sr-only"> (opens in new tab)</span>
           </a>
         </p>
       </div>

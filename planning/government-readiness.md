@@ -72,8 +72,8 @@ Government websites follow link policies that generally require external links t
 
 - [x] **Add an error reporting mechanism** _(Done)_
   - "Report an issue" link on each `ListingDetail` page
-  - Links to GitHub Issues with pre-filled title, listing name, and page URL
-  - Uses `listing-correction` label for easy triage
+  - Opens a pre-filled `mailto:` email with listing name and page URL
+  - No account required — accessible to all residents
   - Notes:
 
 - [x] **Add a "Last Updated" date to the site footer** _(Done)_
