@@ -1,6 +1,7 @@
 # Johnston Community Directory — Government & Institutional Readiness
 
-_Created: March 2026_
+_Created: March 2026_\
+_Last updated: March 2026_
 
 ## Purpose
 
@@ -14,22 +15,22 @@ Government webmasters evaluate external links on criteria that go beyond feature
 
 ## Current State
 
-The site is technically strong (WCAG2AA, fast, mobile-responsive, well-organized) but lacks the **legal and operational infrastructure** a government entity would expect before linking to it.
+**Tier 1 deliverables are complete.** The site now has the legal and operational infrastructure needed to request government links. Tier 2 and 3 items remain for further confidence-building.
 
 | Requirement                             | Status  | Risk Level |
 | --------------------------------------- | ------- | ---------- |
-| Privacy Policy                          | Missing | High       |
-| Terms of Service / Disclaimer           | Missing | High       |
-| Data accuracy disclaimer                | Missing | High       |
-| "Not an official government site" label | Missing | Medium     |
+| Privacy Policy                          | ✅ Done | —          |
+| Terms of Service / Disclaimer           | ✅ Done | —          |
+| Data accuracy disclaimer                | ✅ Done | —          |
+| "Not an official government site" label | ✅ Done | —          |
 | Error reporting mechanism               | Missing | Medium     |
-| Webmaster contact information           | Missing | Medium     |
+| Webmaster contact information           | ✅ Done | —          |
 | Multi-language support                  | Planned | Medium     |
 | Data freshness commitment               | Planned | Medium     |
 | Continuity / succession plan            | Missing | Low        |
 | Uptime / hosting reliability            | Netlify | Low        |
-| WCAG2AA accessibility                   | ✅ Done | Low        |
-| Mobile responsiveness                   | ✅ Done | Low        |
+| WCAG2AA accessibility                   | ✅ Done | —          |
+| Mobile responsiveness                   | ✅ Done | —          |
 
 ---
 
@@ -38,12 +39,12 @@ The site is technically strong (WCAG2AA, fast, mobile-responsive, well-organized
 Government websites follow link policies that generally require external links to be:
 
 1. **Relevant** — Directly useful to constituents ✅
-2. **Accurate** — Information is current and verifiable ⚠️ (no freshness dates yet)
+2. **Accurate** — Information is current and verifiable ⚠️ (no freshness dates yet — Tier 2)
 3. **Non-commercial** — Not primarily an advertising or revenue vehicle ✅
 4. **Accessible** — Meets WCAG standards ✅
-5. **Legally safe** — Won't create liability for the linking agency ❌ (no disclaimers)
-6. **Maintained** — Evidence of active upkeep ⚠️ (no public update history)
-7. **Transparent** — Clear about who runs it and what it is ⚠️ (partial)
+5. **Legally safe** — Won't create liability for the linking agency ✅ (Privacy Policy, Terms of Service, disclaimers added)
+6. **Maintained** — Evidence of active upkeep ⚠️ (no public update history yet — Tier 2)
+7. **Transparent** — Clear about who runs it and what it is ✅ (community project disclaimer, contact email added)
 
 ---
 
@@ -51,33 +52,21 @@ Government websites follow link policies that generally require external links t
 
 ### Tier 1 — Blockers (Must-Have Before Requesting Government Links)
 
-- [ ] **Add a Privacy Policy page**
-  - Even if the site collects nothing, this must be stated explicitly
-  - Content: No cookies, no analytics (until Plausible/Fathom is added), no personal data collection, no tracking, no data sold to third parties
-  - If analytics are added later (Phase 2C), update the policy to describe what's collected (aggregate page views only, no PII)
-  - Add as a route (`/privacy`) and link from the footer
-  - Notes:
+- [x] **Add a Privacy Policy page** _(Done — PR #21)_
+  - Route: `/privacy`, linked from footer
+  - States: no cookies, no analytics, no personal data collection, no tracking
+  - Discloses third-party services (OpenStreetMap, Open Meteo)
+  - Notes future analytics policy update if Plausible/Fathom is added
 
-- [ ] **Add a Terms of Service / Disclaimer page**
-  - Key points to cover:
-    - Site is provided "as-is" without warranty
-    - Listings are manually verified but may become outdated
-    - Users should contact services directly to confirm hours, eligibility, and availability before visiting
-    - Site owner is not liable for actions taken based on listing information
-    - Site is not an official government service
-  - Add as a route (`/terms`) and link from the footer
-  - Notes:
+- [x] **Add a Terms of Service / Disclaimer page** _(Done — PR #21)_
+  - Route: `/terms`, linked from footer
+  - Covers: "as-is" disclaimer, listing accuracy caveats, "contact services directly" guidance, limitation of liability, not a government service
 
-- [ ] **Add a visible "community project" disclaimer**
-  - Footer text: "This is an independent community project. It is not affiliated with or endorsed by the Town of Johnston or any government agency."
-  - Must be visible on every page (footer placement is fine)
-  - Notes:
+- [x] **Add a visible "community project" disclaimer** _(Done — PR #21)_
+  - Footer text on every page: _"This is an independent community project. It is not affiliated with or endorsed by the Town of Johnston or any government agency."_
 
-- [ ] **Add webmaster contact information**
-  - At minimum, an email address on the About page and footer
-  - Government webmasters need a person to contact if a listing is wrong or the site goes down
-  - Consider a simple `mailto:` link — no contact form required
-  - Notes:
+- [x] **Add webmaster contact information** _(Done — PR #21)_
+  - Email (`mastapegs01@gmail.com`) added to footer and About page via `mailto:` link
 
 ### Tier 2 — Strongly Recommended (Builds Confidence)
 
