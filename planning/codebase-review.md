@@ -182,12 +182,12 @@ At current scale (~71 listings, ~30KB bundle), performance is not a problem. The
 
 _These address immediate technical debt and prevent bugs during expansion._
 
-- [ ] **Create `src/config.ts` constants file** — Extract contact email, population, coordinates, route paths, and reusable Tailwind class strings. Update all 5+ files that reference hardcoded email.
-- [ ] **Add React error boundary** — Wrap routes in `App.tsx` with an error boundary component that shows a user-friendly fallback instead of a blank screen.
-- [ ] **Add 404 catch-all route** — Add `<Route path="*" element={<NotFound />} />` in `App.tsx`. Create a simple `NotFound.tsx` page.
-- [ ] **Extract listing data to JSON** — Move the `listingData` array from `listings.ts` to a separate `listings.json` (or per-category JSON files). Keep types and coordinate-merging logic in `listings.ts`. This makes data editable without touching TypeScript and enables future migration to a CMS or API.
-- [ ] **Split `Home.tsx` into sections** — Extract `HeroSearch`, `StatsSection`, `CategoryGrid`, and `MissionBanner` components. Keep `Home.tsx` as the composition root.
-- [ ] **Normalize phone numbers at data load time** — Add a `normalizePhone()` utility that runs when listings are loaded, producing a clean `tel:` href. Prevents fragile regex in JSX.
+- [x] **Create `src/config.ts` constants file** — Extracted `CONTACT_EMAIL` (with Zod email validation), `SITE_NAME`, and `JOHNSTON_COORDS`. Route paths and reusable Tailwind class strings deferred as low-value.
+- [x] **Add React error boundary** — `ErrorBoundary` component wraps all routes in `App.tsx` with a user-friendly fallback.
+- [x] **Add 404 catch-all route** — `<Route path="*" element={<NotFound />} />` in `App.tsx`. `NotFound.tsx` page created.
+- [x] **Extract listing data to JSON** — Moved `listingData` array to `src/data/listings.json`. Types and coordinate-merging logic remain in `listings.ts`. Added Zod schema validation (`src/data/schemas.ts`) with a discriminated `ListingsResult` union and `DataError` fallback UI.
+- [x] **Split `Home.tsx` into sections** — Extracted `HeroSearch`, `StatsSection`, `CategoryGrid`, and `MissionBanner` components. `Home.tsx` is now a composition root.
+- [x] **Normalize phone numbers at data load time** — Zod `.transform()` in `schemas.ts` computes `phoneHref` at parse time. US phone format validated via regex.
 
 ### Tier 2: Scalability (Before Listings Exceed ~150)
 
