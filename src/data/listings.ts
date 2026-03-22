@@ -1,3 +1,4 @@
+import type { ZodError } from "zod";
 import coordinatesData from "./coordinates.generated.json";
 import listingJson from "./listings.json";
 import { listingsArraySchema, type ListingInput } from "./schemas";
@@ -22,24 +23,28 @@ export interface Listing {
 
 export { categories, type Category } from "./categories";
 
-const result = listingsArraySchema.safeParse(listingJson);
-if (!result.success) {
-  console.error("Listing data validation failed:", result.error.format());
-}
-const listingData: ListingInput[] = result.success
-  ? result.data
-  : (listingJson as unknown as ListingInput[]);
+export type ListingsResult =
+  | { success: true; listings: Listing[] }
+  | { success: false; error: ZodError };
 
-export const listings: Listing[] = listingData.map((listing) => {
-  const coords = coordinates[listing.id];
-  if (!coords) {
-    console.warn(
-      `Missing coordinates for "${listing.id}". Run: npm run geocode`,
-    );
-  }
-  return {
-    ...listing,
-    lat: coords?.lat ?? 0,
-    lng: coords?.lng ?? 0,
-  };
-});
+function hydrate(data: ListingInput[]): Listing[] {
+  return data.map((listing) => {
+    const coords = coordinates[listing.id];
+    if (!coords) {
+      console.warn(
+        `Missing coordinates for "${listing.id}". Run: npm run geocode`,
+      );
+    }
+    return {
+      ...listing,
+      lat: coords?.lat ?? 0,
+      lng: coords?.lng ?? 0,
+    };
+  });
+}
+
+const result = listingsArraySchema.safeParse(listingJson);
+
+export const listingsResult: ListingsResult = result.success
+  ? { success: true, listings: hydrate(result.data) }
+  : { success: false, error: result.error };

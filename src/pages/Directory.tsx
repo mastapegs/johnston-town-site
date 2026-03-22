@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
-import { categories, listings } from "../data/listings";
+import { categories, listingsResult } from "../data/listings";
 import { SITE_NAME } from "../config";
 import ListingMap from "../components/ListingMap";
+import DataError from "../components/DataError";
 import { useUserLocation } from "../useUserLocation";
 
 function Directory() {
@@ -10,13 +11,17 @@ function Directory() {
   const [view, setView] = useState<"list" | "map">("list");
   const userLocation = useUserLocation();
 
-  useEffect(() => {
-    document.title = `Directory — ${SITE_NAME}`;
-  }, []);
   const activeCategory = searchParams.get("category");
   const searchQuery = searchParams.get("q") || "";
 
+  useEffect(() => {
+    document.title = `Directory — ${SITE_NAME}`;
+  }, []);
+
   const filtered = useMemo(() => {
+    if (!listingsResult.success) return [];
+    const { listings } = listingsResult;
+
     let results = activeCategory
       ? listings.filter((l) => l.category === activeCategory)
       : listings;
@@ -34,6 +39,10 @@ function Directory() {
 
     return results;
   }, [activeCategory, searchQuery]);
+
+  if (!listingsResult.success) {
+    return <DataError error={listingsResult.error} />;
+  }
 
   return (
     <div>

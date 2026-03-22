@@ -1,20 +1,27 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router";
-import { listings } from "../data/listings";
+import { listingsResult } from "../data/listings";
 import { CONTACT_EMAIL, SITE_NAME } from "../config";
 import ListingMap from "../components/ListingMap";
+import DataError from "../components/DataError";
 import { useUserLocation } from "../useUserLocation";
 
 function ListingDetail() {
   const { id } = useParams<{ id: string }>();
-  const listing = listings.find((l) => l.id === id);
   const userLocation = useUserLocation();
+  const listing = listingsResult.success
+    ? listingsResult.listings.find((l) => l.id === id)
+    : undefined;
 
   useEffect(() => {
     document.title = listing
       ? `${listing.name} — ${SITE_NAME}`
       : `Listing Not Found — ${SITE_NAME}`;
   }, [listing]);
+
+  if (!listingsResult.success) {
+    return <DataError error={listingsResult.error} />;
+  }
 
   if (!listing) {
     return (
