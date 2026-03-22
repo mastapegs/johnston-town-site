@@ -1,6 +1,7 @@
 import coordinatesData from "./coordinates.generated.json";
 import listingJson from "./listings.json";
 import { listingsArraySchema, type ListingInput } from "./schemas";
+import type { Category } from "./categories";
 
 const coordinates: Record<string, { lat: number; lng: number }> =
   coordinatesData;
@@ -19,19 +20,7 @@ export interface Listing {
   lng: number;
 }
 
-export const categories = [
-  "Food Assistance",
-  "Healthcare & Mental Health",
-  "Childcare",
-  "Senior Services",
-  "Municipal Services",
-  "Shelters",
-  "Parks & Recreation",
-  "Entertainment",
-  "Schools",
-] as const;
-
-export type Category = (typeof categories)[number];
+export { categories, type Category } from "./categories";
 
 const result = listingsArraySchema.safeParse(listingJson);
 if (!result.success) {

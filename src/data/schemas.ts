@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { categories } from "./listings";
+import { categories } from "./categories";
 
 export const listingInputSchema = z
   .object({
