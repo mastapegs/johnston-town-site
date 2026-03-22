@@ -95,6 +95,19 @@ function ListingDetail() {
         <h2 className="mb-3 text-lg font-semibold text-gray-900">Location</h2>
         <ListingMap listings={[listing]} singleListing />
       </div>
+
+      <div className="mt-6 rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">
+        <p>
+          See something wrong with this listing?{" "}
+          <a
+            href={`mailto:mastapegs01@gmail.com?subject=${encodeURIComponent(`Issue with listing: ${listing.name}`)}&body=${encodeURIComponent(`Listing: ${listing.name}\nPage: ${window.location.origin}/directory/${listing.id}\n\nWhat's incorrect or outdated?\n\n`)}`}
+            aria-label={`Report an issue with ${listing.name} via email`}
+            className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+          >
+            Report an issue
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

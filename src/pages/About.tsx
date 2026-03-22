@@ -50,6 +50,16 @@ function About() {
       </ul>
 
       <h2 className="mt-10 text-xl font-semibold text-gray-900">
+        Data Freshness
+      </h2>
+      <p className="mt-4 text-gray-700">
+        All listings are reviewed at least every 6 months to confirm accuracy.
+        If you notice outdated information, you can report it directly from any
+        listing page using the &ldquo;Report an issue&rdquo; link, which sends
+        an email to our team for review.
+      </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-gray-900">
         Want to Help?
       </h2>
       <p className="mt-4 text-gray-700">

@@ -85,6 +85,7 @@ function Layout() {
               mastapegs01@gmail.com
             </a>
           </p>
+          <p className="mt-3 text-gray-700">Last updated {__LAST_UPDATED__}</p>
         </div>
       </footer>
     </div>
