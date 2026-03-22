@@ -57,6 +57,18 @@ function About() {
         Community input is coming soon. In the meantime, we&apos;re focused on
         building out a solid foundation of verified listings.
       </p>
+
+      <h2 className="mt-10 text-xl font-semibold text-gray-900">Contact</h2>
+      <p className="mt-4 text-gray-700">
+        Have a question, correction, or suggestion? Reach out at{" "}
+        <a
+          href="mailto:mastapegs01@gmail.com"
+          className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
+        >
+          mastapegs01@gmail.com
+        </a>
+        .
+      </p>
     </div>
   );
 }

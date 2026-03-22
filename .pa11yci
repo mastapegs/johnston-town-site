@@ -14,6 +14,8 @@
     "http://localhost:4173/directory",
     "http://localhost:4173/directory/johnston-town-hall",
     "http://localhost:4173/about",
-    "http://localhost:4173/submit"
+    "http://localhost:4173/submit",
+    "http://localhost:4173/privacy",
+    "http://localhost:4173/terms"
   ]
 }
