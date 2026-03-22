@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router";
-import { categories, listings } from "../data/listings";
+import { useNavigate } from "react-router";
+import { SITE_NAME } from "../config";
+import HeroSearch from "../components/HeroSearch";
+import StatsSection from "../components/StatsSection";
+import CategoryGrid from "../components/CategoryGrid";
+import MissionBanner from "../components/MissionBanner";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const navigate = useNavigate();
 
   useEffect(() => {
-    document.title = "Johnston Community Directory";
+    document.title = SITE_NAME;
   }, []);
 
   const handleSearch = (e: React.FormEvent) => {
@@ -22,81 +26,15 @@ function Home() {
 
   return (
     <div className="space-y-12">
-      {/* Hero */}
-      <section className="py-10 text-center">
-        <h1 className="text-4xl font-bold text-gray-900">
-          Welcome to Johnston, RI
-        </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-gray-700">
-          Your neighbor-built guide to local services, resources, and
-          organizations &mdash; all in one place.
-        </p>
+      <HeroSearch
+        searchQuery={searchQuery}
+        onSearchChange={setSearchQuery}
+        onSearchSubmit={handleSearch}
+      />
 
-        {/* Search */}
-        <form
-          onSubmit={handleSearch}
-          role="search"
-          className="mx-auto mt-8 flex max-w-lg gap-2"
-        >
-          <label htmlFor="home-search" className="sr-only">
-            Search the directory
-          </label>
-          <input
-            id="home-search"
-            type="search"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Search for food banks, childcare, town hall..."
-            className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-500 focus:border-blue-600 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
-          />
-          <button
-            type="submit"
-            className="rounded-lg bg-blue-600 px-5 py-3 text-sm font-medium text-white hover:bg-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
-          >
-            Search
-          </button>
-        </form>
-      </section>
+      <StatsSection />
 
-      {/* Quick stats */}
-      <section aria-label="Directory statistics">
-        <div className="grid grid-cols-3 gap-4 text-center">
-          <div className="rounded-lg border border-gray-200 bg-white px-4 py-6">
-            <p className="text-3xl font-bold text-blue-700">
-              {listings.length}
-            </p>
-            <p className="mt-1 text-sm text-gray-700">Verified Listings</p>
-          </div>
-          <div className="rounded-lg border border-gray-200 bg-white px-4 py-6">
-            <p className="text-3xl font-bold text-blue-700">
-              {categories.length}
-            </p>
-            <p className="mt-1 text-sm text-gray-700">Categories</p>
-          </div>
-          <div className="rounded-lg border border-gray-200 bg-white px-4 py-6">
-            <p className="text-3xl font-bold text-blue-700">100%</p>
-            <p className="mt-1 text-sm text-gray-700">Free to Use</p>
-          </div>
-        </div>
-      </section>
-
-      {/* Categories */}
-      <section>
-        <h2 className="mb-6 text-center text-2xl font-semibold text-gray-900">
-          Browse by Category
-        </h2>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-          {categories.map((category) => (
-            <Link
-              key={category}
-              to={`/directory?category=${encodeURIComponent(category)}`}
-              className="rounded-lg border border-gray-200 bg-white p-4 text-center text-sm font-medium text-gray-700 hover:border-blue-300 hover:text-blue-700 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
-            >
-              {category}
-            </Link>
-          ))}
-        </div>
-      </section>
+      <CategoryGrid />
 
       {/* About Johnston */}
       <section className="rounded-lg border border-gray-200 bg-white p-6 sm:p-8">
@@ -144,40 +82,7 @@ function Home() {
         </div>
       </section>
 
-      {/* Mission / trust */}
-      <section className="rounded-lg border border-blue-100 bg-blue-50 p-6 sm:p-8">
-        <h2 className="text-2xl font-semibold text-gray-900">
-          Built by a Neighbor
-        </h2>
-        <p className="mt-3 text-sm text-gray-700">
-          Every listing in this directory is manually researched and verified.
-          No algorithms, no ads, no data collection &mdash; just useful
-          information for our community.
-        </p>
-        <ul className="mt-4 grid list-inside list-disc gap-3 text-sm text-gray-700 sm:grid-cols-2">
-          <li>
-            <strong>Community first</strong> &mdash; solve real resident needs
-          </li>
-          <li>
-            <strong>Accuracy over volume</strong> &mdash; every listing is
-            verified
-          </li>
-          <li>
-            <strong>Free to use, always</strong> &mdash; no paywalls or hidden
-            costs
-          </li>
-          <li>
-            <strong>Open and transparent</strong> &mdash; local perspective,
-            local care
-          </li>
-        </ul>
-        <Link
-          to="/about"
-          className="mt-5 inline-block text-sm font-medium text-blue-700 hover:underline focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
-        >
-          Learn more about this project &rarr;
-        </Link>
-      </section>
+      <MissionBanner />
 
       {/* Need help now */}
       <section className="rounded-lg border border-gray-200 bg-white p-6 text-center">

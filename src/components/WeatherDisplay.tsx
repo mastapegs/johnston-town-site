@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
+import { JOHNSTON_COORDS } from "../config";
 
 interface CurrentWeather {
   temperature: number;
   weathercode: number;
 }
-
-const JOHNSTON_LAT = 41.824;
-const JOHNSTON_LON = -71.516;
 const REFRESH_INTERVAL_MS = 30 * 60 * 1000; // 30 minutes
 
 const weatherDescriptions: Record<number, string> = {
@@ -53,7 +51,7 @@ function WeatherDisplay() {
     async function fetchWeather() {
       try {
         const res = await fetch(
-          `https://api.open-meteo.com/v1/forecast?latitude=${JOHNSTON_LAT}&longitude=${JOHNSTON_LON}&current_weather=true&temperature_unit=fahrenheit`,
+          `https://api.open-meteo.com/v1/forecast?latitude=${JOHNSTON_COORDS.lat}&longitude=${JOHNSTON_COORDS.lng}&current_weather=true&temperature_unit=fahrenheit`,
           { signal: controller.signal },
         );
         if (!res.ok) return;

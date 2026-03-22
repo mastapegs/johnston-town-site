@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link, useSearchParams } from "react-router";
 import { categories, listings } from "../data/listings";
+import { SITE_NAME } from "../config";
 import ListingMap from "../components/ListingMap";
 import { useUserLocation } from "../useUserLocation";
 
@@ -10,7 +11,7 @@ function Directory() {
   const userLocation = useUserLocation();
 
   useEffect(() => {
-    document.title = "Directory — Johnston Community Directory";
+    document.title = `Directory — ${SITE_NAME}`;
   }, []);
   const activeCategory = searchParams.get("category");
   const searchQuery = searchParams.get("q") || "";

@@ -1,5 +1,6 @@
 import { Link, NavLink, Outlet } from "react-router";
 import WeatherDisplay from "./WeatherDisplay";
+import { CONTACT_EMAIL, SITE_NAME } from "../config";
 
 function Layout() {
   const linkClass = ({ isActive }: { isActive: boolean }) =>
@@ -50,10 +51,7 @@ function Layout() {
 
       <footer className="border-t border-gray-200 bg-white">
         <div className="mx-auto max-w-5xl px-4 py-6 text-center text-sm text-gray-900">
-          <p>
-            Johnston Community Directory &mdash; built by a neighbor, for
-            neighbors.
-          </p>
+          <p>{SITE_NAME} &mdash; built by a neighbor, for neighbors.</p>
           <p className="mt-1">Free to use, always.</p>
           <p className="mt-3 text-gray-700">
             This is an independent community project. It is not affiliated with
@@ -79,10 +77,10 @@ function Layout() {
           <p className="mt-3 text-gray-700">
             Contact:{" "}
             <a
-              href="mailto:mastapegs01@gmail.com"
+              href={`mailto:${CONTACT_EMAIL}`}
               className="text-blue-700 underline hover:text-blue-900 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
             >
-              mastapegs01@gmail.com
+              {CONTACT_EMAIL}
             </a>
           </p>
           <p className="mt-3 text-gray-700">Last updated {__LAST_UPDATED__}</p>

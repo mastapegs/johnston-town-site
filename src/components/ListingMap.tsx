@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import type { Listing } from "../data/listings";
+import { JOHNSTON_COORDS } from "../config";
 
 interface ListingMapProps {
   listings: Listing[];
@@ -73,7 +74,7 @@ function buildLargeMapUrl(listings: Listing[], singleListing: boolean) {
     const { lat, lng } = listings[0];
     return `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}#map=16/${lat}/${lng}`;
   }
-  return `https://www.openstreetmap.org/#map=12/41.824/-71.49`;
+  return `https://www.openstreetmap.org/#map=12/${JOHNSTON_COORDS.lat}/${JOHNSTON_COORDS.lng}`;
 }
 
 function ListingMap({

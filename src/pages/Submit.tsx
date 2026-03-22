@@ -1,8 +1,9 @@
 import { useEffect } from "react";
+import { SITE_NAME } from "../config";
 
 function Submit() {
   useEffect(() => {
-    document.title = "Submit a Listing — Johnston Community Directory";
+    document.title = `Submit a Listing — ${SITE_NAME}`;
   }, []);
 
   return (
