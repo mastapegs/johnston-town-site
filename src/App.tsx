@@ -1,6 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router";
 import Layout from "./components/Layout";
 import ErrorBoundary from "./components/ErrorBoundary";
+import DataError from "./components/DataError";
+import { listingsResult } from "./data/listings";
 import Home from "./pages/Home";
 import Directory from "./pages/Directory";
 import ListingDetail from "./pages/ListingDetail";
@@ -11,6 +13,10 @@ import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 function App() {
+  if (!listingsResult.success) {
+    return <DataError error={listingsResult.error} />;
+  }
+
   return (
     <BrowserRouter>
       <ErrorBoundary>
