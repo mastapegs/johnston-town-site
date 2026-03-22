@@ -27,6 +27,23 @@ npm run a11y           # Run WCAG2AA accessibility tests via pa11y-ci
 npm run geocode        # Resolve listing addresses to lat/lng coordinates
 ```
 
+### Environment Setup (Claude Code on the Web)
+
+When running in a web/cloud environment, `node_modules` may be missing or incomplete. Before running lint, format, or build commands:
+
+1. **Install dependencies first** with `npm install --ignore-scripts`. The `--ignore-scripts` flag is required because `puppeteer` (a pa11y-ci dependency) runs a postinstall script that downloads Chrome, which fails in sandboxed environments. Skipping scripts is safe — puppeteer is only needed for `npm run a11y`, not for lint/format/build.
+2. **Run `npm run format` before committing** (not just `format:check`). Prettier may reformat code that passes ESLint but doesn't match Prettier's style. Running `format` auto-fixes everything.
+3. **`npm run a11y` will not work** in environments without Chrome/Chromium installed. This is expected — a11y tests run in GitHub Actions CI where Chrome is available. Don't try to fix this locally; just ensure lint, format, and build pass.
+
+**Recommended pre-commit check order:**
+
+```bash
+npm install --ignore-scripts   # Only needed once per session
+npm run lint                   # ESLint (zero-config, fast)
+npm run format                 # Auto-fix formatting
+npm run build                  # TypeScript check + production build
+```
+
 ## Project Structure
 
 ```
