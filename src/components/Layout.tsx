@@ -35,6 +35,9 @@ function Layout() {
               <NavLink to="/about" className={linkClass}>
                 About
               </NavLink>
+              <NavLink to="/family" className={linkClass}>
+                Family
+              </NavLink>
             </nav>
             <WeatherDisplay />
           </div>
