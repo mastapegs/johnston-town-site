@@ -2,10 +2,12 @@ import { useEffect } from "react";
 import { Link, useParams } from "react-router";
 import { listings } from "../data/listings";
 import ListingMap from "../components/ListingMap";
+import { useUserLocation } from "../useUserLocation";
 
 function ListingDetail() {
   const { id } = useParams<{ id: string }>();
   const listing = listings.find((l) => l.id === id);
+  const userLocation = useUserLocation();
 
   useEffect(() => {
     document.title = listing
@@ -93,7 +95,11 @@ function ListingDetail() {
 
       <div className="mt-6">
         <h2 className="mb-3 text-lg font-semibold text-gray-900">Location</h2>
-        <ListingMap listings={[listing]} singleListing />
+        <ListingMap
+          listings={[listing]}
+          singleListing
+          userLocation={userLocation}
+        />
       </div>
 
       <div className="mt-6 rounded-lg border border-gray-200 bg-white p-4 text-sm text-gray-700">

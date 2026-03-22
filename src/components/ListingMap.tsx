@@ -82,12 +82,12 @@ function ListingMap({
   singleListing = false,
   userLocation,
 }: ListingMapProps) {
+  const useSrcdoc = listings.length > 0 && (!singleListing || !!userLocation);
+
   const srcdoc = useMemo(
     () =>
-      !singleListing && listings.length > 0
-        ? buildMultiMarkerSrcdoc(listings, userLocation)
-        : undefined,
-    [listings, singleListing, userLocation],
+      useSrcdoc ? buildMultiMarkerSrcdoc(listings, userLocation) : undefined,
+    [listings, useSrcdoc, userLocation],
   );
 
   if (listings.length === 0) return null;
@@ -98,7 +98,7 @@ function ListingMap({
   return (
     <div className={className}>
       <div className="overflow-hidden rounded-lg border border-gray-200">
-        {singleListing ? (
+        {singleListing && !srcdoc ? (
           <iframe
             title={`Map showing ${listings[0].name}`}
             src={buildSingleEmbedUrl(listings[0])}
@@ -110,7 +110,11 @@ function ListingMap({
           />
         ) : (
           <iframe
-            title="Map of community resources in Johnston, RI"
+            title={
+              singleListing
+                ? `Map showing ${listings[0].name}`
+                : "Map of community resources in Johnston, RI"
+            }
             srcDoc={srcdoc}
             width="100%"
             height={height}
