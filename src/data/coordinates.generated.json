@@ -438,5 +438,35 @@
     "lat": 41.8335,
     "lng": -71.5585,
     "address": "1665 Hartford Ave, Johnston, RI 02919"
+  },
+  "wicked-fresh-cafe": {
+    "lat": 41.8225,
+    "lng": -71.4885,
+    "address": "1345 Hartford Ave, Johnston, RI 02919"
+  },
+  "bangin-wingz": {
+    "lat": 41.8265,
+    "lng": -71.5165,
+    "address": "258 Greenville Ave, Johnston, RI 02919"
+  },
+  "jt-grill": {
+    "lat": 41.8355,
+    "lng": -71.5085,
+    "address": "98 George Waterman Rd, Johnston, RI 02919"
+  },
+  "california-taco-shop": {
+    "lat": 41.8238,
+    "lng": -71.4925,
+    "address": "1428 Hartford Ave, Johnston, RI 02919"
+  },
+  "brewed-awakenings-johnston": {
+    "lat": 41.8395,
+    "lng": -71.4755,
+    "address": "1577 Atwood Ave, Johnston, RI 02919"
+  },
+  "expressos-pizza": {
+    "lat": 41.8345,
+    "lng": -71.5645,
+    "address": "2949 Hartford Ave, Johnston, RI 02919"
   }
 }

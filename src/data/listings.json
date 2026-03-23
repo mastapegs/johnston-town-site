@@ -848,5 +848,62 @@
     "phone": "(401) 331-6445",
     "hours": "Mon–Fri 6:00 AM – 2:00 PM, Sat–Sun 6:00 AM – 2:00 PM",
     "description": "Family-style American restaurant known for generous portions and reasonable prices. Popular for breakfast and lunch with favorites like omelettes, French toast, and grilled bagels."
+  },
+  {
+    "id": "wicked-fresh-cafe",
+    "name": "Wicked Fresh Cafe",
+    "category": "Restaurants",
+    "address": "1345 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 273-7374",
+    "website": "https://wickedfreshcafe.com",
+    "hours": "Mon–Fri 8:00 AM – 5:00 PM, Sat–Sun 9:00 AM – 4:00 PM",
+    "description": "Health-focused fast-casual cafe offering acai bowls, smoothies, wraps, salads, and meal prep services with vegan, gluten-free, and vegetarian options."
+  },
+  {
+    "id": "bangin-wingz",
+    "name": "Bangin' Wingz",
+    "category": "Restaurants",
+    "address": "258 Greenville Ave, Johnston, RI 02919",
+    "phone": "(401) 204-6733",
+    "description": "Local wing spot specializing in chicken wings with a variety of signature sauces. Popular for Tuesday wing specials, with delivery and takeout available."
+  },
+  {
+    "id": "jt-grill",
+    "name": "J & T's Grill",
+    "category": "Restaurants",
+    "address": "98 George Waterman Rd, Johnston, RI 02919",
+    "phone": "(401) 233-9665",
+    "hours": "Mon–Thu 6:00 AM – 4:00 PM, Fri 6:00 AM – 8:00 PM, Sat 6:00 AM – 4:00 PM, Sun 6:00 AM – 1:00 PM",
+    "description": "Family-owned breakfast and lunch restaurant in business for over 40 years. Serves homemade soups, daily dinner specials, and all-day breakfast."
+  },
+  {
+    "id": "california-taco-shop",
+    "name": "California Taco Shop",
+    "category": "Restaurants",
+    "address": "1428 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 780-0669",
+    "website": "https://www.californiatacoshopri.com",
+    "hours": "Mon–Sat 10:00 AM – 10:00 PM, Sun 11:00 AM – 9:00 PM",
+    "description": "Popular taco shop serving Mexican-inspired fare including tacos, burritos, quesadillas, and beloved horchata at affordable prices."
+  },
+  {
+    "id": "brewed-awakenings-johnston",
+    "name": "Brewed Awakenings",
+    "category": "Restaurants",
+    "address": "1577 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 383-4682",
+    "website": "https://brewedcoffeeshop.com",
+    "hours": "Mon–Sat 6:00 AM – 5:00 PM, Sun 7:00 AM – 4:00 PM",
+    "description": "Locally owned Rhode Island coffeehouse chain serving coffee, pastries, and breakfast and lunch sandwiches. Features a drive-thru and outdoor seating."
+  },
+  {
+    "id": "expressos-pizza",
+    "name": "Expresso's Pizza Restaurant",
+    "category": "Restaurants",
+    "address": "2949 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 934-2515",
+    "website": "https://www.expressospizzajohnston.com",
+    "hours": "Tue–Thu 11:00 AM – 10:00 PM, Fri–Sat 11:00 AM – 11:00 PM, Sun 12:00 PM – 10:00 PM, Mon Closed",
+    "description": "Budget-friendly Italian restaurant known for Greek-style pizza and calzones. Offers dine-in, delivery, and takeout."
   }
 ]
