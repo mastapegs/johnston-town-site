@@ -809,5 +809,44 @@
     "website": "https://heiplace.com",
     "hours": "Mon–Thu 11:30 AM – 10:00 PM, Fri 11:30 AM – 10:30 PM",
     "description": "Pan-Asian restaurant offering Chinese, Japanese, Thai, Vietnamese, and Cambodian cuisines. A diverse menu featuring dishes from across Southeast Asia."
+  },
+  {
+    "id": "bar-101",
+    "name": "Bar 101",
+    "category": "Restaurants",
+    "address": "1478 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 432-7080",
+    "website": "https://www.bar101ri.com",
+    "hours": "Mon 4:00 PM – 10:00 PM, Tue–Thu 4:00 PM – 11:00 PM, Fri–Sat 12:00 PM – 12:00 AM, Sun 12:00 PM – 10:00 PM",
+    "description": "Modern bar and grill featuring a fusion of classic Italian and American dishes by Chef Jamie. Known for the 101 Burger, chicken fajitas, and a lively atmosphere with outdoor seating."
+  },
+  {
+    "id": "bon-asian-bistro",
+    "name": "Bon Asian Bistro & Hibachi Grill",
+    "category": "Restaurants",
+    "address": "1386 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 270-0777",
+    "website": "https://www.bonhibachi.com",
+    "hours": "Mon–Thu 11:00 AM – 9:30 PM, Fri–Sat 11:00 AM – 10:30 PM, Sun 11:30 AM – 9:00 PM",
+    "description": "Pan-Asian restaurant and sushi bar with tableside hibachi grill experience. Offers a diverse menu of Japanese, Chinese, and Thai dishes in a casual chic atmosphere."
+  },
+  {
+    "id": "mexizol-rincon-de-mexico",
+    "name": "Mexizol Rincon De Mexico",
+    "category": "Restaurants",
+    "address": "678 Killingly St, Johnston, RI 02919",
+    "phone": "(401) 216-4727",
+    "website": "https://www.mexizol.com",
+    "hours": "Mon–Sun 11:00 AM – 8:30 PM",
+    "description": "Authentic Mexican restaurant featuring sizzling fajitas, handmade tortillas, refreshing margaritas, and traditional recipes with fresh ingredients in a vibrant atmosphere."
+  },
+  {
+    "id": "lighthouse-restaurant",
+    "name": "The Lighthouse Restaurant",
+    "category": "Restaurants",
+    "address": "1665 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 331-6445",
+    "hours": "Mon–Fri 6:00 AM – 2:00 PM, Sat–Sun 6:00 AM – 2:00 PM",
+    "description": "Family-style American restaurant known for generous portions and reasonable prices. Popular for breakfast and lunch with favorites like omelettes, French toast, and grilled bagels."
   }
 ]
