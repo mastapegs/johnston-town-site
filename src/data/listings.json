@@ -719,5 +719,95 @@
     "website": "https://www.theavebarandgrill.com",
     "hours": "Mon–Sat 4:00 PM – 1:00 AM, Sun Closed",
     "description": "Lively bar and grill specializing in unique burgers and unforgettable pizzas. Features 2 full bars, a dance floor, pool tables, shuffleboard, and more."
+  },
+  {
+    "id": "sura-korean-bbq",
+    "name": "Sura Korean BBQ",
+    "category": "Restaurants",
+    "address": "300 George Waterman Rd, Johnston, RI 02919",
+    "phone": "(401) 233-7888",
+    "website": "https://surabbqkorean.com",
+    "hours": "Sun–Thu 11:30 AM – 10:00 PM, Fri–Sat 11:30 AM – 11:00 PM",
+    "description": "Authentic Korean cuisine since 1997. The only place in Rhode Island where Korean marinated barbecues are cooked and served right on your tabletop grill. Offers all-you-can-eat BBQ."
+  },
+  {
+    "id": "cherry-hill-grille-pub",
+    "name": "Cherry Hill Grille & Pub",
+    "category": "Restaurants",
+    "address": "223 Greenville Ave, Johnston, RI 02919",
+    "phone": "(401) 349-4340",
+    "website": "https://www.cherryhillgrille.com",
+    "hours": "Wed–Thu 11:30 AM – 8:30 PM, Fri 11:30 AM – 9:00 PM, Sat 7:00 AM – 9:00 PM, Sun 7:00 AM – 1:00 PM",
+    "description": "Cozy 50-seat neighborhood pub featuring comfort food, HD TVs, draft beer, cocktails, and outstanding daily specials. Locally owned and operated since 2009."
+  },
+  {
+    "id": "pats-italian-johnston",
+    "name": "Pat's Italian Restaurant",
+    "category": "Restaurants",
+    "address": "1200 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 273-1444",
+    "website": "https://patsitalian.com",
+    "hours": "Tue–Thu 4:30 PM – 8:30 PM, Fri–Sat 4:30 PM – 9:00 PM, Sun 4:30 PM – 7:30 PM",
+    "description": "Authentic Italian restaurant offering classic dishes in a warm setting. Part of the Pat's Italian family with multiple Rhode Island locations. Reservations, delivery, and takeout available."
+  },
+  {
+    "id": "punjab-indian-himalayan",
+    "name": "The Punjab Indian & Himalayan Cuisine",
+    "category": "Restaurants",
+    "address": "1565 Plainfield Pike, Johnston, RI 02919",
+    "phone": "(401) 270-5687",
+    "website": "https://www.thepunjabjohnston.com",
+    "hours": "Mon 11:00 AM – 9:00 PM, Wed 11:00 AM – 9:00 PM, Thu 11:30 AM – 8:00 PM, Fri–Sat 11:00 AM – 9:45 PM, Sun 11:00 AM – 9:00 PM",
+    "description": "Authentic Indian and Himalayan cuisine celebrating traditional recipes, spices, and heartfelt hospitality. Offers lunch, dinner, buffets, takeout, and catering."
+  },
+  {
+    "id": "baylee-thai-cuisine",
+    "name": "Baylee Thai Cuisine",
+    "category": "Restaurants",
+    "address": "1369 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 272-7888",
+    "website": "https://bayleethaicuisine-ri.com",
+    "hours": "Mon 11:30 AM – 9:00 PM, Tue–Thu 11:30 AM – 9:30 PM, Fri–Sat 11:30 AM – 10:30 PM, Sun 11:30 AM – 9:00 PM",
+    "description": "Authentic Thai cuisine using fresh ingredients and traditional spices. Offers dine-in, delivery, and takeout with a diverse menu of classic Thai dishes."
+  },
+  {
+    "id": "cafe-vino",
+    "name": "Café Vino",
+    "category": "Restaurants",
+    "address": "235 Greenville Ave, Johnston, RI 02919",
+    "phone": "(401) 349-2680",
+    "website": "https://www.cafevinori.com",
+    "hours": "Tue–Thu 5:00 PM – 9:00 PM, Fri–Sat 5:00 PM – 10:00 PM",
+    "description": "Intimate BYOB Italian restaurant focusing on high-quality local products and simple recipes to produce spectacular dishes. A cozy hidden gem rated 4.8 stars."
+  },
+  {
+    "id": "english-muffin",
+    "name": "English Muffin",
+    "category": "Restaurants",
+    "address": "1989 Plainfield Pike, Johnston, RI 02919",
+    "phone": "(401) 943-6100",
+    "website": "https://englishmuffinri.com",
+    "hours": "Mon–Thu 6:00 AM – 2:00 PM, Fri 6:00 AM – 8:00 PM, Sat–Sun 6:00 AM – 2:00 PM",
+    "description": "Beloved breakfast, lunch, and dinner restaurant serving American comfort food. Breakfast served daily until 2 PM with Friday dinner service until 8 PM."
+  },
+  {
+    "id": "cayenne-sushi",
+    "name": "Cayenne Sushi Restaurant",
+    "category": "Restaurants",
+    "address": "1450 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 808-6663",
+    "website": "https://cayennesushiri.com",
+    "hours": "Mon–Thu 11:30 AM – 9:30 PM, Fri 11:30 AM – 10:30 PM",
+    "description": "Authentic Japanese, Chinese, and Thai cuisine with a focus on creative sushi rolls and Asian fusion dishes. Dine-in, takeout, and delivery available."
+  },
+  {
+    "id": "hei-place",
+    "name": "Hei Place",
+    "category": "Restaurants",
+    "address": "1 Commerce Way, Johnston, RI 02919",
+    "phone": "(401) 276-0688",
+    "website": "https://heiplace.com",
+    "hours": "Mon–Thu 11:30 AM – 10:00 PM, Fri 11:30 AM – 10:30 PM",
+    "description": "Pan-Asian restaurant offering Chinese, Japanese, Thai, Vietnamese, and Cambodian cuisines. A diverse menu featuring dishes from across Southeast Asia."
   }
 ]
