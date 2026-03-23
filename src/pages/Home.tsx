@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
+import { useEffect } from "react";
 import type { Listing } from "../data/listings";
 import { SITE_NAME } from "../config";
 import HeroSearch from "../components/HeroSearch";
@@ -8,30 +7,13 @@ import CategoryGrid from "../components/CategoryGrid";
 import MissionBanner from "../components/MissionBanner";
 
 function Home({ listings }: { listings: Listing[] }) {
-  const [searchQuery, setSearchQuery] = useState("");
-  const navigate = useNavigate();
-
   useEffect(() => {
     document.title = SITE_NAME;
   }, []);
 
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    const trimmed = searchQuery.trim();
-    if (trimmed) {
-      navigate(`/directory?q=${encodeURIComponent(trimmed)}`);
-    } else {
-      navigate("/directory");
-    }
-  };
-
   return (
     <div className="space-y-12">
-      <HeroSearch
-        searchQuery={searchQuery}
-        onSearchChange={setSearchQuery}
-        onSearchSubmit={handleSearch}
-      />
+      <HeroSearch />
 
       <StatsSection listings={listings} />
 
