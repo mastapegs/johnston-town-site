@@ -1,14 +1,20 @@
-interface HeroSearchProps {
-  searchQuery: string;
-  onSearchChange: (value: string) => void;
-  onSearchSubmit: (e: React.FormEvent) => void;
-}
+import { useState } from "react";
+import { useNavigate } from "react-router";
 
-function HeroSearch({
-  searchQuery,
-  onSearchChange,
-  onSearchSubmit,
-}: HeroSearchProps) {
+function HeroSearch() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const trimmed = searchQuery.trim();
+    if (trimmed) {
+      navigate(`/directory?q=${encodeURIComponent(trimmed)}`);
+    } else {
+      navigate("/directory");
+    }
+  };
+
   return (
     <section className="py-10 text-center">
       <h1 className="text-4xl font-bold text-gray-900">
@@ -20,7 +26,7 @@ function HeroSearch({
       </p>
 
       <form
-        onSubmit={onSearchSubmit}
+        onSubmit={handleSubmit}
         role="search"
         className="mx-auto mt-8 flex max-w-lg gap-2"
       >
@@ -31,7 +37,7 @@ function HeroSearch({
           id="home-search"
           type="search"
           value={searchQuery}
-          onChange={(e) => onSearchChange(e.target.value)}
+          onChange={(e) => setSearchQuery(e.target.value)}
           placeholder="Search for food banks, childcare, town hall..."
           className="flex-1 rounded-lg border border-gray-300 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-500 focus:border-blue-600 focus:outline-2 focus:outline-offset-2 focus:outline-blue-600"
         />
