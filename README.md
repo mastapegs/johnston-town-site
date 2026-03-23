@@ -20,7 +20,9 @@ The directory covers the services and resources that matter most:
 - **Entertainment** — local attractions, venues, and activities
 - **Schools** — public schools, private schools, and educational programs
 
-Use the **keyword search** to find what you need by name, description, or address — or browse by category. Every listing is researched and verified by hand. Accuracy matters more than volume — if it's in the directory, you can trust it.
+Use the **keyword search** to find what you need by name, description, or address — or browse by category. Switch between list and map views to find services near you. Every listing is researched and verified by hand. Accuracy matters more than volume — if it's in the directory, you can trust it.
+
+The site also includes live local weather for Johnston, privacy and terms of service pages, and runtime data validation to ensure every listing meets quality standards before it's displayed.
 
 ## Why This Exists
 
@@ -32,9 +34,12 @@ This project was built by a neighbor who lives here and sees the gaps firsthand.
 
 This is just the beginning. Here's where things are headed:
 
-1. **Curated Launch** (current) — A verified, hand-curated set of essential service listings
+1. **Curated Launch** (current) — A verified, hand-curated set of essential service listings with data validation, privacy/terms pages, and WCAG2AA accessibility
 2. **Community Input** — Open up submissions so residents can suggest new listings or flag outdated information
-3. **Sustainable Growth** — Let local businesses claim and enhance their profiles, creating a path to keep the directory free forever
+3. **Government Integration** — Deeper links to municipal services and 211 resources
+4. **Sustainable Growth** — Let local businesses claim and enhance their profiles, creating a path to keep the directory free forever
+
+See `planning/` for detailed roadmaps and analysis documents.
 
 ## Getting Started
 
@@ -63,6 +68,16 @@ npm run a11y           # Run WCAG2AA accessibility tests
 npm run geocode        # Resolve listing addresses to map coordinates
 ```
 
+### Adding a Listing
+
+Listing data lives in `src/data/listings.json`. To add a new listing:
+
+1. Add an entry with `id`, `name`, `category`, `address`, `phone`, `description`, and optionally `website` and `hours`
+2. Use a category from `src/data/categories.ts` (e.g., "Food Assistance", "Municipal Services")
+3. Run `npm run geocode` to generate map coordinates from the address
+
+Data is validated at runtime with Zod — invalid entries will surface clear error messages in the browser.
+
 ### Maps & Geocoding
 
 Each listing includes an interactive map powered by OpenStreetMap. Addresses are the source of truth — when you add or change a listing address, run `npm run geocode` to automatically resolve it to precise map coordinates using the free Nominatim API (no API key needed). Results are cached, so only changed addresses are re-geocoded.
@@ -74,7 +89,9 @@ Each listing includes an interactive map powered by OpenStreetMap. Addresses are
 - [Tailwind CSS](https://tailwindcss.com/) — Styling
 - [Vite](https://vite.dev/) — Build tool and dev server
 - [TypeScript](https://www.typescriptlang.org/) — Type safety
+- [Zod](https://zod.dev/) — Runtime data validation
 - [OpenStreetMap](https://www.openstreetmap.org/) — Maps and geocoding
+- [Open Meteo](https://open-meteo.com/) — Local weather data (no API key needed)
 - [pa11y-ci](https://github.com/pa11y/pa11y-ci) — Automated WCAG2AA accessibility testing
 
 ## Contributing
