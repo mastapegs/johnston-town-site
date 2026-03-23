@@ -659,5 +659,65 @@
     "phone": "(401) 934-0208",
     "website": "https://www.trinityri.org/trinity-christian-academy",
     "description": "Private Christian school (grades PK–12) and ministry of Trinity Assembly of God. Serves approximately 70 students with an 8:1 student-teacher ratio."
+  },
+  {
+    "id": "atwood-grill",
+    "name": "Atwood Grill",
+    "category": "Restaurants",
+    "address": "1413 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 943-3331",
+    "website": "https://www.atwoodgrille.com",
+    "hours": "Sun–Thu 11:30 AM – 8:00 PM, Fri–Sat 11:30 AM – 9:00 PM",
+    "description": "Laid-back Italian bar and grill serving pastas, Angus burgers, and pizza with a full bar. A Johnston institution serving over 100,000 customers a year."
+  },
+  {
+    "id": "barlino-ristorante",
+    "name": "Bar'Lino Ristorante",
+    "category": "Restaurants",
+    "address": "1395 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 303-1303",
+    "website": "https://bar-lino.com",
+    "hours": "Mon–Wed 12:00 PM – 9:30 PM, Thu–Sat 12:00 PM – 10:00 PM, Sun 10:30 AM – 9:30 PM",
+    "description": "Southern Italian ristorante from the DeQuattro Restaurant Group featuring familial recipes from Itri, Italy. Signature dishes include Pappardelle alla Bolognese and Bucatini all'Amatriciana."
+  },
+  {
+    "id": "luigis-gourmet-italian",
+    "name": "Luigi's Gourmet Italian Restaurant",
+    "category": "Restaurants",
+    "address": "1357 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 861-3850",
+    "website": "https://luigisgourmet.com",
+    "hours": "Wed–Thu 12:00 PM – 9:00 PM, Fri–Sat 12:00 PM – 9:30 PM, Sun 12:00 PM – 8:00 PM",
+    "description": "Family-owned Italian restaurant since 1971 with two beautifully appointed dining rooms and a full bar. Also offers a Gourmet Express with takeout soups, sandwiches, pizza, and pasta dinners."
+  },
+  {
+    "id": "trattoria-romana-johnston",
+    "name": "Trattoria Romana Johnston",
+    "category": "Restaurants",
+    "address": "1571 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 519-9100",
+    "website": "https://trattoria-johnston.com",
+    "hours": "Wed–Thu 11:30 AM – 9:00 PM, Fri 11:30 AM – 10:00 PM, Sat 4:30 PM – 10:00 PM, Sun 4:00 PM – 8:00 PM",
+    "description": "Authentic Italian dining from Chef Luciano Canova at the Centre at Cherry Hill. Offers dinner, lunch, banquets, and a special Sunday service in an intimate setting with picturesque murals."
+  },
+  {
+    "id": "chicken-coop-kitchen-bar",
+    "name": "The Chicken Coop Kitchen & Bar",
+    "category": "Restaurants",
+    "address": "1463 Atwood Ave, Johnston, RI 02919",
+    "phone": "(401) 331-9464",
+    "website": "https://thechickencoopkb.com",
+    "hours": "Mon–Thu 11:30 AM – 11:00 PM, Fri–Sat 11:30 AM – 1:00 AM, Sun 11:30 AM – 11:00 PM",
+    "description": "Locally owned bar and grill since 2021 serving fresh food, craft beer, and specialty cocktails in a welcoming neighborhood atmosphere."
+  },
+  {
+    "id": "the-ave-bar-and-grill",
+    "name": "The Ave Bar and Grill",
+    "category": "Restaurants",
+    "address": "1428 Hartford Ave, Johnston, RI 02919",
+    "phone": "(401) 383-9889",
+    "website": "https://www.theavebarandgrill.com",
+    "hours": "Mon–Sat 4:00 PM – 1:00 AM, Sun Closed",
+    "description": "Lively bar and grill specializing in unique burgers and unforgettable pizzas. Features 2 full bars, a dance floor, pool tables, shuffleboard, and more."
   }
 ]
