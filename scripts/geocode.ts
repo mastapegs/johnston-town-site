@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
-const LISTINGS_PATH = path.join(ROOT, "src/data/listings.ts");
+const LISTINGS_PATH = path.join(ROOT, "src/data/listings.json");
 const OUTPUT_PATH = path.join(ROOT, "src/data/coordinates.generated.json");
 
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
@@ -31,22 +31,11 @@ function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/** Extract listing ids and addresses from the TS source file. */
+/** Extract listing ids and addresses from the JSON data file. */
 function parseListings(): { id: string; address: string }[] {
   const source = fs.readFileSync(LISTINGS_PATH, "utf-8");
-  const results: { id: string; address: string }[] = [];
-
-  const idRegex = /id:\s*"([^"]+)"/g;
-  const addrRegex = /address:\s*"([^"]+)"/g;
-
-  const ids = [...source.matchAll(idRegex)].map((m) => m[1]);
-  const addrs = [...source.matchAll(addrRegex)].map((m) => m[1]);
-
-  for (let i = 0; i < ids.length; i++) {
-    results.push({ id: ids[i], address: addrs[i] });
-  }
-
-  return results;
+  const data = JSON.parse(source) as { id: string; address: string }[];
+  return data.map(({ id, address }) => ({ id, address }));
 }
 
 async function geocode(address: string): Promise<Coordinates | null> {
