@@ -343,5 +343,130 @@
     "lat": 41.8635,
     "lng": -71.5425,
     "address": "15 Deerfield Dr, Greenville, RI 02828"
+  },
+  "atwood-grill": {
+    "lat": 41.8375,
+    "lng": -71.4735,
+    "address": "1413 Atwood Ave, Johnston, RI 02919"
+  },
+  "barlino-ristorante": {
+    "lat": 41.8372,
+    "lng": -71.4728,
+    "address": "1395 Atwood Ave, Johnston, RI 02919"
+  },
+  "luigis-gourmet-italian": {
+    "lat": 41.8228,
+    "lng": -71.4895,
+    "address": "1357 Hartford Ave, Johnston, RI 02919"
+  },
+  "trattoria-romana-johnston": {
+    "lat": 41.8395,
+    "lng": -71.4755,
+    "address": "1571 Atwood Ave, Johnston, RI 02919"
+  },
+  "chicken-coop-kitchen-bar": {
+    "lat": 41.8385,
+    "lng": -71.4745,
+    "address": "1463 Atwood Ave, Johnston, RI 02919"
+  },
+  "the-ave-bar-and-grill": {
+    "lat": 41.8238,
+    "lng": -71.4925,
+    "address": "1428 Hartford Ave, Johnston, RI 02919"
+  },
+  "sura-korean-bbq": {
+    "lat": 41.8345,
+    "lng": -71.5075,
+    "address": "300 George Waterman Rd, Johnston, RI 02919"
+  },
+  "cherry-hill-grille-pub": {
+    "lat": 41.8255,
+    "lng": -71.5155,
+    "address": "223 Greenville Ave, Johnston, RI 02919"
+  },
+  "pats-italian-johnston": {
+    "lat": 41.8215,
+    "lng": -71.4835,
+    "address": "1200 Hartford Ave, Johnston, RI 02919"
+  },
+  "punjab-indian-himalayan": {
+    "lat": 41.8125,
+    "lng": -71.5385,
+    "address": "1565 Plainfield Pike, Johnston, RI 02919"
+  },
+  "baylee-thai-cuisine": {
+    "lat": 41.8225,
+    "lng": -71.4885,
+    "address": "1369 Hartford Ave, Johnston, RI 02919"
+  },
+  "cafe-vino": {
+    "lat": 41.8258,
+    "lng": -71.5158,
+    "address": "235 Greenville Ave, Johnston, RI 02919"
+  },
+  "english-muffin": {
+    "lat": 41.8165,
+    "lng": -71.5525,
+    "address": "1989 Plainfield Pike, Johnston, RI 02919"
+  },
+  "cayenne-sushi": {
+    "lat": 41.8378,
+    "lng": -71.4738,
+    "address": "1450 Atwood Ave, Johnston, RI 02919"
+  },
+  "hei-place": {
+    "lat": 41.8197,
+    "lng": -71.4802,
+    "address": "1 Commerce Way, Johnston, RI 02919"
+  },
+  "bar-101": {
+    "lat": 41.8382,
+    "lng": -71.4748,
+    "address": "1478 Atwood Ave, Johnston, RI 02919"
+  },
+  "bon-asian-bistro": {
+    "lat": 41.8368,
+    "lng": -71.4725,
+    "address": "1386 Atwood Ave, Johnston, RI 02919"
+  },
+  "mexizol-rincon-de-mexico": {
+    "lat": 41.8285,
+    "lng": -71.4575,
+    "address": "678 Killingly St, Johnston, RI 02919"
+  },
+  "lighthouse-restaurant": {
+    "lat": 41.8335,
+    "lng": -71.5585,
+    "address": "1665 Hartford Ave, Johnston, RI 02919"
+  },
+  "wicked-fresh-cafe": {
+    "lat": 41.8225,
+    "lng": -71.4885,
+    "address": "1345 Hartford Ave, Johnston, RI 02919"
+  },
+  "bangin-wingz": {
+    "lat": 41.8265,
+    "lng": -71.5165,
+    "address": "258 Greenville Ave, Johnston, RI 02919"
+  },
+  "jt-grill": {
+    "lat": 41.8355,
+    "lng": -71.5085,
+    "address": "98 George Waterman Rd, Johnston, RI 02919"
+  },
+  "california-taco-shop": {
+    "lat": 41.8238,
+    "lng": -71.4925,
+    "address": "1428 Hartford Ave, Johnston, RI 02919"
+  },
+  "brewed-awakenings-johnston": {
+    "lat": 41.8395,
+    "lng": -71.4755,
+    "address": "1577 Atwood Ave, Johnston, RI 02919"
+  },
+  "expressos-pizza": {
+    "lat": 41.8345,
+    "lng": -71.5645,
+    "address": "2949 Hartford Ave, Johnston, RI 02919"
   }
 }

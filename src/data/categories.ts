@@ -8,6 +8,7 @@ export const categories = [
   "Parks & Recreation",
   "Entertainment",
   "Schools",
+  "Restaurants",
 ] as const;
 
 export type Category = (typeof categories)[number];
