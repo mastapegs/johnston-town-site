@@ -4,6 +4,31 @@
     "lng": -71.4951,
     "address": "1291 Hartford Ave, Johnston, RI 02919"
   },
+  "bridge-at-cherry-hill": {
+    "lat": 41.8215,
+    "lng": -71.5165,
+    "address": "1 Cherry Hill Rd, Johnston, RI 02919"
+  },
+  "cherry-hill-manor": {
+    "lat": 41.8218,
+    "lng": -71.5168,
+    "address": "2 Cherry Hill Rd, Johnston, RI 02919"
+  },
+  "anchor-bay-pocasset": {
+    "lat": 41.8375,
+    "lng": -71.5255,
+    "address": "12 Old Pocasset Ln, Johnston, RI 02919"
+  },
+  "briarcliffe-manor": {
+    "lat": 41.8365,
+    "lng": -71.5245,
+    "address": "49 Old Pocasset Rd, Johnston, RI 02919"
+  },
+  "pace-ri": {
+    "lat": 41.7685,
+    "lng": -71.3625,
+    "address": "10 Tripps Ln, Riverside, RI 02915"
+  },
   "johnston-town-hall": {
     "lat": 41.8243,
     "lng": -71.4988,
@@ -14,100 +39,75 @@
     "lng": -71.4866,
     "address": "1126 Hartford Ave, Johnston, RI 02919"
   },
+  "st-robert-bellarmine-food-closet": {
+    "lat": 41.8425,
+    "lng": -71.4785,
+    "address": "1804 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-sda-food-pantry": {
+    "lat": 41.8335,
+    "lng": -71.5545,
+    "address": "2693 Hartford Ave, Johnston, RI 02919"
+  },
+  "allendale-baptist-food-pantry": {
+    "lat": 41.8455,
+    "lng": -71.4715,
+    "address": "545 Woonasquatucket Ave, North Providence, RI 02911"
+  },
+  "salvation-army-providence-food": {
+    "lat": 41.8145,
+    "lng": -71.4165,
+    "address": "386 Broad St, Providence, RI 02907"
+  },
+  "ccap-food-bank": {
+    "lat": 41.7835,
+    "lng": -71.4375,
+    "address": "311 Doric Ave, Cranston, RI 02910"
+  },
+  "meals-on-wheels-ri": {
+    "lat": 41.8385,
+    "lng": -71.4155,
+    "address": "70 Bath St, Providence, RI 02908"
+  },
   "johnston-public-library": {
     "lat": 41.8305,
     "lng": -71.5024,
     "address": "1 Memorial Ave, Johnston, RI 02919"
   },
+  "johnston-police-department": {
+    "lat": 41.8415,
+    "lng": -71.4765,
+    "address": "1651 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-fire-department-hq": {
+    "lat": 41.8382,
+    "lng": -71.4722,
+    "address": "1520 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-dpw": {
+    "lat": 41.8275,
+    "lng": -71.4945,
+    "address": "100 Irons Ave, Johnston, RI 02919"
+  },
+  "johnston-municipal-court": {
+    "lat": 41.8395,
+    "lng": -71.4745,
+    "address": "1600 Atwood Ave, Johnston, RI 02919"
+  },
+  "johnston-public-schools": {
+    "lat": 41.8305,
+    "lng": -71.5025,
+    "address": "10 Memorial Ave, Johnston, RI 02919"
+  },
+  "usps-johnston": {
+    "lat": 41.838,
+    "lng": -71.472,
+    "address": "1530 Atwood Ave, Johnston, RI 02919"
+  },
   "lollipop-learning-center": {
     "lat": 41.8333,
     "lng": -71.5587,
     "address": "2766B Hartford Ave, Johnston, RI 02919"
-  },
-  "operation-stand-down-ri": {
-    "lat": 41.8218,
-    "lng": -71.4837,
-    "address": "1010 Hartford Ave, Johnston, RI 02919"
-  },
-  "crossroads-rhode-island": {
-    "lat": 41.817,
-    "lng": -71.4175,
-    "address": "160 Broad St, Providence, RI 02903"
-  },
-  "providence-rescue-mission": {
-    "lat": 41.8067,
-    "lng": -71.4362,
-    "address": "627 Cranston St, Providence, RI 02907"
-  },
-  "amos-house": {
-    "lat": 41.8127,
-    "lng": -71.4195,
-    "address": "460 Pine St, Providence, RI 02907"
-  },
-  "ocean-state-medical": {
-    "lat": 41.8384,
-    "lng": -71.4724,
-    "address": "1539 Atwood Ave, Suite 101, Johnston, RI 02919"
-  },
-  "tricounty-community-health-center": {
-    "lat": 41.8225,
-    "lng": -71.4866,
-    "address": "1126 Hartford Ave, Johnston, RI 02919"
-  },
-  "brown-health-urgent-care-johnston": {
-    "lat": 41.8197,
-    "lng": -71.4802,
-    "address": "11 Commerce Way, Unit 5, Johnston, RI 02919"
-  },
-  "johnston-urgent-care-mdri": {
-    "lat": 41.8235,
-    "lng": -71.4925,
-    "address": "1239 Hartford Ave, Johnston, RI 02919"
-  },
-  "atmed-treatment-center": {
-    "lat": 41.8383,
-    "lng": -71.4725,
-    "address": "1526 Atwood Ave, Suite 100, Johnston, RI 02919"
-  },
-  "inner-you-counseling-center": {
-    "lat": 41.8495,
-    "lng": -71.5505,
-    "address": "190 Putnam Pike, Suite 1, Johnston, RI 02919"
-  },
-  "ellie-mental-health-johnston": {
-    "lat": 41.8383,
-    "lng": -71.4725,
-    "address": "1526 Atwood Ave, Suite 104, Johnston, RI 02919"
-  },
-  "johnston-war-memorial-park": {
-    "lat": 41.8258,
-    "lng": -71.5018,
-    "address": "1583 Hartford Ave, Johnston, RI 02919"
-  },
-  "snake-den-state-park": {
-    "lat": 41.8355,
-    "lng": -71.5365,
-    "address": "2321 Hartford Ave, Johnston, RI 02919"
-  },
-  "buttonhole-golf-course": {
-    "lat": 41.8445,
-    "lng": -71.4645,
-    "address": "1 Button Hole Dr, Providence, RI 02908"
-  },
-  "cw-theaters-lanes-games": {
-    "lat": 41.8915,
-    "lng": -71.4535,
-    "address": "622 George Washington Hwy, Lincoln, RI 02865"
-  },
-  "apple-cinemas-warwick": {
-    "lat": 41.7235,
-    "lng": -71.4795,
-    "address": "400 Bald Hill Rd, Warwick, RI 02886"
-  },
-  "showcase-cinemas-warwick": {
-    "lat": 41.7175,
-    "lng": -71.4685,
-    "address": "1200 Quaker Ln, Warwick, RI 02886"
   },
   "johnston-child-care-center": {
     "lat": 41.8488,
@@ -179,35 +179,120 @@
     "lng": -71.5045,
     "address": "7 Waveland St, Johnston, RI 02919"
   },
-  "johnston-police-department": {
+  "operation-stand-down-ri": {
+    "lat": 41.8218,
+    "lng": -71.4837,
+    "address": "1010 Hartford Ave, Johnston, RI 02919"
+  },
+  "crossroads-rhode-island": {
+    "lat": 41.817,
+    "lng": -71.4175,
+    "address": "160 Broad St, Providence, RI 02903"
+  },
+  "providence-rescue-mission": {
+    "lat": 41.8067,
+    "lng": -71.4362,
+    "address": "627 Cranston St, Providence, RI 02907"
+  },
+  "amos-house": {
+    "lat": 41.8127,
+    "lng": -71.4195,
+    "address": "460 Pine St, Providence, RI 02907"
+  },
+  "ocean-state-medical": {
+    "lat": 41.8384,
+    "lng": -71.4724,
+    "address": "1539 Atwood Ave, Suite 101, Johnston, RI 02919"
+  },
+  "tricounty-community-health-center": {
+    "lat": 41.8225,
+    "lng": -71.4866,
+    "address": "1126 Hartford Ave, Johnston, RI 02919"
+  },
+  "brown-health-urgent-care-johnston": {
+    "lat": 41.8197,
+    "lng": -71.4802,
+    "address": "11 Commerce Way, Unit 5, Johnston, RI 02919"
+  },
+  "johnston-urgent-care-mdri": {
+    "lat": 41.8235,
+    "lng": -71.4925,
+    "address": "1239 Hartford Ave, Johnston, RI 02919"
+  },
+  "atmed-treatment-center": {
+    "lat": 41.8383,
+    "lng": -71.4725,
+    "address": "1526 Atwood Ave, Suite 100, Johnston, RI 02919"
+  },
+  "inner-you-counseling-center": {
+    "lat": 41.8495,
+    "lng": -71.5505,
+    "address": "190 Putnam Pike, Suite 1, Johnston, RI 02919"
+  },
+  "ellie-mental-health-johnston": {
+    "lat": 41.8383,
+    "lng": -71.4725,
+    "address": "1526 Atwood Ave, Suite 104, Johnston, RI 02919"
+  },
+  "johnston-war-memorial-park": {
+    "lat": 41.8258,
+    "lng": -71.5018,
+    "address": "1583 Hartford Ave, Johnston, RI 02919"
+  },
+  "snake-den-state-park": {
+    "lat": 41.8355,
+    "lng": -71.5365,
+    "address": "2321 Hartford Ave, Johnston, RI 02919"
+  },
+  "buttonhole-golf-course": {
+    "lat": 41.8445,
+    "lng": -71.4645,
+    "address": "1 Button Hole Dr, Providence, RI 02908"
+  },
+  "woodlake-park": {
+    "lat": 41.8345,
+    "lng": -71.4855,
+    "address": "103 Reservoir Ave, Johnston, RI 02919"
+  },
+  "cricket-field": {
     "lat": 41.8415,
-    "lng": -71.4765,
-    "address": "1651 Atwood Ave, Johnston, RI 02919"
+    "lng": -71.4665,
+    "address": "15 Riverside Ave, Johnston, RI 02919"
   },
-  "johnston-fire-department-hq": {
-    "lat": 41.8382,
-    "lng": -71.4722,
-    "address": "1520 Atwood Ave, Johnston, RI 02919"
+  "johnston-indoor-rec-center": {
+    "lat": 41.8435,
+    "lng": -71.4795,
+    "address": "1741 Atwood Ave, Johnston, RI 02919"
   },
-  "johnston-dpw": {
-    "lat": 41.8275,
-    "lng": -71.4945,
-    "address": "100 Irons Ave, Johnston, RI 02919"
+  "woonasquatucket-river-greenway": {
+    "lat": 41.8405,
+    "lng": -71.4685,
+    "address": "Hillside Ave, Johnston, RI 02919"
   },
-  "johnston-municipal-court": {
-    "lat": 41.8395,
-    "lng": -71.4745,
-    "address": "1600 Atwood Ave, Johnston, RI 02919"
+  "deerfield-park": {
+    "lat": 41.8625,
+    "lng": -71.5415,
+    "address": "25 Lisa Ann Cir, Smithfield, RI 02828"
   },
-  "johnston-public-schools": {
-    "lat": 41.8305,
-    "lng": -71.5025,
-    "address": "10 Memorial Ave, Johnston, RI 02919"
+  "smithfield-ymca": {
+    "lat": 41.8635,
+    "lng": -71.5425,
+    "address": "15 Deerfield Dr, Greenville, RI 02828"
   },
-  "usps-johnston": {
-    "lat": 41.838,
-    "lng": -71.472,
-    "address": "1530 Atwood Ave, Johnston, RI 02919"
+  "cw-theaters-lanes-games": {
+    "lat": 41.8915,
+    "lng": -71.4535,
+    "address": "622 George Washington Hwy, Lincoln, RI 02865"
+  },
+  "apple-cinemas-warwick": {
+    "lat": 41.7235,
+    "lng": -71.4795,
+    "address": "400 Bald Hill Rd, Warwick, RI 02886"
+  },
+  "showcase-cinemas-warwick": {
+    "lat": 41.7175,
+    "lng": -71.4685,
+    "address": "1200 Quaker Ln, Warwick, RI 02886"
   },
   "johnston-early-childhood-center": {
     "lat": 41.8305,
@@ -258,91 +343,6 @@
     "lat": 41.8325,
     "lng": -71.5285,
     "address": "2119 Hartford Ave, Johnston, RI 02919"
-  },
-  "st-robert-bellarmine-food-closet": {
-    "lat": 41.8425,
-    "lng": -71.4785,
-    "address": "1804 Atwood Ave, Johnston, RI 02919"
-  },
-  "johnston-sda-food-pantry": {
-    "lat": 41.8335,
-    "lng": -71.5545,
-    "address": "2693 Hartford Ave, Johnston, RI 02919"
-  },
-  "allendale-baptist-food-pantry": {
-    "lat": 41.8455,
-    "lng": -71.4715,
-    "address": "545 Woonasquatucket Ave, North Providence, RI 02911"
-  },
-  "salvation-army-providence-food": {
-    "lat": 41.8145,
-    "lng": -71.4165,
-    "address": "386 Broad St, Providence, RI 02907"
-  },
-  "ccap-food-bank": {
-    "lat": 41.7835,
-    "lng": -71.4375,
-    "address": "311 Doric Ave, Cranston, RI 02910"
-  },
-  "meals-on-wheels-ri": {
-    "lat": 41.8385,
-    "lng": -71.4155,
-    "address": "70 Bath St, Providence, RI 02908"
-  },
-  "bridge-at-cherry-hill": {
-    "lat": 41.8215,
-    "lng": -71.5165,
-    "address": "1 Cherry Hill Rd, Johnston, RI 02919"
-  },
-  "cherry-hill-manor": {
-    "lat": 41.8218,
-    "lng": -71.5168,
-    "address": "2 Cherry Hill Rd, Johnston, RI 02919"
-  },
-  "anchor-bay-pocasset": {
-    "lat": 41.8375,
-    "lng": -71.5255,
-    "address": "12 Old Pocasset Ln, Johnston, RI 02919"
-  },
-  "briarcliffe-manor": {
-    "lat": 41.8365,
-    "lng": -71.5245,
-    "address": "49 Old Pocasset Rd, Johnston, RI 02919"
-  },
-  "pace-ri": {
-    "lat": 41.7685,
-    "lng": -71.3625,
-    "address": "10 Tripps Ln, Riverside, RI 02915"
-  },
-  "woodlake-park": {
-    "lat": 41.8345,
-    "lng": -71.4855,
-    "address": "103 Reservoir Ave, Johnston, RI 02919"
-  },
-  "cricket-field": {
-    "lat": 41.8415,
-    "lng": -71.4665,
-    "address": "15 Riverside Ave, Johnston, RI 02919"
-  },
-  "johnston-indoor-rec-center": {
-    "lat": 41.8435,
-    "lng": -71.4795,
-    "address": "1741 Atwood Ave, Johnston, RI 02919"
-  },
-  "woonasquatucket-river-greenway": {
-    "lat": 41.8405,
-    "lng": -71.4685,
-    "address": "Hillside Ave, Johnston, RI 02919"
-  },
-  "deerfield-park": {
-    "lat": 41.8625,
-    "lng": -71.5415,
-    "address": "25 Lisa Ann Cir, Smithfield, RI 02828"
-  },
-  "smithfield-ymca": {
-    "lat": 41.8635,
-    "lng": -71.5425,
-    "address": "15 Deerfield Dr, Greenville, RI 02828"
   },
   "atwood-grill": {
     "lat": 41.8375,
