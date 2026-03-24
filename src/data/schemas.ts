@@ -24,6 +24,8 @@ export const listingInputSchema = z
     website: z.url().optional(),
     hours: z.string().optional(),
     description: z.string().min(1),
+    lat: z.number().default(0),
+    lng: z.number().default(0),
   })
   .transform((listing) => ({
     ...listing,

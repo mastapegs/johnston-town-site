@@ -4,9 +4,10 @@
  *
  * Usage: npx tsx scripts/geocode.ts
  *
- * Reads listings from src/data/listings.ts and writes coordinates to
- * src/data/coordinates.generated.json. Nominatim requires a 1-second
- * delay between requests per their usage policy.
+ * Reads listings from src/data/listings.json and updates them in-place
+ * with lat/lng coordinates. Only geocodes listings that are missing
+ * coordinates or whose address has changed. Nominatim requires a
+ * 1-second delay between requests per their usage policy.
  */
 
 import * as fs from "node:fs";
@@ -16,7 +17,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const LISTINGS_PATH = path.join(ROOT, "src/data/listings.json");
-const OUTPUT_PATH = path.join(ROOT, "src/data/coordinates.generated.json");
+const CACHE_PATH = path.join(__dirname, ".geocode-cache.json");
 
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
 const USER_AGENT = "johnston-town-site geocoder (community directory)";
@@ -27,15 +28,16 @@ interface Coordinates {
   lng: number;
 }
 
-function sleep(ms: number): Promise<void> {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+interface ListingEntry {
+  id: string;
+  address: string;
+  lat?: number;
+  lng?: number;
+  [key: string]: unknown;
 }
 
-/** Extract listing ids and addresses from the JSON data file. */
-function parseListings(): { id: string; address: string }[] {
-  const source = fs.readFileSync(LISTINGS_PATH, "utf-8");
-  const data = JSON.parse(source) as { id: string; address: string }[];
-  return data.map(({ id, address }) => ({ id, address }));
+function sleep(ms: number): Promise<void> {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function geocode(address: string): Promise<Coordinates | null> {
@@ -68,24 +70,26 @@ async function geocode(address: string): Promise<Coordinates | null> {
 }
 
 async function main() {
-  const listings = parseListings();
-  console.log(`Found ${listings.length} listings to geocode.\n`);
+  const listings: ListingEntry[] = JSON.parse(
+    fs.readFileSync(LISTINGS_PATH, "utf-8"),
+  );
+  console.log(`Found ${listings.length} listings.\n`);
 
-  // Load existing coordinates to avoid re-geocoding unchanged addresses
-  let existing: Record<string, Coordinates & { address: string }> = {};
-  if (fs.existsSync(OUTPUT_PATH)) {
-    existing = JSON.parse(fs.readFileSync(OUTPUT_PATH, "utf-8"));
+  // Load cache of previously geocoded addresses
+  let cache: Record<string, string> = {};
+  if (fs.existsSync(CACHE_PATH)) {
+    cache = JSON.parse(fs.readFileSync(CACHE_PATH, "utf-8"));
   }
 
-  const results: Record<string, Coordinates & { address: string }> = {};
   let geocoded = 0;
 
   for (const listing of listings) {
-    // Skip geocoding if address hasn't changed
-    const cached = existing[listing.id];
-    if (cached && cached.address === listing.address) {
+    const hasCoords = listing.lat != null && listing.lng != null;
+    const addressUnchanged = cache[listing.id] === listing.address;
+
+    // Skip if coordinates exist and address hasn't changed
+    if (hasCoords && addressUnchanged) {
       console.log(`✓ ${listing.id} (cached)`);
-      results[listing.id] = cached;
       continue;
     }
 
@@ -99,20 +103,20 @@ async function main() {
     geocoded++;
 
     if (coords) {
-      results[listing.id] = { ...coords, address: listing.address };
+      listing.lat = coords.lat;
+      listing.lng = coords.lng;
+      cache[listing.id] = listing.address;
       console.log(`  ${coords.lat}, ${coords.lng}`);
     } else {
       console.error(`  ✗ Failed to geocode ${listing.id}`);
-      // Keep old coordinates if available
-      if (cached) {
-        results[listing.id] = cached;
-        console.log(`  Using previous coordinates`);
-      }
     }
   }
 
-  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(results, null, 2) + "\n");
-  console.log(`\nWrote coordinates to ${path.relative(ROOT, OUTPUT_PATH)}`);
+  fs.writeFileSync(LISTINGS_PATH, JSON.stringify(listings, null, 2) + "\n");
+  fs.writeFileSync(CACHE_PATH, JSON.stringify(cache, null, 2) + "\n");
+  console.log(
+    `\nUpdated ${path.relative(ROOT, LISTINGS_PATH)} (${geocoded} geocoded)`,
+  );
 }
 
 main().catch((err) => {

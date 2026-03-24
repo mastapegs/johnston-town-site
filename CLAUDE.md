@@ -69,11 +69,10 @@ src/
 │   ├── Terms.tsx            # Terms of service page
 │   └── NotFound.tsx         # 404 error page
 ├── data/
-│   ├── listings.json            # Raw listing data (source of truth)
-│   ├── listings.ts              # Validates & hydrates listings with coordinates
+│   ├── listings.json            # Listing data with lat/lng (source of truth)
+│   ├── listings.ts              # Validates listings via Zod and exports result
 │   ├── schemas.ts               # Zod schemas for listing validation
-│   ├── categories.ts            # Category tuple and Category type
-│   └── coordinates.generated.json  # Auto-generated lat/lng from addresses
+│   └── categories.ts            # Category tuple and Category type
 ├── config.ts                # Site-wide constants (CONTACT_EMAIL, SITE_NAME, JOHNSTON_COORDS)
 ├── useUserLocation.ts       # Custom hook for browser geolocation with localStorage cache
 ├── App.tsx                  # Route definitions with ErrorBoundary
@@ -93,14 +92,13 @@ planning/
 
 ### Key Files
 
-- `src/data/listings.json` — Raw listing data (addresses are the source of truth). Each entry has `id`, `name`, `category`, `address`, `phone`, `website?`, `hours?`, `description`.
-- `src/data/listings.ts` — Validates `listings.json` via Zod, hydrates entries with coordinates, and exports the `Listing` interface and `listingsResult` (a success/error discriminated union).
-- `src/data/schemas.ts` — Zod schemas: validates listing fields (including US phone regex), transforms `phone` → `phoneHref` (digits-only for `tel:` links).
+- `src/data/listings.json` — Listing data including lat/lng coordinates. Each entry has `id`, `name`, `category`, `address`, `phone`, `website?`, `hours?`, `description`, `lat`, `lng`.
+- `src/data/listings.ts` — Validates `listings.json` via Zod and exports the `Listing` interface and `listingsResult` (a success/error discriminated union).
+- `src/data/schemas.ts` — Zod schemas: validates listing fields (including US phone regex and lat/lng), transforms `phone` → `phoneHref` (digits-only for `tel:` links).
 - `src/data/categories.ts` — Categories defined as a `const` tuple with derived `Category` type. Reused by schemas and components.
-- `src/data/coordinates.generated.json` — Auto-generated lat/lng coordinates. Regenerate with `npm run geocode` after changing addresses.
 - `src/config.ts` — Extracted site-wide constants: `CONTACT_EMAIL` (Zod-validated), `SITE_NAME`, `JOHNSTON_COORDS`.
 - `src/useUserLocation.ts` — Browser geolocation hook with localStorage caching and graceful error handling.
-- `scripts/geocode.ts` — Build-time script that resolves listing addresses to coordinates via the OpenStreetMap Nominatim API (free, no API key). Reads from `listings.json`, caches results, only re-geocodes when an address changes.
+- `scripts/geocode.ts` — Script that resolves listing addresses to coordinates via the OpenStreetMap Nominatim API (free, no API key). Updates `listings.json` in-place, only re-geocodes listings missing coordinates or with changed addresses.
 - `src/components/ListingMap.tsx` — Map component using OpenStreetMap iframe embeds. Used on listing detail pages and the directory map view.
 - `src/components/ErrorBoundary.tsx` — React error boundary that catches render errors gracefully.
 - `src/components/DataError.tsx` — Displays Zod validation errors when listing data fails to parse.
@@ -153,18 +151,17 @@ interface Listing {
   website?: string;
   hours?: string;
   description: string;
-  lat: number; // Auto-populated from coordinates.generated.json
-  lng: number; // Auto-populated from coordinates.generated.json
+  lat: number; // From listings.json, populated by npm run geocode
+  lng: number; // From listings.json, populated by npm run geocode
 }
 ```
 
 ### Data Flow
 
-1. Raw data lives in `src/data/listings.json`
+1. Listing data (including lat/lng) lives in `src/data/listings.json`
 2. On import, `listings.ts` validates via Zod schemas in `schemas.ts`
 3. The schema transforms `phone` → `phoneHref` (strips non-digits for `tel:` links)
-4. Valid entries are hydrated with lat/lng from `coordinates.generated.json`
-5. `App.tsx` checks `listingsResult.success` — renders `DataError` on failure, routes on success
+4. `App.tsx` checks `listingsResult.success` — renders `DataError` on failure, routes on success
 
 ## Code Style & Conventions
 
@@ -188,11 +185,11 @@ Three GitHub Actions workflows in `.github/workflows/`:
 ## Adding a New Listing
 
 1. Edit `src/data/listings.json`
-2. Add a new object to the array (no lat/lng needed — just the address)
+2. Add a new object to the array (lat/lng can be omitted — they default to 0)
 3. Use an existing category from the `categories` tuple in `src/data/categories.ts`, or add a new one if needed
 4. Ensure the `id` is unique and kebab-case
 5. The `phone` field must match the US phone regex in `schemas.ts`
-6. Run `npm run geocode` to generate coordinates from the address
+6. Run `npm run geocode` to populate lat/lng coordinates from the address
 
 ## WCAG & Accessibility Guidelines
 
@@ -213,8 +210,8 @@ This project enforces WCAG2AA via pa11y-ci with the axe runner. Key lessons lear
 
 ### Geocoding
 
-- Addresses are the source of truth for listing locations. Coordinates are generated via `npm run geocode` using the OpenStreetMap Nominatim API (free, no API key, 1 req/sec rate limit).
-- The geocode script caches results in `src/data/coordinates.generated.json` and only re-geocodes when an address changes.
+- Addresses are the source of truth for listing locations. Coordinates are stored directly in `listings.json` and populated via `npm run geocode` using the OpenStreetMap Nominatim API (free, no API key, 1 req/sec rate limit).
+- The geocode script updates `listings.json` in-place and uses a local cache (`scripts/.geocode-cache.json`, gitignored) to skip unchanged addresses.
 
 ## Adding a New Page
 
